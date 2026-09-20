@@ -91,6 +91,24 @@
   .sticky-note.tilt-2 { transform: rotate(-1deg); }
   .sticky-note.tilt-3 { transform: rotate(2deg); }
   .sticky-note.tilt-4 { transform: rotate(5deg); }
+
+  .screenshot-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .corner-tag {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: #D9A5A0;
+    color: #2F3B36;
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    padding: 5px 14px;
+    transform: rotate(-6deg);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    z-index: 2;
+  }
 </style>
 </head>
 <body>
@@ -165,7 +183,10 @@
 </div>
 
 <div class="entry">
-  <img src="screenshot9.jpeg" alt="Screenshot 9">
+  <div class="screenshot-wrap">
+    <p class="corner-tag">Career & Life Direction</p>
+    <img src="screenshot9.jpeg" alt="Screenshot 9">
+  </div>
   <div class="sticky-note note-green tilt-1">
     At some point in time, we learned that being a young adult meant having a plan all figured out and if that plan changed; it meant we were failures.
   </div>
