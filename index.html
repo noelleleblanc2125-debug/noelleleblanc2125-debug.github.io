@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Things Fall Apart: Social Media Edition</title>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   body {
     background: #1B2420;
@@ -17,14 +17,41 @@
     text-align: center;
     font-weight: 600;
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
   .subtitle {
     text-align: center;
     font-family: 'Caveat', cursive;
     font-size: 1.8rem;
     color: #F6C64C;
-    margin: 0 0 60px 0;
+    margin: 0 0 50px 0;
+  }
+  .vision {
+    max-width: 650px;
+    margin: 0 auto 70px auto;
+    background: #E8DCC3;
+    color: #2F3B36;
+    padding: 40px;
+    border-radius: 2px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    line-height: 1.7;
+  }
+  .vision h2 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #7A6A4F;
+    margin: 25px 0 8px 0;
+  }
+  .vision h2:first-child {
+    margin-top: 0;
+  }
+  .vision ul {
+    margin: 0 0 15px 0;
+    padding-left: 20px;
+  }
+  .vision li {
+    margin-bottom: 6px;
   }
   .entry {
     display: flex;
@@ -34,6 +61,10 @@
     gap: 30px;
     max-width: 800px;
     margin: 0 auto 70px auto;
+  }
+  .entry.note-left {
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
   }
   .entry img {
     max-width: 100%;
@@ -52,105 +83,27 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transform: rotate(-3deg);
   }
-  .entry.note-left {
-    flex-direction: row-reverse;
-    flex-wrap: wrap-reverse;
-  }
-  .sticky-note.note-pink {
-    background: #F4A9A8;
-  }
-  .sticky-note.note-blue {
-    background: #A8C8D8;
-  }
-  .sticky-note.note-sage {
-    background: #B7C4A3;
-  }
+  .sticky-note.note-pink { background: #F4A9A8; }
+  .sticky-note.note-blue { background: #A8C8D8; }
+  .sticky-note.note-green { background: #A9C9A4; }
+
   .sticky-note.tilt-1 { transform: rotate(-5deg); }
   .sticky-note.tilt-2 { transform: rotate(-1deg); }
   .sticky-note.tilt-3 { transform: rotate(2deg); }
   .sticky-note.tilt-4 { transform: rotate(5deg); }
-
-  .tag {
-    font-family: 'Caveat', cursive;
-    font-size: 1.1rem;
-    color: #F6C64C;
-    margin: 0 0 4px 0;
-    transform: rotate(-2deg);
-  }
-
-  .divider {
-    text-align: center;
-    font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
-    color: #F4EFE4;
-    opacity: 0.5;
-    margin: 10px auto 50px auto;
-    letter-spacing: 8px;
-  }
-
-  .vision {
-    max-width: 650px;
-    margin: 0 auto 20px auto;
-    background: #E8DCC3;
-    color: #2F3B36;
-    padding: 45px 40px;
-    border-radius: 2px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  }
-  .vision h2 {
-    font-family: 'Special Elite', monospace;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #7A6A4F;
-    margin: 30px 0 10px 0;
-  }
-  .vision h2:first-child {
-    margin-top: 0;
-  }
-  .vision p {
-    line-height: 1.7;
-    margin: 0 0 10px 0;
-  }
-  .vision .thesis p::first-letter {
-    font-size: 3rem;
-    font-family: 'Special Elite', monospace;
-    float: left;
-    line-height: 0.8;
-    margin: 6px 8px 0 0;
-    color: #7A6A4F;
-  }
-  .capture-highlight {
-    border-left: 4px solid #7A6A4F;
-    background: rgba(122,106,79,0.1);
-    padding: 15px 20px;
-    font-style: italic;
-    margin: 15px 0 20px 0;
-  }
-  .vision ul {
-    margin: 0 0 15px 0;
-    padding-left: 20px;
-  }
-  .vision li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
 </style>
 </head>
 <body>
 
 <h1>Things Fall Apart: Social Media Edition</h1>
+<p class="subtitle">My Screenshot Journal</p>
 
 <div class="vision">
-  <div class="thesis">
-    <h2>Thesis</h2>
-    <p>Young adulthood has traditionally been framed as the point when you "figure out" who you are and establish an adult life. However, online spaces increasingly portray young adulthood as an ongoing process of becoming, where identity, career, relationships, family, and lifestyle remain uncertain and negotiable. I believe social media provides a space where young adults can collectively express, navigate, and make sense of that uncertainty.</p>
-  </div>
+  <h2>Thesis</h2>
+  <p>Young adulthood has traditionally been framed as the point when you "figure out" who you are and establish an adult life. However, online spaces increasingly portray young adulthood as an ongoing process of becoming, where identity, career, relationships, family, and lifestyle remain uncertain and negotiable. I believe social media provides a space where young adults can collectively express, navigate, and make sense of that uncertainty.</p>
 
   <h2>The Capture Rule</h2>
-  <div class="capture-highlight">
-    I will capture publicly available media that communicates a disrupted expectation, lack of experience, or reflection about what it means to establish an adult identity during one's twenties.
-  </div>
+  <p><em>I will capture publicly available media that communicates a disrupted expectation, lack of experience, or reflection about what it means to establish an adult identity during one's twenties.</em></p>
   <p>Media counts when it depicts, discusses, questions, or reflects on the experience or expectations of establishing an adult identity in one's twenties. This can include content about:</p>
   <ul>
     <li>Uncertainty surrounding career or life direction</li>
@@ -161,75 +114,62 @@
     <li>Changing values, priorities, or understanding oneself</li>
     <li>Feelings of being "behind," uncertain, or still in the process of figuring things out</li>
   </ul>
-  <p>Some content I will consider implementing into my project reinforces traditional expectations or timelines for adulthood — this provides context and comparison to my thesis, and could challenge my prediction that online spaces portray young adulthood as uncertain and negotiable.</p>
+  <p>Some content I will consider implementing reinforces traditional expectations or timelines for adulthood — this provides context and comparison to my thesis.</p>
 
   <h2>Plan of Capture</h2>
-  <p>I want to find screenshots of primarily Instagram and Facebook posts from my feed and discover pages, scrolling nightly to find a post worth capturing on each platform. I'll stay open to relevant media I encounter in physical spaces, though I expect that to be a supplemental aspect of the project rather than its focus. If I fall behind, I'll aim to review two posts per sitting to catch up.</p>
+  <p>I want to find screenshots of primarily Instagram and Facebook posts from my feed and discover pages, scrolling nightly to find a post worth capturing on each platform. I'll stay open to relevant media I encounter in physical spaces, though I expect that to be supplemental. If I fall behind, I'll aim to review two posts per sitting to catch up.</p>
 </div>
-
-<p class="subtitle">My Screenshot Journal</p>
 
 <!-- ===== COPY FROM HERE FOR EACH NEW WEEKLY ENTRY ===== -->
 <div class="entry">
-  <p class="tag">Expected vs. Actual Adulthood</p>
   <img src="screenshot1.jpeg" alt="Screenshot 1">
   <div class="sticky-note">
-    Entry 1: This screenshot speaks to an outcome that could happen when a traditional milestone that says we have reached adulthood falls through.
+    This screenshot speaks to an outcome that could happen when a traditional milestone that says we have reached adulthood falls through.
   </div>
 </div>
 <!-- ===== COPY TO HERE ===== -->
-  
+
 <div class="entry">
-  <p class="tag">Relationships & Family</p>
   <img src="screenshot2.jpeg" alt="Screenshot 2">
   <div class="sticky-note note-pink tilt-1">
-    Entry 2: The speaker is talking about his long time partner. Contrasts the expectation that I had as a child that love and marriage was always something positive. Changes my view on relationships now that I am older. Also suggests that this outcome is not always intentional.
+    The speaker is talking about his long time partner. Contrasts the expectation that I had as a child that love and marriage was always something positive. Changes my view on relationships now that I am older. Also suggests that this outcome is not always intentional.
   </div>
 </div>
 
 <div class="entry note-left">
-  <p class="tag">Feelings of Being "Behind"</p>
   <img src="screenshot3.jpeg" alt="Screenshot 3">
-  <div class="sticky-note note-blue tilt-2">
-    Entry 3: I like how this screenshot embraces the idea that even as time continues to go by does not automatically mean that we figure things out. People say, "it comes with time," but this screenshot suggests that not everything does. Some things come with a change of mindset.
+  <div class="sticky-note note-green tilt-2">
+    I like how this screenshot embraces the idea that even as time continues to go by does not automatically mean that we figure things out. People say, "it comes with time," but this screenshot suggests that not everything does. Some things come with a change of mindset.
   </div>
 </div>
 
-<p class="divider">✦ ✦ ✦</p>
-
 <div class="entry">
-  <p class="tag">Expected vs. Actual Adulthood</p>
   <img src="screenshot4.jpeg" alt="Screenshot 4">
-  <div class="sticky-note note-sage tilt-3">
-    Entry 4: Adulting seems to be an allusion. The world our parents told us we were going to get is not the world that got handed to us. Things fall apart. Adulting does too apparently.
+  <div class="sticky-note note-blue tilt-3">
+    Adulting seems to be an allusion. The world our parents told us we were going to get is not the world that got handed to us. Things fall apart. Adulting does too apparently.
   </div>
 </div>
 
 <div class="entry">
-  <p class="tag">Changing Values & Self-Understanding</p>
   <img src="screenshot5.jpeg" alt="Screenshot 5">
   <div class="sticky-note tilt-4">
-    Entry 5: Empowering language. Reasonated with me as young adult. Encourages me to take back power in the awkwardness of not knowing, of being in the in between, and to move with confidence anyway.
+    Empowering language. Reasonated with me as young adult. Encourages me to take back power in the awkwardness of not knowing, of being in the in between, and to move with confidence anyway.
   </div>
 </div>
 
-  <div class="entry note-left">
-  <p class="tag">Expected vs. Actual Adulthood</p>
+<div class="entry note-left">
   <img src="screenshot6.jpeg" alt="Screenshot 6">
-  <div class="sticky-note note-pink tilt-1">
-    Entry 6: As a kid we have it all figured out, but this screenshot suggests that young adulthood is not that way at all.
+  <div class="sticky-note note-pink">
+    As a kid we have it all figured out, but this screenshot suggests that young adulthood is not that way at all.
   </div>
 </div>
 
-<p class="divider">✦ ✦ ✦</p>
-
-  <div class="entry">
-  <p class="tag">Career & Life Direction</p>
+<div class="entry">
   <img src="screenshot9.jpeg" alt="Screenshot 9">
-  <div class="sticky-note note-blue tilt-2">
-    Entry 7: At some point in time, we learned that being a young adult meant having a plan all figured out and if that plan changed; it meant we were failures.
+  <div class="sticky-note note-green tilt-1">
+    At some point in time, we learned that being a young adult meant having a plan all figured out and if that plan changed; it meant we were failures.
   </div>
 </div>
-  
+
 </body>
 </html>
