@@ -1,10 +1,7 @@
 /* ============ FONTS & BASE ============ */
 body {
-  background-color: #2B241E;
-  background-image:
-    radial-gradient(ellipse at top, rgba(255,255,255,0.03), transparent 60%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  color: #EDE6D9;
+  background-color: #FAF3E0;
+  color: #4A3F35;
   font-family: 'Lora', serif;
   margin: 0;
   padding: 0;
@@ -17,13 +14,14 @@ h1 {
   font-size: 2.4rem;
   margin: 50px 0 6px 0;
   letter-spacing: 0.5px;
+  color: #4A3F35;
 }
 
 .subtitle {
   text-align: center;
   font-family: 'Caveat', cursive;
   font-size: 1.7rem;
-  color: #C98A4B;
+  color: #C97B4A;
   margin: 0 0 20px 0;
 }
 
@@ -34,43 +32,44 @@ h1 {
   justify-content: center;
   gap: 0;
   margin: 30px 0 50px 0;
-  border-top: 1px solid rgba(237,230,217,0.15);
-  border-bottom: 1px solid rgba(237,230,217,0.15);
+  border-top: 1px solid rgba(74,63,53,0.15);
+  border-bottom: 1px solid rgba(74,63,53,0.15);
   padding: 4px 0;
 }
 .site-nav a {
-  color: #EDE6D9;
+  color: #4A3F35;
   text-decoration: none;
   font-family: 'Playfair Display', serif;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
   padding: 12px 18px;
-  border-right: 1px solid rgba(237,230,217,0.1);
+  border-right: 1px solid rgba(74,63,53,0.1);
 }
 .site-nav a:last-child { border-right: none; }
 .site-nav a:hover,
 .site-nav a.active {
-  background: rgba(201,138,75,0.15);
-  color: #C98A4B;
+  background: rgba(201,123,74,0.15);
+  color: #C97B4A;
 }
 
 /* ============ VISION BOX ============ */
 .vision {
   max-width: 640px;
   margin: 0 auto 50px auto;
-  background: #F2E9D8;
-  color: #2B241E;
+  background: #FFFFFF;
+  color: #4A3F35;
   padding: 45px;
   border-radius: 2px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(74,63,53,0.15);
   line-height: 1.75;
+  border: 1px solid rgba(74,63,53,0.08);
 }
 .vision h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   font-style: italic;
   font-weight: 600;
-  color: #8A5A2B;
+  color: #C97B4A;
   margin: 28px 0 8px 0;
 }
 .vision h2:first-child { margin-top: 0; }
@@ -88,7 +87,7 @@ h1 {
   font-style: italic;
   font-weight: 700;
   font-size: 1.9rem;
-  color: #C98A4B;
+  color: #C97B4A;
   margin: 10px 0 55px 0;
 }
 
@@ -106,17 +105,16 @@ h1 {
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse;
 }
-.entry:nth-child(odd) { margin-right: auto; margin-left: 5%; }
-.entry:nth-child(even) { margin-left: auto; margin-right: 5%; }
 
 /* Polaroid frame */
 .screenshot-wrap {
   position: relative;
   display: inline-block;
-  background: #FBF8F2;
+  background: #FFFFFF;
   padding: 14px 14px 34px 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 22px rgba(74,63,53,0.2);
   transform: rotate(-1.5deg);
+  border: 1px solid rgba(74,63,53,0.08);
 }
 .entry.note-left .screenshot-wrap {
   transform: rotate(1.5deg);
@@ -131,13 +129,13 @@ h1 {
   position: absolute;
   top: -12px;
   left: -12px;
-  background: #C98A4B;
-  color: #2B241E;
+  background: #F6C9A0;
+  color: #4A3F35;
   font-family: 'Caveat', cursive;
   font-size: 1rem;
   padding: 5px 14px;
   transform: rotate(-6deg);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 6px rgba(74,63,53,0.25);
   z-index: 2;
 }
 .corner-tag.tag-right {
@@ -148,19 +146,20 @@ h1 {
 
 /* Sticky note */
 .sticky-note {
-  background: #E0A8AE;
-  color: #2B241E;
+  background: #FCEEB0;
+  color: #4A3F35;
   font-family: 'Caveat', cursive;
   font-size: 1.4rem;
   line-height: 1.35;
   padding: 22px;
   width: 220px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 14px rgba(74,63,53,0.25);
   transform: rotate(-2deg);
+  border: 1px solid rgba(74,63,53,0.06);
 }
-.sticky-note.note-pink  { background: #E0A8AE; }
-.sticky-note.note-blue  { background: #8FA9BC; }
-.sticky-note.note-green { background: #9BAE8C; }
+.sticky-note.note-pink  { background: #F4C2C2; }
+.sticky-note.note-blue  { background: #F6C9A0; }
+.sticky-note.note-green { background: #FFFFFF; }
 
 .sticky-note.tilt-1 { transform: rotate(-4deg); }
 .sticky-note.tilt-2 { transform: rotate(-1deg); }
