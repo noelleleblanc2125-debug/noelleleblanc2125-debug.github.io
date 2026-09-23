@@ -143,3 +143,8 @@ h1 {
 .sticky-note.tilt-2 { transform: rotate(-1deg); }
 .sticky-note.tilt-3 { transform: rotate(1.5deg); }
 .sticky-note.tilt-4 { transform: rotate(4deg); }
+
+.sticky-note.tilt-1 { transform: rotate(-4deg); }
+.sticky-note.tilt-2 { transform: rotate(-1deg); }
+.sticky-note.tilt-3 { transform: rotate(1.5deg); }
+.sticky-note.tilt-4 { transform: rotate(4deg); }
