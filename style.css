@@ -2,14 +2,14 @@
 body {
   background-color: #FAF3E0;
   color: #4A3F35;
-  font-family: 'Lora', serif;
+  font-family: 'Century Gothic', CenturyGothic, 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 h1 {
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Century Gothic', CenturyGothic, 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 2.4rem;
   margin: 50px 0 6px 0;
@@ -39,7 +39,7 @@ h1 {
 .site-nav a {
   color: #4A3F35;
   text-decoration: none;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Century Gothic', CenturyGothic, 'Poppins', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
   padding: 12px 18px;
@@ -65,8 +65,8 @@ h1 {
     #C7DCEA 32px
   );
   color: #4A3F35;
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.15rem;
+  font-family: 'Century Gothic', CenturyGothic, 'Poppins', sans-serif;
+  font-size: 1.05rem;
   padding: 50px 45px 60px 70px;
   box-shadow: 0 14px 30px rgba(74,63,53,0.3);
   line-height: 32px;
@@ -87,7 +87,7 @@ h1 {
 }
 .vision h2 {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   text-decoration: underline;
   text-decoration-color: #C97B4A;
   color: #C97B4A;
@@ -107,10 +107,9 @@ h1 {
 
 .page-title {
   text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
+  font-family: 'Patrick Hand', cursive;
   font-weight: 700;
-  font-size: 1.9rem;
+  font-size: 2rem;
   color: #C97B4A;
   margin: 10px 0 55px 0;
 }
