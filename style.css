@@ -131,10 +131,16 @@ h1 {
 .screenshot-wrap {
   position: relative;
   display: inline-block;
-  background: #F5EEDD;
+  background: #FFF9EE;
   padding: 14px 14px 34px 14px;
-  box-shadow: 0 10px 22px rgba(74,60,46,0.3);
+  box-shadow: 0 8px 18px rgba(74, 60, 50, 0.20);
   transform: rotate(-1.5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screenshot-wrap:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 0 12px 24px rgba(74, 60, 50, 0.25);
 }
 
 .entry.note-left .screenshot-wrap {
