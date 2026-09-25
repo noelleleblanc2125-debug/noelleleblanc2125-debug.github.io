@@ -22,22 +22,18 @@ h1 {
   font-size: 3.2rem;
   margin: 50px 0 4px 0;
   color: #4A3C32;
-  position: relative;
-  padding-bottom: 20px;
+}
+
+h1::before {
+  content: "✦ ";
+  color: #D4A857;
+  font-size: 1.6rem;
 }
 
 h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 10px;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 10'%3E%3Cpath d='M2 6 Q 20 2, 40 6 T 80 6 T 120 6 T 160 6 T 200 6' stroke='%234A3C32' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M2 9 Q 20 6, 40 9 T 80 9 T 120 9 T 160 9 T 200 9' stroke='%234A3C32' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
+  content: " ✦";
+  color: #D4A857;
+  font-size: 1.6rem;
 }
 
 .subtitle {
