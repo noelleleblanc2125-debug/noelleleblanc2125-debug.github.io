@@ -15,29 +15,25 @@ body {
    MAIN HEADER
    ========================================= */
 
-h1 {
-  text-align: center;
-  font-family: 'Parisienne', cursive;
-  font-weight: 700;
-  font-size: 3.2rem;
-  margin: 50px 0 4px 0;
-  color: #4A3C32;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
 h1::before,
 h1::after {
   content: "";
   display: inline-block;
-  width: 34px;
-  height: 34px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 C50 35, 65 50, 95 50 C65 50, 50 65, 50 95 C50 65, 35 50, 5 50 C35 50, 50 35, 50 5 Z' fill='none' stroke='%23A4728C' stroke-width='4'/%3E%3C/svg%3E");
+  width: 55px;
+  height: 85px;
+  background-image: url("flower.png");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
   flex-shrink: 0;
+}
+
+h1::before {
+  transform: rotate(-10deg);
+}
+
+h1::after {
+  transform: rotate(10deg) scaleX(-1);
 }
 
 .header-stem {
