@@ -25,66 +25,52 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 h1::before,
 h1::after {
   content: "";
   display: inline-block;
-  width: 36px;
-  height: 50px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 50'%3E%3Cpath d='M18 48 L18 10' stroke='%234A3C32' stroke-width='1.5' fill='none'/%3E%3Cpath d='M18 20 Q 10 15, 8 8' stroke='%234A3C32' stroke-width='1.2' fill='none'/%3E%3Cpath d='M18 28 Q 26 23, 28 16' stroke='%234A3C32' stroke-width='1.2' fill='none'/%3E%3Ccircle cx='18' cy='8' r='3' fill='none' stroke='%234A3C32' stroke-width='1.2'/%3E%3C/svg%3E");
+  width: 34px;
+  height: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 C50 35, 65 50, 95 50 C65 50, 50 65, 50 95 C50 65, 35 50, 5 50 C35 50, 50 35, 50 5 Z' fill='none' stroke='%23A4728C' stroke-width='4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: contain;
   flex-shrink: 0;
 }
 
-h1::after {
-  transform: scaleX(-1);
-}
-
-.subtitle {
+.header-stem {
   text-align: center;
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.4rem;
-  color: #4A3C32;
-  margin: 20px 0 30px 0;
-  position: relative;
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 6px 24px;
+  margin: 4px 0;
 }
 
-.subtitle::before,
-.subtitle::after {
-  content: "✦";
-  color: #D4A857;
-  font-size: 1rem;
-  margin: 0 10px;
+.header-stem svg {
+  width: 40px;
+  height: 55px;
 }
 
 .subtitle {
   text-align: center;
   font-family: 'Patrick Hand', cursive;
   font-size: 1.7rem;
-  color: #D4A857;
-  margin: 0 0 20px 0;
+  color: #A4728C;
+  margin: 8px 0 20px 0;
 }
 
 .header-divider {
   text-align: center;
   margin: 10px 0 30px 0;
-  height: 14px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14'%3E%3Cpath d='M2 7 Q 15 1, 28 7 T 54 7 T 80 7 T 106 7 T 132 7 T 158 7 T 184 7 T 210 7 T 236 7 T 262 7 T 288 7' stroke='%234A3C32' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20'%3E%3Cpath d='M2 18 C 2 2, 20 2, 20 10 C 20 18, 38 18, 38 10 C 38 2, 56 2, 56 10 C 56 18, 74 18, 74 10 C 74 2, 92 2, 92 10 C 92 18, 110 18, 110 10 C 110 2, 128 2, 128 10 C 128 18, 146 18, 146 10 C 146 2, 164 2, 164 10 C 164 18, 182 18, 182 10 C 182 2, 200 2, 200 10 C 200 18, 218 18, 218 10 C 218 2, 236 2, 236 10 C 236 18, 254 18, 254 10 C 254 2, 272 2, 272 10 C 272 18, 290 18, 290 10' stroke='%234A3C32' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 300px 14px;
+  background-size: 300px 20px;
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
+
 
 /* =========================================
    NAVIGATION
@@ -119,7 +105,6 @@ h1::after {
 }
 
 
-
 /* =========================================
    VISION / INTRO PAPER
    ========================================= */
@@ -133,7 +118,6 @@ h1::after {
   box-shadow: 0 8px 20px rgba(74, 60, 50, 0.18);
   line-height: 1.7;
 
-  /* Slightly uneven paper edge */
   clip-path: polygon(
     1% 2%,
     15% 0%,
@@ -207,7 +191,6 @@ h1::after {
   padding: 0 20px;
 }
 
-/* Alternates the position of the note and screenshot */
 .entry.note-left {
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse;
@@ -222,25 +205,18 @@ h1::after {
   position: relative;
   display: inline-block;
   background: #FFF9EE;
-
-  /* Extra bottom space makes it resemble
-     a pasted photograph or Polaroid */
   padding: 14px 14px 34px 14px;
-
   box-shadow: 0 8px 18px rgba(74, 60, 50, 0.20);
   transform: rotate(-1.5deg);
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-/* Alternate screenshot rotation */
 .entry.note-left .screenshot-wrap {
   transform: rotate(1.5deg);
 }
 
-/* Screenshot gently lifts when hovered */
 .screenshot-wrap:hover,
 .entry.note-left .screenshot-wrap:hover {
   transform: rotate(0deg) translateY(-5px);
@@ -261,21 +237,13 @@ h1::after {
 .screenshot-wrap::before {
   content: "";
   position: absolute;
-
   width: 90px;
   height: 26px;
-
   background: rgba(201, 184, 154, 0.65);
-
   top: -13px;
   left: 50%;
-
   transform: translateX(-50%) rotate(-3deg);
-
   z-index: 3;
-
-  /* Slight softness makes the tape
-     look less like a solid rectangle */
   box-shadow: 0 2px 4px rgba(74, 60, 50, 0.08);
 }
 
@@ -288,19 +256,13 @@ h1::after {
   position: absolute;
   top: -12px;
   left: -12px;
-
   background: #D7AAA5;
   color: #4A3C32;
-
   font-family: 'Patrick Hand', cursive;
   font-size: 1.15rem;
-
   padding: 5px 14px;
-
   transform: rotate(-6deg);
-
   box-shadow: 0 3px 6px rgba(74, 60, 50, 0.20);
-
   z-index: 4;
 }
 
@@ -368,19 +330,14 @@ h1::after {
 .sticky-note {
   background: #FFF9EE;
   color: #4A3C32;
-
-  font-family: 'Lora', serif;
+  font-family: 'Patrick Hand', cursive;
   font-size: 1rem;
   line-height: 1.7;
-
   padding: 28px;
   width: 230px;
-
   box-shadow: 0 6px 14px rgba(74, 60, 50, 0.18);
-
   transform: rotate(-1deg);
 
-  /* Mostly clean paper with a torn bottom */
   clip-path: polygon(
     1% 1%,
     99% 0%,
@@ -398,7 +355,6 @@ h1::after {
   );
 }
 
-/* Alternate the direction of the note */
 .entry.note-left .sticky-note {
   transform: rotate(1deg);
 }
@@ -410,12 +366,9 @@ h1::after {
 
 .entry-date {
   display: block;
-
   font-family: 'Patrick Hand', cursive;
   font-size: 1rem;
-
   color: #8E9678;
-
   margin-bottom: 6px;
 }
 
@@ -428,11 +381,8 @@ h1::after {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.6rem;
   font-weight: normal;
-
   color: #4A3C32;
-
   line-height: 1.2;
-
   margin: 0 0 12px 0;
 }
 
@@ -445,7 +395,6 @@ h1::after {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.1rem;
   line-height: 1.5;
-
   margin: 0;
 }
 
@@ -456,23 +405,17 @@ h1::after {
 
 .entry-tags {
   margin-top: 18px;
-
   display: flex;
   flex-wrap: wrap;
-
   gap: 6px;
 }
 
 .entry-tags span {
   font-family: 'Patrick Hand', cursive;
   font-size: 0.95rem;
-
   color: #4A3C32;
-
   background: rgba(168, 174, 145, 0.35);
-
   padding: 3px 9px;
-
   border-radius: 10px;
 }
 
@@ -483,34 +426,10 @@ h1::after {
 
 @media (max-width: 700px) {
 
- h1 {
-  text-align: center;
-  font-family: 'Parisienne', cursive;
-  font-weight: 700;
-  font-size: 3.2rem;
-  margin: 50px 0 4px 0;
-  color: #4A3C32;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-
-h1::before,
-h1::after {
-  content: "";
-  display: inline-block;
-  width: 36px;
-  height: 50px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 50'%3E%3Cpath d='M18 48 L18 10' stroke='%234A3C32' stroke-width='1.5' fill='none'/%3E%3Cpath d='M18 20 Q 10 15, 8 8' stroke='%234A3C32' stroke-width='1.2' fill='none'/%3E%3Cpath d='M18 28 Q 26 23, 28 16' stroke='%234A3C32' stroke-width='1.2' fill='none'/%3E%3Ccircle cx='18' cy='8' r='3' fill='none' stroke='%234A3C32' stroke-width='1.2'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  flex-shrink: 0;
-}
-
-h1::after {
-  transform: scaleX(-1);
-}
+  h1 {
+    font-size: 2.6rem;
+    margin-top: 35px;
+  }
 
   .subtitle {
     font-size: 1.4rem;
@@ -536,9 +455,7 @@ h1::after {
   .entry.note-left {
     flex-direction: column;
     gap: 30px;
-
     margin-bottom: 90px;
-
     padding: 0 20px;
   }
 
@@ -556,7 +473,6 @@ h1::after {
   .entry.note-left .sticky-note {
     width: auto;
     max-width: 85%;
-
     transform: rotate(0.5deg);
   }
 }
