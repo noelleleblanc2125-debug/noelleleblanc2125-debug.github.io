@@ -14,6 +14,10 @@ body {
    MAIN HEADER
    ========================================= */
 
+/* =========================================
+   MAIN HEADER
+   ========================================= */
+
 h1 {
   position: relative;
   text-align: center;
@@ -22,21 +26,20 @@ h1 {
   font-size: 3.2rem;
   margin: 50px auto 4px auto;
   color: #4A3C32;
-
-  /* Keeps the title itself centered */
   width: fit-content;
   max-width: 80%;
 }
 
 
-/* Decorative flowers beside title */
+/* FLOWERS BESIDE TITLE */
+
 h1::before,
 h1::after {
   content: "";
   position: absolute;
 
-  width: 45px;
-  height: 65px;
+  width: 35px;
+  height: 50px;
 
   background-image: url("flower.png");
   background-repeat: no-repeat;
@@ -47,21 +50,24 @@ h1::after {
 }
 
 
-/* Left flower */
+/* LEFT FLOWER */
+
 h1::before {
   right: calc(100% + 20px);
   transform: translateY(-50%) rotate(-8deg);
 }
 
 
-/* Right flower */
+/* RIGHT FLOWER */
+
 h1::after {
   left: calc(100% + 20px);
   transform: translateY(-50%) rotate(8deg) scaleX(-1);
 }
 
 
-/* Subtitle */
+/* SUBTITLE */
+
 .subtitle {
   text-align: center;
   font-family: 'Patrick Hand', cursive;
@@ -70,11 +76,12 @@ h1::after {
   margin: 8px 0 20px 0;
 }
 
-/* Decorative divider */
+
+/* WAVY DIVIDER */
+
 .header-divider {
   height: 20px;
   max-width: 300px;
-
   margin: 10px auto 30px auto;
 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20'%3E%3Cpath d='M2 18 C 2 2, 20 2, 20 10 C 20 18, 38 18, 38 10 C 38 2, 56 2, 56 10 C 56 18, 74 18, 74 10 C 74 2, 92 2, 92 10 C 92 18, 110 18, 110 10 C 110 2, 128 2, 128 10 C 128 18, 146 18, 146 10 C 146 2, 164 2, 164 10 C 164 18, 182 18, 182 10 C 182 2, 200 2, 200 10 C 200 18, 218 18, 218 10 C 218 2, 236 2, 236 10 C 236 18, 254 18, 254 10 C 254 2, 272 2, 272 10 C 272 18, 290 18, 290 10' stroke='%234A3C32' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -88,6 +95,7 @@ h1::after {
 /* =========================================
    NAVIGATION
    ========================================= */
+
 
 .site-nav {
   display: flex;
@@ -104,19 +112,36 @@ h1::after {
   font-family: 'Patrick Hand', cursive;
   font-size: 1.05rem;
   padding: 8px 16px;
+
   border: 2px dashed rgba(74, 60, 50, 0.4);
   border-radius: 8px;
+
   background: #FFF9EE;
-  transition: background 0.2s ease, border-color 0.2s ease;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.site-nav a:hover,
+
+/* HOVER EFFECT */
+
+.site-nav a:hover {
+  background: rgba(164, 114, 140, 0.15);
+  border-color: #A4728C;
+  color: #A4728C;
+}
+
+
+/* CURRENT / SELECTED PAGE */
+
 .site-nav a.active {
-  background: rgba(212, 168, 87, 0.25);
-  border-color: #D4A857;
+  background: rgba(164, 114, 140, 0.22);
+  border-color: #A4728C;
   border-style: solid;
+  color: #A4728C;
 }
-
 
 /* =========================================
    VISION / INTRO PAPER
