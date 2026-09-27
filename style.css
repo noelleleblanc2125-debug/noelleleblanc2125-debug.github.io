@@ -780,6 +780,533 @@ h1::after {
   border-radius: 10px;
 }
 
+/* =========================================
+   HOME PAGE
+   ========================================= */
+
+.home-page {
+  position: relative;
+
+  max-width: 1100px;
+
+  margin: 0 auto 100px auto;
+  padding: 0 30px 60px 30px;
+}
+
+
+/* =========================================
+   HANGING LEAVES
+   ========================================= */
+
+.home-leaves {
+  position: relative;
+
+  width: 100%;
+  height: 170px;
+
+  margin: -10px auto 0 auto;
+
+  overflow: hidden;
+}
+
+
+/* Individual leafy branches */
+
+.home-leaf {
+  position: absolute;
+
+  width: 330px;
+  height: auto;
+
+  opacity: 0.9;
+}
+
+
+/* Left branch */
+
+.leaf-one {
+  top: 0;
+  left: -20px;
+
+  transform: rotate(12deg);
+}
+
+
+/* Middle branch */
+
+.leaf-two {
+  top: 10px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(4deg)
+    scale(1.1);
+}
+
+
+/* Right branch */
+
+.leaf-three {
+  top: 0;
+  right: -20px;
+
+  transform:
+    rotate(-12deg)
+    scaleX(-1);
+}
+
+
+/* =========================================
+   WELCOME SECTION
+   ========================================= */
+
+.welcome-section {
+  text-align: center;
+
+  max-width: 700px;
+
+  margin: -15px auto 65px auto;
+}
+
+
+/* Welcome! */
+
+.welcome-section h2 {
+  font-family: 'Parisienne', cursive;
+
+  font-size: 4.3rem;
+  font-weight: normal;
+
+  color: #A4728C;
+
+  margin: 0 0 5px 0;
+}
+
+
+/* Little journal divider */
+
+.welcome-sparkles {
+  display: inline-block;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.3rem;
+
+  color: #4A3C32;
+
+  background: rgba(201, 184, 154, 0.30);
+
+  padding: 7px 35px;
+
+  margin-bottom: 18px;
+
+  transform: rotate(-0.5deg);
+}
+
+
+/* Welcome introduction */
+
+.welcome-section p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.35rem;
+  line-height: 1.5;
+
+  color: #4A3C32;
+}
+
+
+/* =========================================
+   HOME CARD LAYOUT
+   ========================================= */
+
+.home-cards {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  align-items: start;
+
+  gap: 60px 55px;
+
+  max-width: 950px;
+
+  margin: 0 auto;
+}
+
+
+/* Remove default disclosure triangle */
+
+.home-card summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.home-card summary::-webkit-details-marker {
+  display: none;
+}
+
+
+/* Shared heading */
+
+.card-title {
+  display: block;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2rem;
+  line-height: 1.15;
+
+  color: #4A3C32;
+}
+
+
+/* Little click instruction */
+
+.open-note {
+  display: block;
+
+  margin-top: 14px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1rem;
+
+  color: rgba(74, 60, 50, 0.65);
+}
+
+
+/* Change instruction after opening */
+
+.home-card[open] .open-note {
+  font-size: 0;
+}
+
+.home-card[open] .open-note::after {
+  content: "click to close";
+
+  font-size: 1rem;
+}
+
+
+/* Text inside all cards */
+
+.card-content {
+  margin-top: 25px;
+}
+
+.card-content p,
+.card-content li {
+  font-family: 'Lora', serif;
+
+  font-size: 1rem;
+  line-height: 1.75;
+
+  color: #4A3C32;
+}
+
+.card-content p {
+  margin: 0 0 18px 0;
+}
+
+.card-content p:last-child {
+  margin-bottom: 0;
+}
+
+.card-content ul {
+  margin: 8px 0 22px 0;
+  padding-left: 22px;
+}
+
+.card-content li {
+  margin-bottom: 8px;
+}
+
+
+/* =========================================
+   CARD 1 — TAPED WHITE PAPER
+   ========================================= */
+
+.about-card {
+  position: relative;
+
+  background: #FFFDF7;
+
+  padding: 35px 38px;
+
+  border: 2px solid #4A3C32;
+  border-radius: 8px 5px 10px 6px;
+
+  transform: rotate(-0.7deg);
+
+  box-shadow:
+    5px 7px 0 rgba(201, 184, 154, 0.18),
+    0 10px 20px rgba(74, 60, 50, 0.12);
+}
+
+
+/* Top-left washi */
+
+.about-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 105px;
+  height: 29px;
+
+  top: -16px;
+  left: -24px;
+
+  background: rgba(215, 170, 165, 0.80);
+
+  transform: rotate(-12deg);
+
+  z-index: 3;
+
+  box-shadow:
+    0 2px 3px rgba(74, 60, 50, 0.10);
+}
+
+
+/* Bottom-right washi */
+
+.about-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 105px;
+  height: 29px;
+
+  right: -27px;
+  bottom: -13px;
+
+  background: rgba(215, 170, 165, 0.80);
+
+  transform: rotate(-10deg);
+
+  z-index: 3;
+
+  box-shadow:
+    0 2px 3px rgba(74, 60, 50, 0.10);
+}
+
+
+/* =========================================
+   CARD 2 — SQUIGGLY BOW CARD
+   ========================================= */
+
+.capture-card {
+  position: relative;
+
+  background: rgba(255, 253, 247, 0.60);
+
+  padding: 40px 38px 35px 38px;
+
+  border: 3px solid #A4728C;
+
+  border-radius:
+    17px 10px 20px 12px /
+    12px 20px 10px 18px;
+
+  transform: rotate(0.6deg);
+
+  box-shadow:
+    0 8px 18px rgba(74, 60, 50, 0.09);
+}
+
+
+/* Hand-drawn bow */
+
+.capture-card::before {
+  content: "୨୧";
+
+  position: absolute;
+
+  top: -35px;
+  left: -15px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 4.3rem;
+  line-height: 1;
+
+  color: #A4728C;
+
+  transform: rotate(-12deg);
+
+  z-index: 3;
+}
+
+
+/* Slight inner uneven line */
+
+.capture-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid rgba(164, 114, 140, 0.40);
+
+  border-radius:
+    10px 18px 11px 20px /
+    18px 10px 19px 12px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CARD 3 — TORN NOTEBOOK PAPER
+   ========================================= */
+
+.collecting-card {
+  position: relative;
+
+  grid-column: 1 / -1;
+
+  width: min(680px, 85%);
+
+  justify-self: center;
+
+  box-sizing: border-box;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #FFFDF7 0px,
+      #FFFDF7 31px,
+      rgba(113, 139, 145, 0.17) 32px,
+      #FFFDF7 33px
+    );
+
+  padding: 38px 48px 45px 78px;
+
+  transform: rotate(-0.4deg);
+
+  box-shadow:
+    0 10px 20px rgba(74, 60, 50, 0.15);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 96%,
+
+    96% 98%,
+    92% 96%,
+    88% 100%,
+    83% 97%,
+    78% 100%,
+    73% 97%,
+    68% 100%,
+    63% 97%,
+    58% 100%,
+    53% 97%,
+    48% 100%,
+    43% 97%,
+    38% 100%,
+    33% 97%,
+    28% 100%,
+    23% 97%,
+    18% 100%,
+    13% 97%,
+    8% 100%,
+    4% 97%,
+    0 99%
+  );
+}
+
+
+/* Notebook holes */
+
+.collecting-card::before {
+  content:
+    "●\A"
+    "●\A"
+    "●\A"
+    "●\A"
+    "●";
+
+  white-space: pre;
+
+  position: absolute;
+
+  top: 25px;
+  left: 22px;
+
+  font-size: 1.25rem;
+  line-height: 2.25;
+
+  color: #F4EBDD;
+
+  text-shadow:
+    inset 1px 1px 2px rgba(74, 60, 50, 0.20);
+}
+
+
+/* Paper clip */
+
+.collecting-card::after {
+  content: "⌇";
+
+  position: absolute;
+
+  top: -18px;
+  right: 35px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 5.5rem;
+  line-height: 1;
+
+  color: #8E9678;
+
+  transform: rotate(18deg);
+
+  text-shadow:
+    1px 2px 2px rgba(74, 60, 50, 0.18);
+}
+
+
+/* =========================================
+   OPEN CARD EFFECT
+   ========================================= */
+
+.home-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-card[open] {
+  z-index: 5;
+}
+
+.about-card[open] {
+  transform: rotate(-0.2deg);
+}
+
+.capture-card[open] {
+  transform: rotate(0.2deg);
+}
+
+.collecting-card[open] {
+  transform: rotate(0deg);
+}
+
+
+/* Heading underline after opening */
+
+.home-card[open] .card-title {
+  text-decoration-line: underline;
+  text-decoration-thickness: 5px;
+  text-decoration-color: rgba(168, 174, 145, 0.35);
+  text-underline-offset: 3px;
+}
 
 /* =========================================
    MOBILE DESIGN
@@ -959,4 +1486,127 @@ h1::after {
     font-size: 1.05rem;
   }
 
+     /* =========================================
+     HOME PAGE
+     ========================================= */
+
+  .home-page {
+    padding: 0 18px 50px 18px;
+  }
+
+
+  /* Hanging leaves */
+
+  .home-leaves {
+    height: 115px;
+    margin-top: 0;
+  }
+
+  .home-leaf {
+    width: 210px;
+  }
+
+  .leaf-one {
+    left: -70px;
+  }
+
+  .leaf-three {
+    right: -70px;
+  }
+
+
+  /* Welcome */
+
+  .welcome-section {
+    margin-top: -5px;
+    margin-bottom: 50px;
+  }
+
+  .welcome-section h2 {
+    font-size: 3.4rem;
+  }
+
+  .welcome-sparkles {
+    font-size: 1.1rem;
+    padding: 6px 25px;
+  }
+
+  .welcome-section p {
+    max-width: 90%;
+
+    font-size: 1.15rem;
+  }
+
+
+  /* Journal cards */
+
+  .home-cards {
+    display: flex;
+    flex-direction: column;
+
+    gap: 55px;
+
+    width: 100%;
+  }
+
+  .about-card,
+  .capture-card,
+  .collecting-card {
+    width: 90%;
+    max-width: none;
+
+    box-sizing: border-box;
+
+    margin: 0 auto;
+  }
+
+
+  /* Taped card */
+
+  .about-card {
+    padding: 32px 28px;
+  }
+
+
+  /* Bow card */
+
+  .capture-card {
+    padding: 38px 28px 32px 28px;
+  }
+
+
+  /* Notebook paper */
+
+  .collecting-card {
+    padding:
+      35px
+      28px
+      42px
+      58px;
+  }
+
+  .collecting-card::before {
+    left: 16px;
+
+    font-size: 1rem;
+    line-height: 2.4;
+  }
+
+  .collecting-card::after {
+    right: 22px;
+    font-size: 4.5rem;
+  }
+
+
+  /* Card text */
+
+  .card-title {
+    font-size: 1.7rem;
+  }
+
+  .card-content p,
+  .card-content li {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
 }
