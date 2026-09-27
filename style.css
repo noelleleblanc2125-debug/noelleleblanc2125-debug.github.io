@@ -384,12 +384,19 @@ h1::after {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 45px;
-  max-width: 850px;
-  margin: 0 auto 120px auto;
-  padding: 0 20px;
+
+  /* Smaller gap allows the papers to overlap */
+  gap: 0;
+
+  max-width: 900px;
+  margin: 0 auto 130px auto;
+  padding: 25px 30px;
+
+  position: relative;
 }
 
+
+/* Alternate entries */
 .entry.note-left {
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse;
@@ -403,30 +410,53 @@ h1::after {
 .screenshot-wrap {
   position: relative;
   display: inline-block;
+
   background: #FFF9EE;
-  padding: 14px 14px 34px 14px;
-  box-shadow: 0 8px 18px rgba(74, 60, 50, 0.20);
-  transform: rotate(-1.5deg);
+
+  /* Polaroid / pasted-photo border */
+  padding: 14px 14px 36px 14px;
+
+  /* Creates a subtle second paper layer underneath */
+  box-shadow:
+    7px 8px 0 rgba(201, 184, 154, 0.28),
+    0 12px 24px rgba(74, 60, 50, 0.20);
+
+  transform: rotate(-1.4deg);
+
+  z-index: 1;
 
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
+
+/* Opposite rotation on alternating entries */
 .entry.note-left .screenshot-wrap {
-  transform: rotate(1.5deg);
+  transform: rotate(1.2deg);
 }
 
-.screenshot-wrap:hover,
+
+/* Slight lift when hovering */
+.screenshot-wrap:hover {
+  transform: rotate(-0.4deg) translateY(-4px);
+
+  box-shadow:
+    7px 8px 0 rgba(201, 184, 154, 0.25),
+    0 16px 28px rgba(74, 60, 50, 0.24);
+}
+
 .entry.note-left .screenshot-wrap:hover {
-  transform: rotate(0deg) translateY(-5px);
-  box-shadow: 0 12px 24px rgba(74, 60, 50, 0.25);
+  transform: rotate(0.4deg) translateY(-4px);
 }
 
+
+/* Screenshot itself */
 .screenshot-wrap img {
   display: block;
-  max-width: 100%;
   width: 400px;
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -438,28 +468,35 @@ h1::after {
   content: "";
   position: absolute;
 
-  width: 90px;
-  height: 26px;
+  width: 92px;
+  height: 27px;
 
-  top: -13px;
+  top: -14px;
   left: 50%;
 
   transform: translateX(-50%) rotate(-3deg);
 
-  z-index: 3;
+  z-index: 5;
 
-  /* Default tape color */
+  /* Default tape */
   background: #F0E6D2;
 
-  /* Gives the tape a slightly transparent washi feel */
   opacity: 0.82;
 
-  box-shadow: 0 2px 4px rgba(74, 60, 50, 0.08);
+  box-shadow:
+    0 1px 2px rgba(74, 60, 50, 0.08);
+}
+
+
+/* Slightly different tape angle on alternating entries */
+.entry.note-left .screenshot-wrap::before {
+  transform: translateX(-50%) rotate(2.5deg);
 }
 
 
 /* =========================================
    WASHI TAPE CATEGORY COLORS
+   Matches the sticky-note colors
    ========================================= */
 
 
@@ -504,27 +541,39 @@ h1::after {
 
 .corner-tag {
   position: absolute;
-  top: -12px;
-  left: -12px;
+
+  top: 12px;
+  left: -20px;
+
   background: #D7AAA5;
   color: #4A3C32;
+
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+
   padding: 5px 14px;
-  transform: rotate(-6deg);
-  box-shadow: 0 3px 6px rgba(74, 60, 50, 0.20);
-  z-index: 4;
+
+  transform: rotate(-5deg);
+
+  box-shadow:
+    2px 3px 6px rgba(74, 60, 50, 0.16);
+
+  z-index: 6;
 }
+
+
+/* Move tag to opposite corner on alternating entries */
 
 .corner-tag.tag-right {
   left: auto;
-  right: -12px;
-  transform: rotate(6deg);
+  right: -20px;
+
+  transform: rotate(5deg);
 }
 
 
 /* =========================================
-   CATEGORY COLORS
+   CATEGORY TAG COLORS
    ========================================= */
 
 .tag-career {
@@ -549,64 +598,91 @@ h1::after {
 
 
 /* =========================================
-   STICKY NOTE CATEGORY TINTS
+   STICKY NOTE
    ========================================= */
 
-.sticky-note.note-career {
-  background: #EFE6F2;
+.sticky-note {
+  position: relative;
+
+  width: 235px;
+
+  padding: 28px 28px 32px 28px;
+
+  background-color: #FFF9EE;
+  color: #4A3C32;
+
+  font-family: 'Patrick Hand', cursive;
+
+  /* Pulls the note over the screenshot */
+  margin-left: -32px;
+
+  transform: rotate(1.2deg);
+
+  z-index: 3;
+
+  /* Drop shadow works better with torn edges */
+  filter:
+    drop-shadow(3px 5px 5px rgba(74, 60, 50, 0.16));
+
+  /* Slightly irregular paper edges */
+  clip-path: polygon(
+    1% 1%,
+    18% 0%,
+    35% 1%,
+    52% 0%,
+    70% 1%,
+    86% 0%,
+    99% 1%,
+
+    100% 92%,
+    96% 95%,
+    90% 93%,
+    84% 98%,
+    76% 95%,
+    68% 100%,
+    59% 96%,
+    50% 100%,
+    41% 96%,
+    32% 99%,
+    23% 95%,
+    14% 99%,
+    7% 95%,
+    0% 98%
+  );
 }
 
-.sticky-note.note-relationships {
-  background: #F6E4E2;
-}
 
-.sticky-note.note-identity {
-  background: #EEF0E7;
-}
+/* Note overlaps from the opposite side */
+.entry.note-left .sticky-note {
+  margin-left: 0;
+  margin-right: -32px;
 
-.sticky-note.note-growing-up {
-  background: #F0E6D2;
-}
-
-.sticky-note.note-uncertainty {
-  background: #FBF0DC;
+  transform: rotate(-1deg);
 }
 
 
 /* =========================================
-   CAPTION / TORN PAPER NOTE
+   STICKY NOTE CATEGORY TINTS
    ========================================= */
 
-.sticky-note {
-  background: #FFF9EE;
-  color: #4A3C32;
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1rem;
-  line-height: 1.7;
-  padding: 28px;
-  width: 230px;
-  box-shadow: 0 6px 14px rgba(74, 60, 50, 0.18);
-  transform: rotate(-1deg);
-
-  clip-path: polygon(
-    1% 1%,
-    99% 0%,
-    100% 96%,
-    92% 98%,
-    82% 96%,
-    72% 100%,
-    62% 97%,
-    52% 100%,
-    42% 97%,
-    32% 100%,
-    22% 97%,
-    12% 100%,
-    0% 97%
-  );
+.sticky-note.note-career {
+  background-color: #EFE6F2;
 }
 
-.entry.note-left .sticky-note {
-  transform: rotate(1deg);
+.sticky-note.note-relationships {
+  background-color: #F6E4E2;
+}
+
+.sticky-note.note-identity {
+  background-color: #EEF0E7;
+}
+
+.sticky-note.note-growing-up {
+  background-color: #F0E6D2;
+}
+
+.sticky-note.note-uncertainty {
+  background-color: #FBF0DC;
 }
 
 
@@ -616,10 +692,13 @@ h1::after {
 
 .entry-date {
   display: block;
+
   font-family: 'Patrick Hand', cursive;
-  font-size: 1rem;
+  font-size: 0.95rem;
+
   color: #8E9678;
-  margin-bottom: 6px;
+
+  margin-bottom: 7px;
 }
 
 
@@ -629,11 +708,14 @@ h1::after {
 
 .sticky-note h2 {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.6rem;
+
+  font-size: 1.55rem;
   font-weight: normal;
-  color: #4A3C32;
   line-height: 1.2;
-  margin: 0 0 12px 0;
+
+  color: #4A3C32;
+
+  margin: 0 0 11px 0;
 }
 
 
@@ -643,11 +725,14 @@ h1::after {
 
 .sticky-note p {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.1rem;
+
+  font-size: 1.08rem;
   line-height: 1.5;
+
+  color: #4A3C32;
+
   margin: 0;
 }
-
 
 /* =========================================
    OPTIONAL TAGS UNDER CAPTION
