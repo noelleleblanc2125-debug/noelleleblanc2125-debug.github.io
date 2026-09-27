@@ -221,11 +221,11 @@ h1::after {
   align-items: flex-start;
 
   max-width: 900px;
-  margin: 10px auto 60px auto;
+  margin: 15px auto 65px auto;
   padding: 0 20px;
 
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: normal;
   line-height: 1;
 
@@ -241,15 +241,15 @@ h1::after {
   display: inline-flex;
   position: relative;
 
-  margin: 0 7px 16px 7px;
+  margin: 0 8px 18px 8px;
 
-  /* Thin hand-drawn-looking string */
-  border-top: 1.5px solid rgba(74, 60, 50, 0.85);
+  /* thin string running across top */
+  border-top: 1.5px solid #4A3C32;
 }
 
 
 /* =========================================
-   EACH LITTLE FLAG
+   EACH PENNANT
    ========================================= */
 
 .title-letter {
@@ -257,86 +257,121 @@ h1::after {
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 
-  width: 25px;
-  height: 34px;
+  width: 26px;
+  height: 27px;
 
-  padding-top: 5px;
   box-sizing: border-box;
+  padding-top: 2px;
 
   color: inherit;
 
-  /* softer line than before */
-  border-left: 1.5px solid rgba(74, 60, 50, 0.85);
-
-  /* creates the little notched pennant shape */
-  background: rgba(255, 249, 238, 0.30);
-
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    50% 78%,
-    0 100%
-  );
+  /* vertical sides */
+  border-left: 1.5px solid #4A3C32;
 }
 
 
-/* right edge of the final flag */
+/* right side of last pennant */
 .title-letter:last-child {
-  border-right: 1.5px solid rgba(74, 60, 50, 0.85);
+  border-right: 1.5px solid #4A3C32;
 }
 
 
 /* =========================================
-   SLIGHT HANDMADE IMPERFECTIONS
+   LEFT SIDE OF PENNANT BOTTOM
    ========================================= */
 
-.title-letter:nth-child(3n + 1) {
-  transform: rotate(-0.6deg);
+.title-letter::before {
+  content: "";
+  position: absolute;
+
+  width: 14px;
+  height: 1.5px;
+
+  background: #4A3C32;
+
+  left: 0;
+  bottom: -4px;
+
+  transform: rotate(20deg);
+  transform-origin: left center;
 }
 
-.title-letter:nth-child(3n + 2) {
+
+/* =========================================
+   RIGHT SIDE OF PENNANT BOTTOM
+   ========================================= */
+
+.title-letter::after {
+  content: "";
+  position: absolute;
+
+  width: 14px;
+  height: 1.5px;
+
+  background: #4A3C32;
+
+  right: 0;
+  bottom: -4px;
+
+  transform: rotate(-20deg);
+  transform-origin: right center;
+}
+
+
+/* =========================================
+   TINY IMPERFECTIONS FOR HAND-DRAWN FEEL
+   ========================================= */
+
+.title-letter:nth-child(4n + 1) {
+  transform: rotate(-0.4deg);
+}
+
+.title-letter:nth-child(4n + 2) {
+  transform: translateY(0.5px) rotate(0.3deg);
+}
+
+.title-letter:nth-child(4n + 3) {
   transform: rotate(0.5deg);
 }
 
-.title-letter:nth-child(3n) {
-  transform: rotate(-0.2deg);
+.title-letter:nth-child(4n) {
+  transform: translateY(-0.4px) rotate(-0.2deg);
 }
 
 
 /* =========================================
-   PAGE TITLE CATEGORY COLORS
+   PAGE TITLE COLORS
    ========================================= */
 
 /* Expected vs. Actual Adulthood */
 .page-title.adulthood-title {
-  color: #C9B89A;
+  color: #9C8A6E;
 }
 
 
 /* Relationships & Family */
 .page-title.relationships-title {
-  color: #D7AAA5;
+  color: #B77F7A;
 }
 
 
 /* Feelings of Being "Behind" */
 .page-title.behind-title {
-  color: #D4A857;
+  color: #B78D38;
 }
 
 
 /* Changing Values & Self-Understanding */
 .page-title.values-title {
-  color: #A8AE91;
+  color: #7F896B;
 }
 
 
 /* Career & Life Direction */
 .page-title.career-title {
-  color: #B8A2C8;
+  color: #927AA5;
 }
 
 
