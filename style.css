@@ -1016,7 +1016,7 @@ h1::after {
 
 /* =========================================
    CARD 1 — ABOUT THE PROJECT
-   Uses about-project-card.png
+   Uses about-project-card-final.png
    ========================================= */
 
 .about-card {
@@ -1029,7 +1029,7 @@ h1::after {
     55px;
 
   background-image:
-    url("about-project-card.png");
+    url("about-project-card-final.png");
 
   background-repeat: no-repeat;
   background-position: center;
@@ -1042,7 +1042,7 @@ h1::after {
 }
 
 
-/* Give expanded text more breathing room */
+/* Expanded About card */
 
 .about-card[open] {
   min-height: 590px;
@@ -1059,7 +1059,7 @@ h1::after {
 
 /* =========================================
    CARD 2 — WHAT I'M CAPTURING
-   Uses capturing-card.png
+   Uses capturing-card-final.png
    ========================================= */
 
 .capture-card {
@@ -1072,7 +1072,7 @@ h1::after {
     65px;
 
   background-image:
-    url("capturing-card.png");
+    url("capturing-card-final.png");
 
   background-repeat: no-repeat;
   background-position: center;
@@ -1084,6 +1084,8 @@ h1::after {
     drop-shadow(4px 7px 7px rgba(74, 60, 50, 0.10));
 }
 
+
+/* Expanded Capturing card */
 
 .capture-card[open] {
   min-height: 760px;
@@ -1100,7 +1102,7 @@ h1::after {
 
 /* =========================================
    CARD 3 — HOW I'M COLLECTING
-   Uses notebook-paper.png
+   Uses notebook-paper-final.png
    ========================================= */
 
 .collecting-card {
@@ -1118,7 +1120,7 @@ h1::after {
     95px;
 
   background-image:
-    url("notebook-paper.png");
+    url("notebook-paper-final.png");
 
   background-repeat: no-repeat;
   background-position: center;
@@ -1130,6 +1132,8 @@ h1::after {
     drop-shadow(4px 8px 7px rgba(74, 60, 50, 0.13));
 }
 
+
+/* Expanded Collecting card */
 
 .collecting-card[open] {
   min-height: 520px;
