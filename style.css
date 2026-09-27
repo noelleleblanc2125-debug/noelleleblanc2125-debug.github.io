@@ -761,9 +761,14 @@ h1::after {
 
 @media (max-width: 700px) {
 
+  /* =========================================
+     MAIN HEADER
+     ========================================= */
+
   h1 {
     font-size: 2.6rem;
     margin-top: 35px;
+    max-width: 78%;
   }
 
   h1::before,
@@ -780,10 +785,17 @@ h1::after {
     left: calc(100% + 10px);
   }
 
+
+  /* Screenshot Journal label */
+
   .journal-header {
     width: 210px;
     max-width: 70%;
+    margin-top: 10px;
   }
+
+
+  /* Leaf divider */
 
   .header-divider {
     width: 190px;
@@ -791,26 +803,134 @@ h1::after {
     margin-bottom: 20px;
   }
 
-  .site-nav a {
-    font-size: 1.1rem;
-    padding: 8px 12px;
+
+  /* =========================================
+     NAVIGATION
+     ========================================= */
+
+  .site-nav {
+    gap: 8px;
+    margin: 15px 0 40px 0;
+    padding: 10px 15px;
   }
+
+  .site-nav a {
+    font-size: 1rem;
+    padding: 7px 11px;
+  }
+
+
+  /* =========================================
+     HOME PAGE INTRO
+     ========================================= */
 
   .vision {
     margin-left: 20px;
     margin-right: 20px;
-    padding: 30px;
+    padding: 28px;
   }
+
+  .vision h2 {
+    font-size: 1.6rem;
+  }
+
+  .vision p,
+  .vision ul {
+    font-size: 1rem;
+  }
+
+
+  /* =========================================
+     PENNANT PAGE TITLES
+     ========================================= */
 
   .page-title {
-    font-size: 2.2rem;
-    margin-bottom: 45px;
+    font-size: 0.9rem;
+    margin: 10px auto 45px auto;
+    padding: 0 10px;
+    max-width: 100%;
   }
 
-.sticky-note,
-.entry.note-left .sticky-note {
-  width: auto;
-  max-width: 85%;
-  transform: rotate(0.5deg);
-}
+  .title-word {
+    margin: 0 3px 15px 3px;
+  }
+
+  .title-letter {
+    width: clamp(16px, 4.2vw, 19px);
+    height: 23px;
+    padding-top: 1px;
+  }
+
+  .title-letter::before,
+  .title-letter::after {
+    width: 55%;
+    bottom: -3px;
+  }
+
+
+  /* =========================================
+     SCRAPBOOK ENTRIES
+     ========================================= */
+
+  .entry,
+  .entry.note-left {
+    flex-direction: column;
+    gap: 28px;
+
+    margin-bottom: 95px;
+    padding: 20px;
+  }
+
+
+  /* Screenshot */
+
+  .screenshot-wrap,
+  .entry.note-left .screenshot-wrap {
+    transform: rotate(-0.8deg);
+    max-width: 88%;
+  }
+
+  .screenshot-wrap img {
+    width: 100%;
+  }
+
+
+  /* Category tag */
+
+  .corner-tag {
+    font-size: 0.95rem;
+    padding: 4px 10px;
+
+    left: -12px;
+  }
+
+  .corner-tag.tag-right {
+    left: auto;
+    right: -12px;
+  }
+
+
+  /* Caption note */
+
+  .sticky-note,
+  .entry.note-left .sticky-note {
+    width: auto;
+    max-width: 78%;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    padding: 24px;
+
+    transform: rotate(0.7deg);
+  }
+
+  .sticky-note h2 {
+    font-size: 1.4rem;
+  }
+
+  .sticky-note p {
+    font-size: 1.05rem;
+  }
+
 }
