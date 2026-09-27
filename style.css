@@ -225,7 +225,7 @@ h1::after {
   padding: 0 20px;
 
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: normal;
   line-height: 1;
 
@@ -233,75 +233,126 @@ h1::after {
 }
 
 
-/* Keeps individual words together */
+/* =========================================
+   EACH WORD
+   ========================================= */
+
 .title-word {
   display: inline-flex;
   position: relative;
-  margin: 0 7px 14px 7px;
 
-  /* horizontal string above the flags */
+  margin: 0 8px 18px 8px;
+
+  /* This creates the string across the top */
   border-top: 2px solid #4A3C32;
 }
 
 
-/* Individual letter flags */
+/* =========================================
+   EACH PENNANT / LETTER
+   ========================================= */
+
 .title-letter {
   position: relative;
 
   display: flex;
-  align-items: flex-start;
   justify-content: center;
+  align-items: center;
 
-  width: 27px;
-  height: 34px;
+  width: 28px;
+  height: 30px;
 
-  padding-top: 5px;
   box-sizing: border-box;
 
-  border-left: 2px solid #4A3C32;
-  border-right: 2px solid #4A3C32;
-
   color: inherit;
-  background: #FFF9EE;
 
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 75%,
-    50% 100%,
-    0 75%
-  );
+  /* vertical sides of each flag */
+  border-left: 2px solid #4A3C32;
+
+  padding-top: 2px;
 }
 
 
-/* Draws the bottom outline of each pennant */
+/* Right edge on the final flag */
+.title-letter:last-child {
+  border-right: 2px solid #4A3C32;
+}
+
+
+/* =========================================
+   LEFT SIDE OF V-SHAPED FLAG BOTTOM
+   ========================================= */
+
+.title-letter::before {
+  content: "";
+  position: absolute;
+
+  width: 16px;
+  height: 2px;
+
+  background: #4A3C32;
+
+  left: 0;
+  bottom: -5px;
+
+  transform: rotate(32deg);
+  transform-origin: left center;
+}
+
+
+/* =========================================
+   RIGHT SIDE OF V-SHAPED FLAG BOTTOM
+   ========================================= */
+
 .title-letter::after {
   content: "";
   position: absolute;
-  inset: 0;
 
-  background:
-    linear-gradient(
-      135deg,
-      transparent 48%,
-      #4A3C32 49%,
-      #4A3C32 53%,
-      transparent 54%
-    )
-    bottom left / 50% 25% no-repeat,
+  width: 16px;
+  height: 2px;
 
-    linear-gradient(
-      225deg,
-      transparent 48%,
-      #4A3C32 49%,
-      #4A3C32 53%,
-      transparent 54%
-    )
-    bottom right / 50% 25% no-repeat;
+  background: #4A3C32;
 
-  pointer-events: none;
+  right: 0;
+  bottom: -5px;
+
+  transform: rotate(-32deg);
+  transform-origin: right center;
 }
 
+
+/* =========================================
+   PAGE TITLE CATEGORY COLORS
+   ========================================= */
+
+/* Expected vs. Actual Adulthood */
+.page-title.adulthood-title {
+  color: #C9B89A;
+}
+
+
+/* Relationships & Family */
+.page-title.relationships-title {
+  color: #D7AAA5;
+}
+
+
+/* Feelings of Being "Behind" */
+.page-title.behind-title {
+  color: #D4A857;
+}
+
+
+/* Changing Values & Self-Understanding */
+.page-title.values-title {
+  color: #A8AE91;
+}
+
+
+/* Career & Life Direction */
+.page-title.career-title {
+  color: #B8A2C8;
+}
 
 /* =========================================
    PAGE TITLE CATEGORY COLORS
