@@ -786,9 +786,7 @@ h1::after {
 
 .home-page {
   position: relative;
-
   max-width: 1100px;
-
   margin: 0 auto 100px auto;
   padding: 0 30px 60px 30px;
 }
@@ -801,19 +799,15 @@ h1::after {
 .home-leaves {
   width: 100%;
   max-width: 1050px;
-
   margin: -5px auto 5px auto;
-
   text-align: center;
   overflow: visible;
 }
 
 .hanging-leaves-image {
   display: block;
-
   width: 100%;
   height: auto;
-
   margin: 0 auto;
 }
 
@@ -824,60 +818,36 @@ h1::after {
 
 .welcome-section {
   position: relative;
-
   text-align: center;
-
   max-width: 700px;
-
   margin: -15px auto 55px auto;
 }
 
-
-/* Welcome! */
-
 .welcome-section h2 {
   font-family: 'Parisienne', cursive;
-
   font-size: 4.3rem;
   font-weight: normal;
-
   color: #A4728C;
-
   margin: 0 0 5px 0;
 }
 
-
-/* Little sparkle strip */
-
 .welcome-sparkles {
   display: inline-block;
-
   font-family: 'Patrick Hand', cursive;
   font-size: 1.3rem;
-
   color: #4A3C32;
-
   background: rgba(201, 184, 154, 0.28);
-
   padding: 7px 35px;
-
   margin-bottom: 16px;
-
   transform: rotate(-0.5deg);
 }
 
-
-/* Welcome introduction */
-
 .welcome-section p {
   max-width: 650px;
-
   margin: 0 auto;
-
   font-family: 'Patrick Hand', cursive;
   font-size: 1.3rem;
   line-height: 1.5;
-
   color: #4A3C32;
 }
 
@@ -888,17 +858,12 @@ h1::after {
 
 .home-cards {
   display: grid;
-
   grid-template-columns:
     minmax(0, 1fr)
     minmax(0, 1fr);
-
   align-items: start;
-
-  gap: 55px 45px;
-
+  gap: 60px 45px;
   max-width: 950px;
-
   margin: 0 auto;
 }
 
@@ -909,9 +874,7 @@ h1::after {
 
 .home-card {
   position: relative;
-
   box-sizing: border-box;
-
   transition:
     transform 0.25s ease,
     filter 0.25s ease;
@@ -921,12 +884,15 @@ h1::after {
 /* Remove normal details triangle */
 
 .home-card summary {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
   list-style: none;
   cursor: pointer;
-
-  position: relative;
-
   z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .home-card summary::-webkit-details-marker {
@@ -934,34 +900,28 @@ h1::after {
 }
 
 
-/* Card titles */
+/* =========================================
+   CARD TITLES
+   ========================================= */
 
 .card-title {
   display: block;
-
   font-family: 'Patrick Hand', cursive;
   font-size: 2rem;
   line-height: 1.15;
-
   color: #4A3C32;
 }
 
-
-/* Click instruction */
-
 .open-note {
   display: block;
-
   margin-top: 12px;
-
   font-family: 'Patrick Hand', cursive;
   font-size: 1rem;
-
   color: rgba(74, 60, 50, 0.65);
 }
 
 
-/* Change message after opening */
+/* Change message when card opens */
 
 .home-card[open] .open-note {
   font-size: 0;
@@ -969,30 +929,199 @@ h1::after {
 
 .home-card[open] .open-note::after {
   content: "click to close";
-
   font-size: 1rem;
 }
 
 
 /* =========================================
-   CARD CONTENT
+   ABOUT THE PROJECT
+   ========================================= */
+
+.about-card {
+  transform: rotate(-0.6deg);
+}
+
+.about-card summary {
+  aspect-ratio: 682 / 359;
+  padding:
+    70px
+    35px
+    40px
+    125px;
+  background-image:
+    url("about-project-card-final.png");
+}
+
+.about-card:hover {
+  transform:
+    rotate(-0.2deg)
+    translateY(-2px);
+}
+
+
+/* =========================================
+   WHAT I'M CAPTURING
+   ========================================= */
+
+.capture-card {
+  transform: rotate(0.5deg);
+}
+
+.capture-card summary {
+  aspect-ratio: 633 / 396;
+  padding:
+    80px
+    40px
+    40px
+    95px;
+  background-image:
+    url("capturing-card-final.png");
+}
+
+.capture-card:hover {
+  transform:
+    rotate(0.2deg)
+    translateY(-2px);
+}
+
+
+/* =========================================
+   HOW I'M COLLECTING
+   ========================================= */
+
+.collecting-card {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(760px, 90%);
+  transform: rotate(-0.35deg);
+}
+
+.collecting-card summary {
+  aspect-ratio: 813 / 354;
+  padding:
+    75px
+    110px
+    40px
+    105px;
+  background-image:
+    url("notebook-paper-final.png");
+}
+
+.collecting-card:hover {
+  transform:
+    rotate(0deg)
+    translateY(-2px);
+}
+
+
+/* =========================================
+   OPEN CARD CONTENT
    ========================================= */
 
 .card-content {
   position: relative;
-
-  z-index: 2;
-
-  margin-top: 25px;
+  z-index: 1;
+  box-sizing: border-box;
 }
+
+
+/* About the Project open paper */
+
+.about-card .card-content {
+  margin:
+    -35px
+    38px
+    0
+    38px;
+  padding:
+    60px
+    42px
+    42px
+    42px;
+  background: #FFF9EE;
+  border:
+    2px solid
+    rgba(74, 60, 50, 0.80);
+  border-radius: 4px;
+  box-shadow:
+    4px 7px 10px
+    rgba(74, 60, 50, 0.12);
+}
+
+
+/* What I'm Capturing open paper */
+
+.capture-card .card-content {
+  margin:
+    -45px
+    35px
+    0
+    35px;
+  padding:
+    65px
+    45px
+    45px
+    45px;
+  background: #FFF9EE;
+  border:
+    4px double
+    rgba(164, 114, 140, 0.75);
+  border-radius: 26px;
+  box-shadow:
+    4px 7px 10px
+    rgba(74, 60, 50, 0.10);
+}
+
+
+/* How I'm Collecting open notebook paper */
+
+.collecting-card .card-content {
+  margin:
+    -40px
+    28px
+    0
+    28px;
+  padding:
+    65px
+    60px
+    45px
+    85px;
+  background-color: #FFF9EE;
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent 55px,
+      rgba(183, 127, 122, 0.30) 55px,
+      rgba(183, 127, 122, 0.30) 57px,
+      transparent 57px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 34px,
+      rgba(113, 139, 145, 0.20) 35px,
+      transparent 36px
+    );
+  border:
+    2px solid
+    rgba(74, 60, 50, 0.65);
+  border-top: none;
+  box-shadow:
+    4px 7px 10px
+    rgba(74, 60, 50, 0.12);
+}
+
+
+/* =========================================
+   CARD CONTENT TEXT
+   ========================================= */
 
 .card-content p,
 .card-content li {
   font-family: 'Lora', serif;
-
   font-size: 0.98rem;
   line-height: 1.7;
-
   color: #4A3C32;
 }
 
@@ -1015,174 +1144,14 @@ h1::after {
 
 
 /* =========================================
-   CARD 1 — ABOUT THE PROJECT
-   Uses about-project-card-final.png
-   ========================================= */
-
-.about-card {
-  min-height: 260px;
-
-  padding:
-    65px
-    55px
-    65px
-    55px;
-
-  background-image:
-    url("about-project-card-final.png");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-
-  transform: rotate(-0.6deg);
-
-  filter:
-    drop-shadow(4px 7px 7px rgba(74, 60, 50, 0.12));
-}
-
-
-/* Expanded About card */
-
-.about-card[open] {
-  min-height: 590px;
-
-  padding:
-    65px
-    55px
-    75px
-    55px;
-
-  transform: rotate(-0.2deg);
-}
-
-
-/* =========================================
-   CARD 2 — WHAT I'M CAPTURING
-   Uses capturing-card-final.png
-   ========================================= */
-
-.capture-card {
-  min-height: 280px;
-
-  padding:
-    70px
-    65px
-    65px
-    65px;
-
-  background-image:
-    url("capturing-card-final.png");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-
-  transform: rotate(0.5deg);
-
-  filter:
-    drop-shadow(4px 7px 7px rgba(74, 60, 50, 0.10));
-}
-
-
-/* Expanded Capturing card */
-
-.capture-card[open] {
-  min-height: 760px;
-
-  padding:
-    75px
-    65px
-    80px
-    65px;
-
-  transform: rotate(0.15deg);
-}
-
-
-/* =========================================
-   CARD 3 — HOW I'M COLLECTING
-   Uses notebook-paper-final.png
-   ========================================= */
-
-.collecting-card {
-  grid-column: 1 / -1;
-
-  justify-self: center;
-
-  width: min(760px, 90%);
-  min-height: 245px;
-
-  padding:
-    65px
-    80px
-    65px
-    95px;
-
-  background-image:
-    url("notebook-paper-final.png");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-
-  transform: rotate(-0.35deg);
-
-  filter:
-    drop-shadow(4px 8px 7px rgba(74, 60, 50, 0.13));
-}
-
-
-/* Expanded Collecting card */
-
-.collecting-card[open] {
-  min-height: 520px;
-
-  padding:
-    70px
-    80px
-    80px
-    95px;
-
-  transform: rotate(0deg);
-}
-
-
-/* =========================================
-   SMALL HANDMADE MOVEMENT
-   ========================================= */
-
-.about-card:hover {
-  transform:
-    rotate(-0.2deg)
-    translateY(-2px);
-}
-
-.capture-card:hover {
-  transform:
-    rotate(0.2deg)
-    translateY(-2px);
-}
-
-.collecting-card:hover {
-  transform:
-    rotate(0deg)
-    translateY(-2px);
-}
-
-
-/* =========================================
    OPEN CARD TITLE
    ========================================= */
 
 .home-card[open] .card-title {
   text-decoration-line: underline;
-
   text-decoration-thickness: 5px;
-
   text-decoration-color:
     rgba(168, 174, 145, 0.30);
-
   text-underline-offset: 4px;
 }
 
@@ -1365,7 +1334,7 @@ h1::after {
   }
 
       /* =========================================
-     HOME PAGE
+     HOME PAGE — MOBILE
      ========================================= */
 
   .home-page {
@@ -1383,7 +1352,6 @@ h1::after {
 
   .home-leaves {
     width: calc(100% + 28px);
-
     margin-left: -14px;
     margin-right: -14px;
     margin-top: 0;
@@ -1414,7 +1382,6 @@ h1::after {
 
   .welcome-sparkles {
     font-size: 1.1rem;
-
     padding:
       6px
       25px;
@@ -1422,7 +1389,6 @@ h1::after {
 
   .welcome-section p {
     max-width: 90%;
-
     font-size: 1.15rem;
   }
 
@@ -1434,23 +1400,18 @@ h1::after {
   .home-cards {
     display: flex;
     flex-direction: column;
-
     gap: 45px;
-
     width: 100%;
   }
-
 
   .about-card,
   .capture-card,
   .collecting-card {
     width: 96%;
     max-width: none;
-
     margin:
       0
       auto;
-
     box-sizing: border-box;
   }
 
@@ -1459,24 +1420,25 @@ h1::after {
      ABOUT THE PROJECT
      ========================================= */
 
-  .about-card {
-    min-height: 230px;
-
+  .about-card summary {
     padding:
-      58px
-      42px
-      58px
-      42px;
+      48px
+      25px
+      30px
+      88px;
   }
 
-  .about-card[open] {
-    min-height: 0;
-
+  .about-card .card-content {
+    margin:
+      -25px
+      20px
+      0
+      20px;
     padding:
-      60px
-      42px
-      70px
-      42px;
+      45px
+      27px
+      32px
+      27px;
   }
 
 
@@ -1484,24 +1446,25 @@ h1::after {
      WHAT I'M CAPTURING
      ========================================= */
 
-  .capture-card {
-    min-height: 250px;
-
+  .capture-card summary {
     padding:
-      65px
-      45px
       60px
-      45px;
+      28px
+      30px
+      70px;
   }
 
-  .capture-card[open] {
-    min-height: 0;
-
+  .capture-card .card-content {
+    margin:
+      -32px
+      18px
+      0
+      18px;
     padding:
-      70px
-      45px
-      75px
-      45px;
+      50px
+      28px
+      35px
+      28px;
   }
 
 
@@ -1509,24 +1472,25 @@ h1::after {
      HOW I'M COLLECTING
      ========================================= */
 
-  .collecting-card {
-    min-height: 220px;
-
+  .collecting-card summary {
     padding:
-      60px
       45px
-      60px
-      70px;
+      55px
+      25px
+      62px;
   }
 
-  .collecting-card[open] {
-    min-height: 0;
-
+  .collecting-card .card-content {
+    margin:
+      -25px
+      15px
+      0
+      15px;
     padding:
-      65px
       45px
-      75px
-      70px;
+      27px
+      35px
+      55px;
   }
 
 
