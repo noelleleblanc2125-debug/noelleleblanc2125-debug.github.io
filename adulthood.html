@@ -56,5 +56,32 @@
   </div>
 </div>
 
+  <script>
+document.querySelectorAll('.page-title').forEach(function(title) {
+
+  const words = title.textContent.trim().split(' ');
+
+  title.textContent = '';
+
+  words.forEach(function(word) {
+
+    const wordGroup = document.createElement('span');
+    wordGroup.className = 'title-word';
+
+    Array.from(word).forEach(function(letter) {
+
+      const flag = document.createElement('span');
+      flag.className = 'title-letter';
+      flag.textContent = letter;
+
+      wordGroup.appendChild(flag);
+    });
+
+    title.appendChild(wordGroup);
+  });
+
+});
+</script>
+  
 </body>
 </html>
