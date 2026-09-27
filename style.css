@@ -431,20 +431,70 @@ h1::after {
 
 
 /* =========================================
-   FAKE TAPE
+   WASHI TAPE
    ========================================= */
 
 .screenshot-wrap::before {
   content: "";
   position: absolute;
+
   width: 90px;
   height: 26px;
-  background: rgba(201, 184, 154, 0.65);
+
   top: -13px;
   left: 50%;
+
   transform: translateX(-50%) rotate(-3deg);
+
   z-index: 3;
+
+  /* Default tape color */
+  background: #F0E6D2;
+
+  /* Gives the tape a slightly transparent washi feel */
+  opacity: 0.82;
+
   box-shadow: 0 2px 4px rgba(74, 60, 50, 0.08);
+}
+
+
+/* =========================================
+   WASHI TAPE CATEGORY COLORS
+   ========================================= */
+
+
+/* Career & Life Direction — Lavender */
+
+.screenshot-wrap:has(.tag-career)::before {
+  background: #EFE6F2;
+}
+
+
+/* Relationships & Family — Dusty Pink */
+
+.screenshot-wrap:has(.tag-relationships)::before {
+  background: #F6E4E2;
+}
+
+
+/* Changing Values & Self-Understanding — Sage */
+
+.screenshot-wrap:has(.tag-identity)::before {
+  background: #EEF0E7;
+}
+
+
+/* Expected vs. Actual Adulthood — Warm Beige */
+
+.screenshot-wrap:has(.tag-growing-up)::before {
+  background: #F0E6D2;
+}
+
+
+/* Feelings of Being "Behind" — Soft Gold */
+
+.screenshot-wrap:has(.tag-uncertainty)::before {
+  background: #FBF0DC;
 }
 
 
