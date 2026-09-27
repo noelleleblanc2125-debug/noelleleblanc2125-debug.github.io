@@ -211,47 +211,127 @@ h1::after {
 
 
 /* =========================================
-   PAGE TITLES
+   PAGE TITLES — PENNANT BANNER
    ========================================= */
 
 .page-title {
-  text-align: center;
-  font-family: 'Parisienne', cursive;
-  font-size: 2.6rem;
-  margin: 10px 0 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  max-width: 900px;
+  margin: 10px auto 60px auto;
+  padding: 0 20px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1;
+
+  color: #4A3C32;
 }
 
 
-/* Expected vs. Actual Adulthood */
+/* Keeps individual words together */
+.title-word {
+  display: inline-flex;
+  position: relative;
+  margin: 0 7px 14px 7px;
 
+  /* horizontal string above the flags */
+  border-top: 2px solid #4A3C32;
+}
+
+
+/* Individual letter flags */
+.title-letter {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 27px;
+  height: 34px;
+
+  padding-top: 5px;
+  box-sizing: border-box;
+
+  border-left: 2px solid #4A3C32;
+  border-right: 2px solid #4A3C32;
+
+  color: inherit;
+  background: #FFF9EE;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75%,
+    50% 100%,
+    0 75%
+  );
+}
+
+
+/* Draws the bottom outline of each pennant */
+.title-letter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 48%,
+      #4A3C32 49%,
+      #4A3C32 53%,
+      transparent 54%
+    )
+    bottom left / 50% 25% no-repeat,
+
+    linear-gradient(
+      225deg,
+      transparent 48%,
+      #4A3C32 49%,
+      #4A3C32 53%,
+      transparent 54%
+    )
+    bottom right / 50% 25% no-repeat;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   PAGE TITLE CATEGORY COLORS
+   ========================================= */
+
+/* Expected vs. Actual Adulthood */
 .page-title.adulthood-title {
   color: #C9B89A;
 }
 
 
 /* Relationships & Family */
-
 .page-title.relationships-title {
   color: #D7AAA5;
 }
 
 
 /* Feelings of Being "Behind" */
-
 .page-title.behind-title {
   color: #D4A857;
 }
 
 
 /* Changing Values & Self-Understanding */
-
 .page-title.values-title {
   color: #A8AE91;
 }
 
 
 /* Career & Life Direction */
-
 .page-title.career-title {
   color: #B8A2C8;
 }
