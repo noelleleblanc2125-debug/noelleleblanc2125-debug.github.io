@@ -215,23 +215,24 @@ h1::after {
    ========================================= */
 
 .page-title {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-
-  max-width: 900px;
-  margin: 10px auto 60px auto;
-  padding: 0 20px;
-
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.35rem;
-  font-weight: normal;
-  line-height: 1;
-
-  color: #4A3C32;
+  font-size: 1.1rem;
+  margin-bottom: 45px;
+  padding: 0 10px;
 }
 
+.title-word {
+  margin: 0 5px 16px 5px;
+}
+
+.title-letter {
+  width: 24px;
+  height: 28px;
+}
+
+.title-letter::before,
+.title-letter::after {
+  width: 14px;
+}
 
 /* =========================================
    EACH WORD
