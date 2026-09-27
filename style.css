@@ -10,9 +10,6 @@ body {
   padding: 0;
 }
 
-/* =========================================
-   MAIN HEADER
-   ========================================= */
 
 /* =========================================
    MAIN HEADER
@@ -31,13 +28,12 @@ h1 {
 }
 
 
-/* FLOWERS BESIDE TITLE */
+/* FLOWERS BESIDE MAIN TITLE */
 
 h1::before,
 h1::after {
   content: "";
   position: absolute;
-
   width: 35px;
   height: 50px;
 
@@ -96,7 +92,6 @@ h1::after {
    NAVIGATION
    ========================================= */
 
-
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -142,6 +137,7 @@ h1::after {
   border-style: solid;
   color: #A4728C;
 }
+
 
 /* =========================================
    VISION / INTRO PAPER
@@ -202,10 +198,6 @@ h1::after {
 
 
 /* =========================================
-   PAGE TITLE
-   ========================================= */
-
-/* =========================================
    PAGE TITLES
    ========================================= */
 
@@ -213,38 +205,60 @@ h1::after {
   text-align: center;
   font-family: 'Parisienne', cursive;
   font-size: 2.6rem;
-  margin: 10px 0 60px 0;
+
+  /* Smaller bottom margin because leaf goes underneath */
+  margin: 10px 0 10px 0;
 }
 
 
 /* Expected vs. Actual Adulthood */
+
 .page-title.adulthood-title {
   color: #C9B89A;
 }
 
 
 /* Relationships & Family */
+
 .page-title.relationships-title {
   color: #D7AAA5;
 }
 
 
 /* Feelings of Being "Behind" */
+
 .page-title.behind-title {
   color: #D4A857;
 }
 
 
 /* Changing Values & Self-Understanding */
+
 .page-title.values-title {
   color: #A8AE91;
 }
 
 
 /* Career & Life Direction */
+
 .page-title.career-title {
   color: #B8A2C8;
 }
+
+
+/* =========================================
+   LEAF DECORATION UNDER PAGE TITLES
+   ========================================= */
+
+.page-leaf {
+  display: block;
+  width: 220px;
+  max-width: 60%;
+  height: auto;
+
+  margin: 0 auto 50px auto;
+}
+
 
 /* =========================================
    SCRAPBOOK ENTRIES
@@ -278,6 +292,7 @@ h1::after {
   padding: 14px 14px 34px 14px;
   box-shadow: 0 8px 18px rgba(74, 60, 50, 0.20);
   transform: rotate(-1.5deg);
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -344,7 +359,7 @@ h1::after {
 
 
 /* =========================================
-   OPTIONAL CATEGORY COLORS
+   CATEGORY COLORS
    ========================================= */
 
 .tag-career {
@@ -518,7 +533,13 @@ h1::after {
 
   .page-title {
     font-size: 2.2rem;
-    margin-bottom: 45px;
+    margin-bottom: 8px;
+  }
+
+  .page-leaf {
+    width: 180px;
+    max-width: 55%;
+    margin-bottom: 40px;
   }
 
   .entry,
