@@ -62,14 +62,16 @@ h1::after {
 }
 
 
-/* SUBTITLE */
+/* =========================================
+   MY SCREENSHOT JOURNAL GRAPHIC
+   ========================================= */
 
-.subtitle {
-  text-align: center;
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.7rem;
-  color: #A4728C;
-  margin: 8px 0 20px 0;
+.journal-header {
+  display: block;
+  width: 240px;
+  max-width: 240px;
+  height: auto;
+  margin: 12px auto 8px auto;
 }
 
 
@@ -79,14 +81,15 @@ h1::after {
 
 .header-divider {
   width: 220px;
-  height: 70px;
-  margin: 5px auto 30px auto;
+  height: 65px;
+  margin: 0 auto 25px auto;
 
   background-image: url("leaf-header.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
+
 
 /* =========================================
    NAVIGATION
@@ -97,7 +100,7 @@ h1::after {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin: 30px 0 50px 0;
+  margin: 20px 0 50px 0;
   padding: 10px;
 }
 
@@ -120,7 +123,7 @@ h1::after {
 }
 
 
-/* HOVER EFFECT */
+/* NAVIGATION HOVER */
 
 .site-nav a:hover {
   background: rgba(164, 114, 140, 0.15);
@@ -205,9 +208,7 @@ h1::after {
   text-align: center;
   font-family: 'Parisienne', cursive;
   font-size: 2.6rem;
-
-  /* Smaller bottom margin because leaf goes underneath */
-  margin: 10px 0 10px 0;
+  margin: 10px 0 60px 0;
 }
 
 
@@ -243,20 +244,6 @@ h1::after {
 
 .page-title.career-title {
   color: #B8A2C8;
-}
-
-
-/* =========================================
-   LEAF DECORATION UNDER PAGE TITLES
-   ========================================= */
-
-.page-leaf {
-  display: block;
-  width: 220px;
-  max-width: 60%;
-  height: auto;
-
-  margin: 0 auto 50px auto;
 }
 
 
@@ -516,8 +503,29 @@ h1::after {
     margin-top: 35px;
   }
 
-  .subtitle {
-    font-size: 1.4rem;
+  h1::before,
+  h1::after {
+    width: 28px;
+    height: 42px;
+  }
+
+  h1::before {
+    right: calc(100% + 10px);
+  }
+
+  h1::after {
+    left: calc(100% + 10px);
+  }
+
+  .journal-header {
+    width: 210px;
+    max-width: 70%;
+  }
+
+  .header-divider {
+    width: 190px;
+    height: 55px;
+    margin-bottom: 20px;
   }
 
   .site-nav a {
@@ -533,13 +541,7 @@ h1::after {
 
   .page-title {
     font-size: 2.2rem;
-    margin-bottom: 8px;
-  }
-
-  .page-leaf {
-    width: 180px;
-    max-width: 55%;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
   }
 
   .entry,
