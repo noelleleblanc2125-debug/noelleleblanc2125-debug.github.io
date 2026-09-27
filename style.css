@@ -1,9 +1,19 @@
 /* =========================================
-   MAIN PAGE
+   MAIN PAGE — DOTTED JOURNAL BACKGROUND
    ========================================= */
 
 body {
   background-color: #F4EBDD;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(74, 60, 50, 0.18) 1px,
+      transparent 1px
+    );
+
+  background-size: 22px 22px;
+
   color: #4A3C32;
   font-family: 'Patrick Hand', cursive;
   margin: 0;
