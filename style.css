@@ -807,28 +807,10 @@ h1::after {
     margin-bottom: 45px;
   }
 
-  .entry,
-  .entry.note-left {
-    flex-direction: column;
-    gap: 30px;
-    margin-bottom: 90px;
-    padding: 0 20px;
-  }
-
-  .screenshot-wrap,
-  .entry.note-left .screenshot-wrap {
-    transform: rotate(-1deg);
-    max-width: 90%;
-  }
-
-  .screenshot-wrap img {
-    width: 100%;
-  }
-
-  .sticky-note,
-  .entry.note-left .sticky-note {
-    width: auto;
-    max-width: 85%;
-    transform: rotate(0.5deg);
-  }
+.sticky-note,
+.entry.note-left .sticky-note {
+  width: auto;
+  max-width: 85%;
+  transform: rotate(0.5deg);
+}
 }
