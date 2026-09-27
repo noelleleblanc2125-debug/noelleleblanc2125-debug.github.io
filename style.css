@@ -205,14 +205,46 @@ h1::after {
    PAGE TITLE
    ========================================= */
 
+/* =========================================
+   PAGE TITLES
+   ========================================= */
+
 .page-title {
   text-align: center;
   font-family: 'Parisienne', cursive;
   font-size: 2.6rem;
-  color: #D4A857;
   margin: 10px 0 60px 0;
 }
 
+
+/* Expected vs. Actual Adulthood */
+.page-title.adulthood-title {
+  color: #C9B89A;
+}
+
+
+/* Relationships & Family */
+.page-title.relationships-title {
+  color: #D7AAA5;
+}
+
+
+/* Feelings of Being "Behind" */
+.page-title.behind-title {
+  color: #D4A857;
+}
+
+
+/* Changing Values & Self-Understanding */
+.page-title.values-title {
+  color: #A8AE91;
+}
+
+
+/* Career & Life Direction */
+.page-title.career-title {
+  color: #B8A2C8;
+}
 
 /* =========================================
    SCRAPBOOK ENTRIES
