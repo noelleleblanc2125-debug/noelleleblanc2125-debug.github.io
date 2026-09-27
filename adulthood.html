@@ -1,87 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expected vs. Actual Adulthood — Things Fall Apart</title>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Expected vs. Actual Adulthood — Things Fall Apart</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
 
-<h1>Things Fall Apart: Social Media Edition</h1>
-<img src="journal-header.png" class="journal-header" alt="My Screenshot Journal">
+  <!-- =========================================
+       MAIN HEADER
+       ========================================= -->
+
+  <h1>Things Fall Apart: Social Media Edition</h1>
+
+  <img
+    src="journal-header.png"
+    class="journal-header"
+    alt="My Screenshot Journal"
+  >
+
   <div class="header-divider"></div>
 
-<nav class="site-nav">
-  <a href="index.html">Home</a>
-  <a href="adulthood.html" class="active">Expected vs. Actual Adulthood</a>
-  <a href="relationships.html">Relationships & Family</a>
-  <a href="behind.html">Feelings of Being "Behind"</a>
-  <a href="values.html">Changing Values & Self-Understanding</a>
-  <a href="career.html">Career & Life Direction</a>
-</nav>
 
-<h2 class="page-title adulthood-title">Expected vs. Actual Adulthood</h2>
+  <!-- =========================================
+       NAVIGATION
+       ========================================= -->
 
-<!-- ===== COPY FROM HERE FOR EACH NEW ENTRY IN THIS CATEGORY ===== -->
-<div class="entry">
-  <div class="screenshot-wrap">
-    <p class="corner-tag tag-growing-up">Expected vs. Actual Adulthood</p>
-    <img src="screenshot1.jpeg" alt="Screenshot 1">
-  </div>
-  <div class="sticky-note note-growing-up">
-    <p>This screenshot speaks to an outcome that could happen when a traditional milestone that says we have reached adulthood falls through.</p>
-  </div>
-</div>
-<!-- ===== COPY TO HERE ===== -->
+  <nav class="site-nav">
 
-<div class="entry">
-  <div class="screenshot-wrap">
-    <p class="corner-tag tag-growing-up">Expected vs. Actual Adulthood</p>
-    <img src="screenshot4.jpeg" alt="Screenshot 4">
-  </div>
-  <div class="sticky-note note-growing-up">
-    <p>Adulting seems to be an allusion. The world our parents told us we were going to get is not the world that got handed to us. Things fall apart. Adulting does too apparently.</p>
-  </div>
-</div>
+    <a href="index.html">
+      Home
+    </a>
 
-<div class="entry note-left">
-  <div class="screenshot-wrap">
-    <p class="corner-tag tag-growing-up tag-right">Expected vs. Actual Adulthood</p>
-    <img src="screenshot6.jpeg" alt="Screenshot 6">
+    <a href="adulthood.html" class="active">
+      Expected vs. Actual Adulthood
+    </a>
+
+    <a href="relationships.html">
+      Relationships & Family
+    </a>
+
+    <a href="behind.html">
+      Feelings of Being "Behind"
+    </a>
+
+    <a href="values.html">
+      Changing Values & Self-Understanding
+    </a>
+
+    <a href="career.html">
+      Career & Life Direction
+    </a>
+
+  </nav>
+
+
+  <!-- =========================================
+       PAGE TITLE
+       ========================================= -->
+
+  <h2 class="page-title adulthood-title">
+    Expected vs. Actual Adulthood
+  </h2>
+
+
+  <!-- =========================================
+       ENTRY 1
+       ========================================= -->
+
+  <div class="entry">
+
+    <div class="screenshot-wrap">
+
+      <p class="corner-tag tag-growing-up tag-right">
+        Expected vs. Actual Adulthood
+      </p>
+
+      <img
+        src="screenshot1.jpeg"
+        alt="Screenshot 1"
+      >
+
+    </div>
+
+
+    <div class="sticky-note note-growing-up">
+
+      <p>
+        This screenshot speaks to an outcome that could happen when a
+        traditional milestone that says we have reached adulthood falls through.
+      </p>
+
+    </div>
+
   </div>
-  <div class="sticky-note note-growing-up">
-    <p>As a kid we have it all figured out, but this screenshot suggests that young adulthood is not that way at all.</p>
+
+
+  <!-- =========================================
+       ENTRY 2
+       ========================================= -->
+
+  <div class="entry">
+
+    <div class="screenshot-wrap">
+
+      <p class="corner-tag tag-growing-up tag-right">
+        Expected vs. Actual Adulthood
+      </p>
+
+      <img
+        src="screenshot4.jpeg"
+        alt="Screenshot 4"
+      >
+
+    </div>
+
+
+    <div class="sticky-note note-growing-up">
+
+      <p>
+        Adulting seems to be an allusion. The world our parents told us we were
+        going to get is not the world that got handed to us. Things fall apart.
+        Adulting does too apparently.
+      </p>
+
+    </div>
+
   </div>
-</div>
+
+
+  <!-- =========================================
+       ENTRY 3
+       ========================================= -->
+
+  <div class="entry note-left">
+
+    <div class="screenshot-wrap">
+
+      <p class="corner-tag tag-growing-up tag-right">
+        Expected vs. Actual Adulthood
+      </p>
+
+      <img
+        src="screenshot6.jpeg"
+        alt="Screenshot 6"
+      >
+
+    </div>
+
+
+    <div class="sticky-note note-growing-up">
+
+      <p>
+        As a kid we have it all figured out, but this screenshot suggests that
+        young adulthood is not that way at all.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       PENNANT PAGE TITLE SCRIPT
+       ========================================= -->
 
   <script>
-document.querySelectorAll('.page-title').forEach(function(title) {
 
-  const words = title.textContent.trim().split(' ');
+    document.querySelectorAll('.page-title').forEach(function(title) {
 
-  title.textContent = '';
+      const words = title.textContent.trim().split(' ');
 
-  words.forEach(function(word) {
+      title.textContent = '';
 
-    const wordGroup = document.createElement('span');
-    wordGroup.className = 'title-word';
+      words.forEach(function(word) {
 
-    Array.from(word).forEach(function(letter) {
+        const wordGroup = document.createElement('span');
+        wordGroup.className = 'title-word';
 
-      const flag = document.createElement('span');
-      flag.className = 'title-letter';
-      flag.textContent = letter;
+        Array.from(word).forEach(function(letter) {
 
-      wordGroup.appendChild(flag);
+          const flag = document.createElement('span');
+
+          flag.className = 'title-letter';
+          flag.textContent = letter;
+
+          wordGroup.appendChild(flag);
+
+        });
+
+        title.appendChild(wordGroup);
+
+      });
+
     });
 
-    title.appendChild(wordGroup);
-  });
+  </script>
 
-});
-</script>
-  
 </body>
+
 </html>
