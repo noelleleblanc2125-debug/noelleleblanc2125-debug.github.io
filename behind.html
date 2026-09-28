@@ -1,67 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feelings of Being "Behind" — Things Fall Apart</title>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<article class="gallery-entry">
 
-<h1>Things Fall Apart: Social Media Edition</h1>
-<img src="journal-header.png" class="journal-header" alt="My Screenshot Journal">
-  <div class="header-divider"></div>
+  <div class="gallery-photo">
 
-<nav class="site-nav">
-  <a href="index.html">Home</a>
-  <a href="adulthood.html">Expected vs. Actual Adulthood</a>
-  <a href="relationships.html">Relationships & Family</a>
-  <a href="behind.html" class="active">Feelings of Being "Behind"</a>
-  <a href="values.html">Changing Values & Self-Understanding</a>
-  <a href="career.html">Career & Life Direction</a>
-</nav>
+    <img
+      src="YOUR-SCREENSHOT.jpeg"
+      alt="Description of screenshot"
+    >
 
-<h2 class="page-title behind-title">Feelings of Being "Behind"</h2>
-  
-<!-- ===== COPY FROM HERE FOR EACH NEW ENTRY IN THIS CATEGORY ===== -->
-<div class="entry note-left">
-  <div class="screenshot-wrap">
-    <p class="corner-tag tag-uncertainty tag-right">Feelings of Being "Behind"</p>
-    <img src="screenshot3.jpeg" alt="Screenshot 3">
   </div>
-  <div class="sticky-note note-uncertainty">
-    <p>I like how this screenshot embraces the idea that even as time continues to go by does not automatically mean that we figure things out. People say, "it comes with time," but this screenshot suggests that not everything does. Some things come with a change of mindset.</p>
+
+  <div class="gallery-caption">
+
+    <p>
+      Your reflection goes here.
+    </p>
+
   </div>
-</div>
-<!-- ===== COPY TO HERE ===== -->
 
-<script>
-document.querySelectorAll('.page-title').forEach(function(title) {
-
-  const words = title.textContent.trim().split(' ');
-
-  title.textContent = '';
-
-  words.forEach(function(word) {
-
-    const wordGroup = document.createElement('span');
-    wordGroup.className = 'title-word';
-
-    Array.from(word).forEach(function(letter) {
-
-      const flag = document.createElement('span');
-      flag.className = 'title-letter';
-      flag.textContent = letter;
-
-      wordGroup.appendChild(flag);
-    });
-
-    title.appendChild(wordGroup);
-  });
-
-});
-</script>
-  
-</body>
-</html>
+</article>
