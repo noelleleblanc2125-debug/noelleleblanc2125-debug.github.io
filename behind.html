@@ -1,20 +1,231 @@
-<article class="gallery-entry">
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="gallery-photo">
+<head>
 
-    <img
-      src="YOUR-SCREENSHOT.jpeg"
-      alt="Description of screenshot"
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Feelings of Being "Behind" — Things Fall Apart
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Parisienne&family=Patrick+Hand&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       MAIN SITE HEADER
+       ========================================= -->
+
+  <h1>
+    Things Fall Apart: Social Media Edition
+  </h1>
+
+  <img
+    src="journal-header.png"
+    class="journal-header"
+    alt="My Screenshot Journal"
+  >
+
+  <div class="header-divider"></div>
+
+
+  <!-- =========================================
+       NAVIGATION
+       ========================================= -->
+
+  <nav class="site-nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="adulthood.html">
+      Expected vs. Actual Adulthood
+    </a>
+
+    <a href="relationships.html">
+      Relationships & Family
+    </a>
+
+    <a
+      href="behind.html"
+      class="active"
     >
+      Feelings of Being "Behind"
+    </a>
 
-  </div>
+    <a href="values.html">
+      Changing Values & Self-Understanding
+    </a>
 
-  <div class="gallery-caption">
+    <a href="career.html">
+      Career & Life Direction
+    </a>
 
-    <p>
-      Your reflection goes here.
-    </p>
+  </nav>
 
-  </div>
 
-</article>
+  <!-- =========================================
+       FEELINGS OF BEING "BEHIND" PAGE
+       ========================================= -->
+
+  <main class="category-page behind-page">
+
+
+    <!-- =========================================
+         PENNANT CATEGORY TITLE
+         ========================================= -->
+
+    <h2 class="page-title behind-title">
+      Feelings of Being "Behind"
+    </h2>
+
+
+    <!-- =========================================
+         CATEGORY INTRODUCTION
+         ========================================= -->
+
+    <section class="category-intro">
+
+      <span
+        class="intro-doodle intro-doodle-left"
+        aria-hidden="true"
+      >
+        ☆
+      </span>
+
+      <p>
+        Posts about feeling behind expected timelines,
+        comparing our progress to others, and questioning
+        where we thought we were supposed to be by now.
+      </p>
+
+      <span
+        class="intro-doodle intro-doodle-right"
+        aria-hidden="true"
+      >
+        ♡
+      </span>
+
+    </section>
+
+
+    <!-- =========================================
+         SCRAPBOOK SCREENSHOT GALLERY
+         ========================================= -->
+
+    <section class="category-gallery">
+
+
+      <!-- =========================================
+           ENTRY 1
+           ========================================= -->
+
+      <article class="gallery-entry">
+
+        <div class="gallery-photo">
+
+          <img
+            src="screenshot3.jpeg"
+            alt="Social media screenshot about feeling behind in young adulthood"
+          >
+
+        </div>
+
+
+        <div class="gallery-caption">
+
+          <p>
+            I like how this screenshot embraces the idea
+            that even as time continues to go by, we do
+            not automatically figure things out. People
+            say, "it comes with time," but this screenshot
+            suggests that not everything does. Some things
+            come with a change of mindset.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       PENNANT CATEGORY TITLE SCRIPT
+       ========================================= -->
+
+  <script>
+
+    document
+      .querySelectorAll('.page-title')
+      .forEach(function(title) {
+
+        const words =
+          title.textContent
+            .trim()
+            .split(' ');
+
+        title.textContent = '';
+
+
+        words.forEach(function(word) {
+
+          const wordGroup =
+            document.createElement('span');
+
+          wordGroup.className =
+            'title-word';
+
+
+          Array
+            .from(word)
+            .forEach(function(letter) {
+
+              const flag =
+                document.createElement('span');
+
+              flag.className =
+                'title-letter';
+
+              flag.textContent =
+                letter;
+
+              wordGroup.appendChild(flag);
+
+            });
+
+
+          title.appendChild(wordGroup);
+
+        });
+
+      });
+
+  </script>
+
+
+</body>
+
+</html>
