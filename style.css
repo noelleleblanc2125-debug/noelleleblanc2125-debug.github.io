@@ -1302,6 +1302,56 @@ h1::after {
   color: #4A3C32;
 }
 
+/* =========================================
+   FIX INTRO PAPER + VISIBLE DOODLES
+   ========================================= */
+
+.category-intro {
+  background: transparent;
+  clip-path: none;
+  isolation: isolate;
+}
+
+.category-intro::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    rgba(222, 203, 169, 0.55);
+
+  clip-path: polygon(
+    1% 14%,
+    8% 5%,
+    18% 9%,
+    30% 3%,
+    44% 8%,
+    58% 2%,
+    73% 7%,
+    88% 3%,
+    99% 11%,
+
+    98% 88%,
+    89% 94%,
+    77% 91%,
+    65% 97%,
+    53% 92%,
+    41% 97%,
+    28% 92%,
+    15% 97%,
+    2% 91%
+  );
+}
+
+.category-intro p,
+.intro-doodle {
+  position: relative;
+  z-index: 1;
+}
+
 
 /* =========================================
    INTRO DOODLES
