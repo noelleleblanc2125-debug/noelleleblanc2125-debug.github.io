@@ -1156,6 +1156,509 @@ h1::after {
 }
 
 /* =========================================
+   NEW CATEGORY GALLERY PAGES
+   ========================================= */
+
+.category-page {
+  --accent: #927AA5;
+  --accent-light: #EFE6F2;
+
+  max-width: 1180px;
+  margin: 0 auto 110px auto;
+  padding: 0 35px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CATEGORY COLORS
+   ========================================= */
+
+
+/* Expected vs. Actual Adulthood — Rustic Blue */
+
+.adulthood-page {
+  --accent: #718B91;
+  --accent-light: #DFE9E7;
+}
+
+
+/* Relationships & Family — Dusty Pink */
+
+.relationships-page {
+  --accent: #B77F7A;
+  --accent-light: #F6E4E2;
+}
+
+
+/* Feelings of Being "Behind" — Mustard */
+
+.behind-page {
+  --accent: #B78D38;
+  --accent-light: #FBF0DC;
+}
+
+
+/* Changing Values & Self-Understanding — Sage */
+
+.values-page {
+  --accent: #7F896B;
+  --accent-light: #EEF0E7;
+}
+
+
+/* Career & Life Direction — Lavender */
+
+.career-page {
+  --accent: #927AA5;
+  --accent-light: #EFE6F2;
+}
+
+
+/* =========================================
+   CATEGORY PENNANT TITLE
+   ========================================= */
+
+/*
+   Keep the pennant linework dark like the
+   hand-drawn reference image.
+
+   The individual category colors now appear
+   in the scrapbook pieces below instead.
+*/
+
+.category-page .page-title {
+  color: #4A3C32;
+  margin-top: 5px;
+  margin-bottom: 48px;
+}
+
+
+/* =========================================
+   CATEGORY INTRO PAPER
+   ========================================= */
+
+.category-intro {
+  position: relative;
+
+  width: min(650px, 80%);
+
+  margin:
+    -10px
+    auto
+    85px
+    auto;
+
+  padding:
+    17px
+    42px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background:
+    rgba(222, 203, 169, 0.55);
+
+  transform:
+    rotate(-0.4deg);
+
+  clip-path: polygon(
+    1% 14%,
+    8% 5%,
+    18% 9%,
+    30% 3%,
+    44% 8%,
+    58% 2%,
+    73% 7%,
+    88% 3%,
+    99% 11%,
+
+    98% 88%,
+    89% 94%,
+    77% 91%,
+    65% 97%,
+    53% 92%,
+    41% 97%,
+    28% 92%,
+    15% 97%,
+    2% 91%
+  );
+}
+
+
+/* Intro text */
+
+.category-intro p {
+  margin: 0;
+
+  font-family:
+    'Patrick Hand',
+    cursive;
+
+  font-size: 1.25rem;
+  line-height: 1.45;
+
+  color: #4A3C32;
+}
+
+
+/* =========================================
+   INTRO DOODLES
+   ========================================= */
+
+.intro-doodle {
+  position: absolute;
+
+  font-family:
+    'Patrick Hand',
+    cursive;
+
+  font-size: 2rem;
+
+  color: var(--accent);
+}
+
+
+/* Left star */
+
+.intro-doodle-left {
+  left: -52px;
+  top: 4px;
+
+  transform:
+    rotate(-12deg);
+}
+
+
+/* Right heart */
+
+.intro-doodle-right {
+  right: -48px;
+  bottom: -3px;
+
+  transform:
+    rotate(10deg);
+}
+
+
+/* =========================================
+   SCREENSHOT GALLERY
+   ========================================= */
+
+.category-gallery {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap:
+    75px
+    42px;
+
+  align-items: start;
+
+  width: 100%;
+  max-width: 1050px;
+
+  margin:
+    0
+    auto;
+}
+
+
+/* Center categories that currently have only one post */
+
+.category-gallery:has(.gallery-entry:only-child) {
+  grid-template-columns:
+    minmax(0, 330px);
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   INDIVIDUAL SCRAPBOOK ENTRY
+   ========================================= */
+
+.gallery-entry {
+  position: relative;
+
+  box-sizing: border-box;
+
+  padding:
+    15px
+    15px
+    0
+    15px;
+
+  background: #E9DDC8;
+
+  box-shadow:
+    4px 6px 10px
+    rgba(74, 60, 50, 0.15);
+
+  transform:
+    rotate(-0.7deg);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Slightly different angles */
+
+.gallery-entry:nth-child(3n + 2) {
+  transform:
+    rotate(0.6deg);
+}
+
+.gallery-entry:nth-child(3n) {
+  transform:
+    rotate(-0.25deg);
+}
+
+.gallery-entry:nth-child(4n) {
+  transform:
+    rotate(0.4deg);
+}
+
+
+/* Lift slightly when hovered */
+
+.gallery-entry:hover {
+  transform:
+    rotate(0deg)
+    translateY(-5px);
+
+  box-shadow:
+    5px 10px 16px
+    rgba(74, 60, 50, 0.19);
+}
+
+
+/* =========================================
+   SCREENSHOT
+   ========================================= */
+
+.gallery-photo {
+  position: relative;
+
+  width: 100%;
+
+  background: #FFF9EE;
+
+  overflow: visible;
+}
+
+
+/* Keep original screenshot proportions */
+
+.gallery-photo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================
+   WASHI TAPE
+   ========================================= */
+
+.gallery-photo::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 30px;
+
+  top: -28px;
+  left: 18px;
+
+  z-index: 5;
+
+  background-color:
+    var(--accent);
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.17) 0,
+      rgba(255, 255, 255, 0.17) 9px,
+      transparent 9px,
+      transparent 18px
+    );
+
+  opacity: 0.72;
+
+  transform:
+    rotate(-4deg);
+
+  box-shadow:
+    0 1px 2px
+    rgba(74, 60, 50, 0.08);
+}
+
+
+/* Move tape around on different cards */
+
+.gallery-entry:nth-child(2n)
+.gallery-photo::before {
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(3deg);
+}
+
+.gallery-entry:nth-child(3n)
+.gallery-photo::before {
+  left: auto;
+  right: 18px;
+
+  transform:
+    rotate(5deg);
+}
+
+
+/* =========================================
+   LITTLE PAPERCLIP
+   ========================================= */
+
+/*
+   Every third scrapbook piece gets a small
+   hand-drawn paperclip instead of looking
+   exactly like the cards around it.
+*/
+
+.gallery-entry:nth-child(3n)::after {
+  content: "";
+
+  position: absolute;
+
+  width: 13px;
+  height: 40px;
+
+  top: -16px;
+  right: 23px;
+
+  border:
+    2px solid
+    var(--accent);
+
+  border-radius: 10px;
+
+  opacity: 0.7;
+
+  transform:
+    rotate(12deg);
+
+  z-index: 7;
+}
+
+
+/* =========================================
+   CAPTION PAPER
+   ========================================= */
+
+.gallery-caption {
+  position: relative;
+
+  margin:
+    0
+    -4px
+    -8px
+    -4px;
+
+  padding:
+    20px
+    20px
+    30px
+    20px;
+
+  background-color:
+    var(--accent-light);
+
+  text-align: center;
+
+  /*
+     Uneven bottom gives the paper
+     a torn scrapbook edge.
+  */
+
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+
+    100% 88%,
+    95% 92%,
+    90% 89%,
+    84% 95%,
+    77% 91%,
+    70% 97%,
+    63% 92%,
+    56% 96%,
+    49% 92%,
+    42% 98%,
+    35% 93%,
+    28% 97%,
+    21% 92%,
+    14% 96%,
+    7% 91%,
+    0% 95%
+  );
+}
+
+
+/* Caption text */
+
+.gallery-caption p {
+  margin: 0;
+
+  font-family:
+    'Patrick Hand',
+    cursive;
+
+  font-size: 1.18rem;
+  line-height: 1.4;
+
+  color: #4A3C32;
+}
+
+
+/* =========================================
+   TABLET CATEGORY GALLERY
+   ========================================= */
+
+@media
+  (max-width: 950px)
+  and
+  (min-width: 701px) {
+
+  .category-page {
+    padding:
+      0
+      28px;
+  }
+
+  .category-gallery {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    max-width: 720px;
+  }
+
+  .category-gallery:has(.gallery-entry:only-child) {
+    grid-template-columns:
+      minmax(0, 330px);
+  }
+
+}
+
+/* =========================================
    MOBILE DESIGN
    ========================================= */
 
@@ -1510,5 +2013,141 @@ h1::after {
   .card-content li {
     font-size: 0.92rem;
     line-height: 1.65;
+  }
+
+     /* =========================================
+     CATEGORY GALLERY — MOBILE
+     ========================================= */
+
+  .category-page {
+    width: 100%;
+
+    padding:
+      0
+      18px;
+
+    margin-bottom: 80px;
+  }
+
+
+  /* Pennant title */
+
+  .category-page .page-title {
+    margin:
+      5px
+      auto
+      40px
+      auto;
+  }
+
+
+  /* Intro paper */
+
+  .category-intro {
+    width: 84%;
+
+    margin:
+      -5px
+      auto
+      65px
+      auto;
+
+    padding:
+      15px
+      22px;
+  }
+
+  .category-intro p {
+    font-size: 1.08rem;
+    line-height: 1.4;
+  }
+
+
+  /* Intro doodles */
+
+  .intro-doodle {
+    font-size: 1.6rem;
+  }
+
+  .intro-doodle-left {
+    left: -28px;
+    top: 4px;
+  }
+
+  .intro-doodle-right {
+    right: -25px;
+    bottom: -2px;
+  }
+
+
+  /* One scrapbook piece per row */
+
+  .category-gallery,
+  .category-gallery:has(.gallery-entry:only-child) {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap: 65px;
+
+    width: 90%;
+    max-width: 430px;
+
+    margin:
+      0
+      auto;
+  }
+
+
+  /* Scrapbook cards */
+
+  .gallery-entry,
+  .gallery-entry:nth-child(3n + 2),
+  .gallery-entry:nth-child(3n),
+  .gallery-entry:nth-child(4n) {
+    width: 100%;
+
+    margin:
+      0
+      auto;
+
+    transform:
+      rotate(-0.4deg);
+  }
+
+
+  /* Keep hover subtle on small screens */
+
+  .gallery-entry:hover {
+    transform:
+      rotate(0deg)
+      translateY(-2px);
+  }
+
+
+  /* Tape */
+
+  .gallery-photo::before {
+    width: 88px;
+    height: 27px;
+
+    top: -25px;
+  }
+
+
+  /* Captions */
+
+  .gallery-caption {
+    padding:
+      18px
+      17px
+      27px
+      17px;
+  }
+
+  .gallery-caption p {
+    font-size: 1.08rem;
+    line-height: 1.4;
   }
 }
