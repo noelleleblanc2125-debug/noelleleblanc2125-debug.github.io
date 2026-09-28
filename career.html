@@ -1,11 +1,293 @@
-<article class="gallery-entry">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="gallery-photo">
-        screenshot
-    </div>
+<head>
 
-    <div class="gallery-caption">
-        caption
-    </div>
+  <meta charset="UTF-8">
 
-</article>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Career & Life Direction — Things Fall Apart
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Parisienne&family=Patrick+Hand&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       MAIN SITE HEADER
+       ========================================= -->
+
+  <h1>
+    Things Fall Apart: Social Media Edition
+  </h1>
+
+  <img
+    src="journal-header.png"
+    class="journal-header"
+    alt="My Screenshot Journal"
+  >
+
+  <div class="header-divider"></div>
+
+
+  <!-- =========================================
+       NAVIGATION
+       ========================================= -->
+
+  <nav class="site-nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="adulthood.html">
+      Expected vs. Actual Adulthood
+    </a>
+
+    <a href="relationships.html">
+      Relationships & Family
+    </a>
+
+    <a href="behind.html">
+      Feelings of Being "Behind"
+    </a>
+
+    <a href="values.html">
+      Changing Values & Self-Understanding
+    </a>
+
+    <a
+      href="career.html"
+      class="active"
+    >
+      Career & Life Direction
+    </a>
+
+  </nav>
+
+
+  <!-- =========================================
+       CAREER & LIFE DIRECTION PAGE
+       ========================================= -->
+
+  <main class="category-page career-page">
+
+
+    <!-- =========================================
+         PENNANT CATEGORY TITLE
+         ========================================= -->
+
+    <h2 class="page-title career-title">
+      Career & Life Direction
+    </h2>
+
+
+    <!-- =========================================
+         CATEGORY INTRODUCTION
+         ========================================= -->
+
+    <section class="category-intro">
+
+      <span
+        class="intro-doodle intro-doodle-left"
+        aria-hidden="true"
+      >
+        ☆
+      </span>
+
+      <p>
+        Posts about choosing a career, changing paths,
+        feeling uncertain, and figuring out what work
+        and purpose can look like in your twenties.
+      </p>
+
+      <span
+        class="intro-doodle intro-doodle-right"
+        aria-hidden="true"
+      >
+        ♡
+      </span>
+
+    </section>
+
+
+    <!-- =========================================
+         SCRAPBOOK SCREENSHOT GALLERY
+         ========================================= -->
+
+    <section class="category-gallery">
+
+
+      <!-- =========================================
+           ENTRY 1
+           ========================================= -->
+
+      <article class="gallery-entry">
+
+        <div class="gallery-photo">
+
+          <img
+            src="screenshot9.jpeg"
+            alt="Social media screenshot about career and life direction"
+          >
+
+        </div>
+
+
+        <div class="gallery-caption">
+
+          <p>
+            At some point in time, we learned that being
+            a young adult meant having a plan all figured
+            out and if that plan changed, it meant we
+            were failures.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================================
+           ENTRY 2
+           ========================================= -->
+
+      <article class="gallery-entry">
+
+        <div class="gallery-photo">
+
+          <img
+            src="screenshot11.jpeg"
+            alt="Social media screenshot about career and life direction"
+          >
+
+        </div>
+
+
+        <div class="gallery-caption">
+
+          <p>
+            I think this screenshot points at the fact
+            that some of us feel like our young adult
+            identity is very closely tied to our careers
+            and also highlights the conception that what
+            we do as young adults is what we need to do
+            for the rest of our lives. But this screenshot
+            allows us to think that maybe that is not true
+            for a lot of people.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================================
+           ENTRY 3
+           ========================================= -->
+
+      <article class="gallery-entry">
+
+        <div class="gallery-photo">
+
+          <img
+            src="screenshot29.jpeg"
+            alt="Social media screenshot about career and life direction"
+          >
+
+        </div>
+
+
+        <div class="gallery-caption">
+
+          <p>
+            Sometimes as people grow, directions change.
+            Your plans that you once had don't need to be
+            a "life sentence." Those can change too. This
+            doesn't mean you aren't adulting.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       PENNANT TITLE SCRIPT
+       ========================================= -->
+
+  <script>
+
+    document
+      .querySelectorAll('.page-title')
+      .forEach(function(title) {
+
+        const words =
+          title.textContent
+            .trim()
+            .split(' ');
+
+        title.textContent = '';
+
+
+        words.forEach(function(word) {
+
+          const wordGroup =
+            document.createElement('span');
+
+          wordGroup.className =
+            'title-word';
+
+
+          Array
+            .from(word)
+            .forEach(function(letter) {
+
+              const flag =
+                document.createElement('span');
+
+              flag.className =
+                'title-letter';
+
+              flag.textContent =
+                letter;
+
+              wordGroup.appendChild(flag);
+
+            });
+
+
+          title.appendChild(wordGroup);
+
+        });
+
+      });
+
+  </script>
+
+
+</body>
+
+</html>
