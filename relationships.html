@@ -1,68 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relationships & Family — Things Fall Apart</title>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Relationships & Family — Things Fall Apart
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Parisienne&family=Patrick+Hand&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
+
 <body>
 
-<h1>Things Fall Apart: Social Media Edition</h1>
-<img src="journal-header.png" class="journal-header" alt="My Screenshot Journal">
+
+  <!-- =========================================
+       MAIN SITE HEADER
+       ========================================= -->
+
+  <h1>
+    Things Fall Apart: Social Media Edition
+  </h1>
+
+  <img
+    src="journal-header.png"
+    class="journal-header"
+    alt="My Screenshot Journal"
+  >
+
   <div class="header-divider"></div>
 
-<nav class="site-nav">
-  <a href="index.html">Home</a>
-  <a href="adulthood.html">Expected vs. Actual Adulthood</a>
-  <a href="relationships.html" class="active">Relationships & Family</a>
-  <a href="behind.html">Feelings of Being "Behind"</a>
-  <a href="values.html">Changing Values & Self-Understanding</a>
-  <a href="career.html">Career & Life Direction</a>
-</nav>
 
-<h2 class="page-title relationships-title">Relationships & Family</h2>
+  <!-- =========================================
+       NAVIGATION
+       ========================================= -->
 
-<!-- ===== COPY FROM HERE FOR EACH NEW ENTRY IN THIS CATEGORY ===== -->
-<div class="entry">
-  <div class="screenshot-wrap">
-    <p class="corner-tag tag-relationships">Relationships & Family</p>
-    <img src="screenshot2.jpeg" alt="Screenshot 2">
-  </div>
-  <div class="sticky-note note-relationships">
-    <p>The speaker is talking about his long time partner. Contrasts the expectation that I had as a child that love and marriage was always something positive. Changes my view on relationships now that I am older. Also suggests that this outcome is not always intentional.</p>
-  </div>
-</div>
-<!-- ===== COPY TO HERE ===== -->
+  <nav class="site-nav">
 
-<script>
-document.querySelectorAll('.page-title').forEach(function(title) {
+    <a href="index.html">
+      Home
+    </a>
 
-  const words = title.textContent.trim().split(' ');
+    <a href="adulthood.html">
+      Expected vs. Actual Adulthood
+    </a>
 
-  title.textContent = '';
+    <a
+      href="relationships.html"
+      class="active"
+    >
+      Relationships & Family
+    </a>
 
-  words.forEach(function(word) {
+    <a href="behind.html">
+      Feelings of Being "Behind"
+    </a>
 
-    const wordGroup = document.createElement('span');
-    wordGroup.className = 'title-word';
+    <a href="values.html">
+      Changing Values & Self-Understanding
+    </a>
 
-    Array.from(word).forEach(function(letter) {
+    <a href="career.html">
+      Career & Life Direction
+    </a>
 
-      const flag = document.createElement('span');
-      flag.className = 'title-letter';
-      flag.textContent = letter;
+  </nav>
 
-      wordGroup.appendChild(flag);
-    });
 
-    title.appendChild(wordGroup);
-  });
+  <!-- =========================================
+       RELATIONSHIPS & FAMILY PAGE
+       ========================================= -->
 
-});
-</script>
-  
+  <main class="category-page relationships-page">
+
+
+    <!-- =========================================
+         PENNANT CATEGORY TITLE
+         ========================================= -->
+
+    <h2 class="page-title relationships-title">
+      Relationships & Family
+    </h2>
+
+
+    <!-- =========================================
+         CATEGORY INTRODUCTION
+         ========================================= -->
+
+    <section class="category-intro">
+
+      <span
+        class="intro-doodle intro-doodle-left"
+        aria-hidden="true"
+      >
+        ☆
+      </span>
+
+      <p>
+        Posts about changing relationships with family,
+        friends, and romantic partners, as well as the
+        expectations surrounding love, marriage, and
+        building a family in young adulthood.
+      </p>
+
+      <span
+        class="intro-doodle intro-doodle-right"
+        aria-hidden="true"
+      >
+        ♡
+      </span>
+
+    </section>
+
+
+    <!-- =========================================
+         SCRAPBOOK SCREENSHOT GALLERY
+         ========================================= -->
+
+    <section class="category-gallery">
+
+
+      <!-- =========================================
+           ENTRY 1
+           ========================================= -->
+
+      <article class="gallery-entry">
+
+        <div class="gallery-photo">
+
+          <img
+            src="screenshot2.jpeg"
+            alt="Social media screenshot about relationships and family"
+          >
+
+        </div>
+
+
+        <div class="gallery-caption">
+
+          <p>
+            The speaker is talking about his longtime
+            partner. This contrasts with the expectation
+            I had as a child that love and marriage were
+            always something positive. It changes my view
+            on relationships now that I am older. It also
+            suggests that this outcome is not always
+            intentional.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       PENNANT CATEGORY TITLE SCRIPT
+       ========================================= -->
+
+  <script>
+
+    document
+      .querySelectorAll('.page-title')
+      .forEach(function(title) {
+
+        const words =
+          title.textContent
+            .trim()
+            .split(' ');
+
+        title.textContent = '';
+
+
+        words.forEach(function(word) {
+
+          const wordGroup =
+            document.createElement('span');
+
+          wordGroup.className =
+            'title-word';
+
+
+          Array
+            .from(word)
+            .forEach(function(letter) {
+
+              const flag =
+                document.createElement('span');
+
+              flag.className =
+                'title-letter';
+
+              flag.textContent =
+                letter;
+
+              wordGroup.appendChild(flag);
+
+            });
+
+
+          title.appendChild(wordGroup);
+
+        });
+
+      });
+
+  </script>
+
+
 </body>
-</html>
 
+</html>
