@@ -1,91 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Changing Values & Self-Understanding — Things Fall Apart</title>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Changing Values & Self-Understanding — Things Fall Apart
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Parisienne&family=Patrick+Hand&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
+
 <body>
 
-<h1>Things Fall Apart: Social Media Edition</h1>
-<img src="journal-header.png" class="journal-header" alt="My Screenshot Journal">
+
+  <!-- =========================================
+       MAIN SITE HEADER
+       ========================================= -->
+
+  <h1>
+    Things Fall Apart: Social Media Edition
+  </h1>
+
+  <img
+    src="journal-header.png"
+    class="journal-header"
+    alt="My Screenshot Journal"
+  >
+
   <div class="header-divider"></div>
 
-<nav class="site-nav">
-  <a href="index.html">Home</a>
-  <a href="adulthood.html">Expected vs. Actual Adulthood</a>
-  <a href="relationships.html">Relationships & Family</a>
-  <a href="behind.html">Feelings of Being "Behind"</a>
-  <a href="values.html" class="active">Changing Values & Self-Understanding</a>
-  <a href="career.html">Career & Life Direction</a>
-</nav>
 
-<h2 class="page-title values-title">Changing Values & Self-Understanding</h2>
-  
-<!-- ===== COPY FROM HERE FOR EACH NEW ENTRY IN THIS CATEGORY ===== -->
-<div class="entry">
-  <div class="screenshot-wrap">
-    <p class="corner-tag tag-identity">Changing Values & Self-Understanding</p>
-    <img src="screenshot5.jpeg" alt="Screenshot 5">
-  </div>
-  <div class="sticky-note note-identity">
-    <p>Empowering language. Reasonated with me as young adult. Encourages me to take back power in the awkwardness of not knowing, of being in the in between, and to move with confidence anyway.</p>
-  </div>
-</div>
-<!-- ===== COPY TO HERE ===== -->
+  <!-- =========================================
+       NAVIGATION
+       ========================================= -->
 
-  <!-- ===== COPY FROM HERE FOR EACH NEW ENTRY IN THIS CATEGORY ===== -->
-<div class="entry">
-  <div class="screenshot-wrap">
-    <p class="corner-tag tag-identity">Changing Values & Self-Understanding</p>
-    <img src="screenshot26.jpeg" alt="Screenshot 26">
-  </div>
-  <div class="sticky-note note-identity">
-    <p>The shift from seeing contradiction to evolving. Here, beliefs over time don't have to be a contradiction but an evolution.</p>
-  </div>
-</div>
-<!-- ===== COPY TO HERE ===== -->
+  <nav class="site-nav">
 
-  <!-- ===== COPY FROM HERE FOR EACH NEW ENTRY IN THIS CATEGORY ===== -->
-<div class="entry note-left">
-  <div class="screenshot-wrap">
-    <p class="corner-tag tag-identity tag-right">Changing Values & Self-Understanding</p>
-    <img src="screenshot30.jpeg" alt="Screenshot 30">
-  </div>
-  <div class="sticky-note note-identity">
-    <p>It is really interesting to me that it says "The goals was always to grow." The implication is that we were never meant to stay the same. And there's something about that that I can't quite name but it deserves to be.</p>
-  </div>
-</div>
-<!-- ===== COPY TO HERE ===== -->
+    <a href="index.html">
+      Home
+    </a>
 
-<script>
-document.querySelectorAll('.page-title').forEach(function(title) {
+    <a href="adulthood.html">
+      Expected vs. Actual Adulthood
+    </a>
 
-  const words = title.textContent.trim().split(' ');
+    <a href="relationships.html">
+      Relationships & Family
+    </a>
 
-  title.textContent = '';
+    <a href="behind.html">
+      Feelings of Being "Behind"
+    </a>
 
-  words.forEach(function(word) {
+    <a
+      href="values.html"
+      class="active"
+    >
+      Changing Values & Self-Understanding
+    </a>
 
-    const wordGroup = document.createElement('span');
-    wordGroup.className = 'title-word';
+    <a href="career.html">
+      Career & Life Direction
+    </a>
 
-    Array.from(word).forEach(function(letter) {
+  </nav>
 
-      const flag = document.createElement('span');
-      flag.className = 'title-letter';
-      flag.textContent = letter;
 
-      wordGroup.appendChild(flag);
-    });
+  <!-- =========================================
+       CHANGING VALUES & SELF-UNDERSTANDING PAGE
+       ========================================= -->
 
-    title.appendChild(wordGroup);
-  });
+  <main class="category-page values-page">
 
-});
-</script>
-  
+
+    <!-- =========================================
+         PENNANT CATEGORY TITLE
+         ========================================= -->
+
+    <h2 class="page-title values-title">
+      Changing Values & Self-Understanding
+    </h2>
+
+
+    <!-- =========================================
+         CATEGORY INTRODUCTION
+         ========================================= -->
+
+    <section class="category-intro">
+
+      <span
+        class="intro-doodle intro-doodle-left"
+        aria-hidden="true"
+      >
+        ☆
+      </span>
+
+      <p>
+        Posts about changing priorities, evolving beliefs,
+        understanding ourselves differently, and recognizing
+        that growing into adulthood can also mean becoming
+        someone different from who we expected to be.
+      </p>
+
+      <span
+        class="intro-doodle intro-doodle-right"
+        aria-hidden="true"
+      >
+        ♡
+      </span>
+
+    </section>
+
+
+    <!-- =========================================
+         SCRAPBOOK SCREENSHOT GALLERY
+         ========================================= -->
+
+    <section class="category-gallery">
+
+
+      <!-- =========================================
+           ENTRY 1
+           ========================================= -->
+
+      <article class="gallery-entry">
+
+        <div class="gallery-photo">
+
+          <img
+            src="screenshot5.jpeg"
+            alt="Social media screenshot about changing values and self-understanding"
+          >
+
+        </div>
+
+
+        <div class="gallery-caption">
+
+          <p>
+            Empowering language. Resonated with me as a
+            young adult. Encourages me to take back power
+            in the awkwardness of not knowing, of being
+            in the in-between, and to move with confidence
+            anyway.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================================
+           ENTRY 2
+           ========================================= -->
+
+      <article class="gallery-entry">
+
+        <div class="gallery-photo">
+
+          <img
+            src="screenshot26.jpeg"
+            alt="Social media screenshot about changing values and self-understanding"
+          >
+
+        </div>
+
+
+        <div class="gallery-caption">
+
+          <p>
+            The shift from seeing contradiction to evolving.
+            Here, beliefs over time don't have to be a
+            contradiction but an evolution.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================================
+           ENTRY 3
+           ========================================= -->
+
+      <article class="gallery-entry">
+
+        <div class="gallery-photo">
+
+          <img
+            src="screenshot30.jpeg"
+            alt="Social media screenshot about changing values and self-understanding"
+          >
+
+        </div>
+
+
+        <div class="gallery-caption">
+
+          <p>
+            It is really interesting to me that it says,
+            "The goal was always to grow." The implication
+            is that we were never meant to stay the same.
+            And there's something about that that I can't
+            quite name, but it deserves to be.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       PENNANT CATEGORY TITLE SCRIPT
+       ========================================= -->
+
+  <script>
+
+    document
+      .querySelectorAll('.page-title')
+      .forEach(function(title) {
+
+        const words =
+          title.textContent
+            .trim()
+            .split(' ');
+
+        title.textContent = '';
+
+
+        words.forEach(function(word) {
+
+          const wordGroup =
+            document.createElement('span');
+
+          wordGroup.className =
+            'title-word';
+
+
+          Array
+            .from(word)
+            .forEach(function(letter) {
+
+              const flag =
+                document.createElement('span');
+
+              flag.className =
+                'title-letter';
+
+              flag.textContent =
+                letter;
+
+              wordGroup.appendChild(flag);
+
+            });
+
+
+          title.appendChild(wordGroup);
+
+        });
+
+      });
+
+  </script>
+
+
 </body>
+
 </html>
