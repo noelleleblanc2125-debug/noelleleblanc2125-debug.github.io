@@ -2765,5 +2765,36 @@ h1::after {
   .phase-card-description {
     font-size: 0.93rem;
   }
+/* =========================================
+   PHASE III — GROWTH
+   ========================================= */
 
+
+/* Center the single category card */
+
+.phase-categories-single {
+  grid-template-columns: minmax(0, 360px);
+}
+
+
+/* Changing Values & Self-Understanding card */
+
+.values-phase-card .phase-card-paper {
+  background: #EEF0E7;
+}
+
+
+/* Changing Values & Self-Understanding tape */
+
+.values-phase-card .phase-card-paper::before {
+  background: #7F896B;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.18) 0,
+      rgba(255, 255, 255, 0.18) 9px,
+      transparent 9px,
+      transparent 18px
+    );
 }
