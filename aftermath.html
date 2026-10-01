@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Aftermath &amp; Transition — Things Fall Apart: Social Media Edition</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- MAIN WEBSITE HEADER -->
+  <h1>Things Fall Apart: Social Media Edition</h1>
+
+  <img
+    src="journal-header.png"
+    class="journal-header"
+    alt="My Screenshot Journal"
+  >
+
+  <div class="header-divider"></div>
+
+
+  <!-- TEMPORARY NAVIGATION
+       We will replace this with the new phase navigation later. -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="adulthood.html">Expected vs. Actual Adulthood</a>
+    <a href="relationships.html">Relationships &amp; Family</a>
+    <a href="behind.html">Feelings of Being "Behind"</a>
+    <a href="values.html">Changing Values &amp; Self-Understanding</a>
+    <a href="career.html">Career &amp; Life Direction</a>
+  </nav>
+
+
+  <!-- PHASE 2 PAGE -->
+  <main class="phase-page phase-two-page">
+
+    <p class="phase-number">Phase II</p>
+
+    <h2 class="page-title phase-title">
+      The Aftermath &amp; Transition of Things Falling Apart
+    </h2>
+
+
+    <!-- PHASE INTRODUCTION -->
+    <section class="phase-intro">
+      <p>
+        The Aftermath &amp; Transition of Things Falling Apart explores
+        what happens after the expectations we once held begin to shift.
+        This phase focuses on the uncertainty of the in-between: navigating
+        changing relationships, reconsidering familiar timelines, comparing
+        our progress to others, and figuring out what comes next when life
+        no longer looks exactly the way we imagined it would.
+      </p>
+    </section>
+
+
+    <!-- CATEGORY SECTION -->
+    <section class="phase-categories">
+
+      <h3 class="phase-explore-title">Explore This Phase</h3>
+
+
+      <!-- FEELINGS OF BEING "BEHIND" -->
+      <a href="behind.html" class="phase-category-card behind-phase-card">
+
+        <div class="phase-card-paper">
+
+          <p class="phase-card-label">Category</p>
+
+          <h3>Feelings of Being "Behind"</h3>
+
+          <p class="phase-card-description">
+            Exploring expected timelines, comparison, uncertainty, and
+            the feeling that we should be further along than we are.
+          </p>
+
+          <span class="phase-card-link">
+            Explore this category →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- RELATIONSHIPS & FAMILY -->
+      <a href="relationships.html" class="phase-category-card relationships-phase-card">
+
+        <div class="phase-card-paper">
+
+          <p class="phase-card-label">Category</p>
+
+          <h3>Relationships &amp; Family</h3>
+
+          <p class="phase-card-description">
+            Exploring how relationships with family, friends, and romantic
+            partners can change as we navigate adulthood, shifting
+            expectations, and different possibilities for the future.
+          </p>
+
+          <span class="phase-card-link">
+            Explore this category →
+          </span>
+
+        </div>
+
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- PENNANT TITLE SCRIPT -->
+  <script>
+    document.querySelectorAll('.page-title').forEach(function(title) {
+      const words = title.textContent.trim().split(' ');
+      title.textContent = '';
+
+      words.forEach(function(word) {
+        const wordGroup = document.createElement('span');
+        wordGroup.className = 'title-word';
+
+        Array.from(word).forEach(function(letter) {
+          const flag = document.createElement('span');
+          flag.className = 'title-letter';
+          flag.textContent = letter;
+          wordGroup.appendChild(flag);
+        });
+
+        title.appendChild(wordGroup);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
