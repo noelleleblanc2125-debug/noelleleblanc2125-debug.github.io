@@ -2065,143 +2065,147 @@ h1::after {
     line-height: 1.65;
   }
 
-     /* =========================================
-     CATEGORY GALLERY — MOBILE
-     ========================================= */
+ /* =========================================
+   CATEGORY GALLERY — MOBILE
+   ========================================= */
 
-  .category-page {
-    width: 100%;
+.category-page {
+  width: 100%;
 
-    padding:
-      0
-      18px;
+  padding:
+    0
+    18px;
 
-    margin-bottom: 80px;
-  }
-
-
-  /* Pennant title */
-
-  .category-page .page-title {
-    margin:
-      5px
-      auto
-      40px
-      auto;
-  }
+  margin-bottom: 80px;
+}
 
 
-  /* Intro paper */
+/* Pennant title */
 
-  .category-intro {
-    width: 84%;
-
-    margin:
-      -5px
-      auto
-      65px
-      auto;
-
-    padding:
-      15px
-      22px;
-  }
-
-  .category-intro p {
-    font-size: 1.08rem;
-    line-height: 1.4;
-  }
+.category-page .page-title {
+  margin:
+    5px
+    auto
+    40px
+    auto;
+}
 
 
-  /* Intro doodles */
+/* Intro paper */
 
-  .intro-doodle {
-    font-size: 1.6rem;
-  }
+.category-intro {
+  width: 84%;
 
-  .intro-doodle-left {
-    left: -28px;
-    top: 4px;
-  }
+  margin:
+    -5px
+    auto
+    65px
+    auto;
 
-  .intro-doodle-right {
-    right: -25px;
-    bottom: -2px;
-  }
-
-
-  /* One scrapbook piece per row */
-
-  .category-gallery,
-  .category-gallery:has(.gallery-entry:only-child) {
-    display: grid;
-
-    grid-template-columns:
-      minmax(0, 1fr);
-
-    gap: 65px;
-
-    width: 90%;
-    max-width: 430px;
-
-    margin:
-      0
-      auto;
-  }
+  padding:
+    15px
+    22px;
+}
 
 
-  /* Scrapbook cards */
-
-  .gallery-entry,
-  .gallery-entry:nth-child(3n + 2),
-  .gallery-entry:nth-child(3n),
-  .gallery-entry:nth-child(4n) {
-    width: 100%;
-
-    margin:
-      0
-      auto;
-
-    transform:
-      rotate(-0.4deg);
-  }
+.category-intro p {
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
 
 
-  /* Keep hover subtle on small screens */
+/* Intro doodles */
 
-  .gallery-entry:hover {
-    transform:
-      rotate(0deg)
-      translateY(-2px);
-  }
+.intro-doodle {
+  font-size: 1.6rem;
+}
 
+.intro-doodle-left {
+  left: -28px;
+  top: 4px;
+}
 
-  /* Tape */
-
-  .gallery-photo::before {
-    width: 88px;
-    height: 27px;
-
-    top: -25px;
-  }
+.intro-doodle-right {
+  right: -25px;
+  bottom: -2px;
+}
 
 
-  /* Captions */
+/* One scrapbook piece per row */
 
-  .gallery-caption {
-    padding:
-      18px
-      17px
-      27px
-      17px;
-  }
+.category-gallery,
+.category-gallery:has(.gallery-entry:only-child) {
+  display: grid;
 
-  .gallery-caption p {
-    font-size: 1.08rem;
-    line-height: 1.4;
-  }
+  grid-template-columns:
+    minmax(0, 1fr);
 
-   /* =========================================
+  gap: 65px;
+
+  width: 90%;
+  max-width: 430px;
+
+  margin:
+    0
+    auto;
+}
+
+
+/* Scrapbook cards */
+
+.gallery-entry,
+.gallery-entry:nth-child(3n + 2),
+.gallery-entry:nth-child(3n),
+.gallery-entry:nth-child(4n) {
+  width: 100%;
+
+  margin:
+    0
+    auto;
+
+  transform:
+    rotate(-0.4deg);
+}
+
+
+/* Keep hover subtle on small screens */
+
+.gallery-entry:hover {
+  transform:
+    rotate(0deg)
+    translateY(-2px);
+}
+
+
+/* Tape */
+
+.gallery-photo::before {
+  width: 88px;
+  height: 27px;
+
+  top: -25px;
+}
+
+
+/* Captions */
+
+.gallery-caption {
+  padding:
+    18px
+    17px
+    27px
+    17px;
+}
+
+.gallery-caption p {
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
+
+}
+
+
+/* =========================================
    PHASE LANDING PAGES
    ========================================= */
 
@@ -2298,9 +2302,12 @@ h1::after {
   top: -5px;
   left: 50%;
 
-  transform: translateX(-50%) rotate(2deg);
+  transform:
+    translateX(-50%)
+    rotate(2deg);
 
-  background: rgba(168, 174, 145, 0.65);
+  background:
+    rgba(168, 174, 145, 0.65);
 
   background-image:
     repeating-linear-gradient(
@@ -2329,7 +2336,9 @@ h1::after {
 }
 
 
-/* EXPLORE THIS PHASE */
+/* =========================================
+   EXPLORE THIS PHASE
+   ========================================= */
 
 .phase-explore-title {
   width: fit-content;
@@ -2361,7 +2370,9 @@ h1::after {
 }
 
 
-/* CATEGORY CARD AREA */
+/* =========================================
+   CATEGORY CARD AREA
+   ========================================= */
 
 .phase-categories {
   display: grid;
@@ -2380,7 +2391,9 @@ h1::after {
 }
 
 
-/* CATEGORY CARDS */
+/* =========================================
+   CATEGORY CARDS
+   ========================================= */
 
 .phase-category-card {
   position: relative;
@@ -2407,7 +2420,9 @@ h1::after {
 
 
 .phase-category-card:hover {
-  transform: rotate(0deg) translateY(-7px);
+  transform:
+    rotate(0deg)
+    translateY(-7px);
 
   filter:
     drop-shadow(
@@ -2416,7 +2431,9 @@ h1::after {
 }
 
 
-/* PAPER INSIDE EACH CARD */
+/* =========================================
+   PAPER INSIDE EACH CARD
+   ========================================= */
 
 .phase-card-paper {
   position: relative;
@@ -2424,7 +2441,11 @@ h1::after {
   height: 100%;
   min-height: 285px;
 
-  padding: 38px 32px 42px 32px;
+  padding:
+    38px
+    32px
+    42px
+    32px;
 
   box-sizing: border-box;
 
@@ -2459,21 +2480,23 @@ h1::after {
 }
 
 
-/* EXPECTED VS. ACTUAL ADULTHOOD CARD */
+/* Expected vs. Actual Adulthood */
 
 .adulthood-phase-card .phase-card-paper {
   background: #DFE9E7;
 }
 
 
-/* CAREER & LIFE DIRECTION CARD */
+/* Career & Life Direction */
 
 .career-phase-card .phase-card-paper {
   background: #EFE6F2;
 }
 
 
-/* TAPE ON CATEGORY CARDS */
+/* =========================================
+   TAPE ON CATEGORY CARDS
+   ========================================= */
 
 .phase-card-paper::before {
   content: "";
@@ -2522,7 +2545,9 @@ h1::after {
 }
 
 
-/* CATEGORY LABEL */
+/* =========================================
+   CATEGORY LABEL
+   ========================================= */
 
 .phase-card-label {
   width: fit-content;
@@ -2543,7 +2568,9 @@ h1::after {
 }
 
 
-/* CATEGORY TITLE */
+/* =========================================
+   CATEGORY TITLE
+   ========================================= */
 
 .phase-card-paper h3 {
   margin: 12px auto 18px auto;
@@ -2557,7 +2584,9 @@ h1::after {
 }
 
 
-/* CATEGORY DESCRIPTION */
+/* =========================================
+   CATEGORY DESCRIPTION
+   ========================================= */
 
 .phase-card-description {
   margin: 0 auto 25px auto;
@@ -2570,7 +2599,9 @@ h1::after {
 }
 
 
-/* EXPLORE LINK */
+/* =========================================
+   EXPLORE LINK
+   ========================================= */
 
 .phase-card-link {
   display: inline-block;
@@ -2605,7 +2636,9 @@ h1::after {
   .phase-page {
     width: 100%;
 
-    padding: 0 18px;
+    padding:
+      0
+      18px;
 
     margin-bottom: 80px;
   }
@@ -2660,7 +2693,8 @@ h1::after {
 
   .phase-category-card:first-of-type,
   .phase-category-card:last-of-type {
-    transform: rotate(-0.5deg);
+    transform:
+      rotate(-0.5deg);
   }
 
 
@@ -2684,5 +2718,4 @@ h1::after {
     font-size: 0.93rem;
   }
 
-}
 }
