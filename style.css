@@ -2496,6 +2496,20 @@ h1::after {
 }
 
 
+/* Feelings of Being "Behind" */
+
+.behind-phase-card .phase-card-paper {
+  background: #FBF0DC;
+}
+
+
+/* Relationships & Family */
+
+.relationships-phase-card .phase-card-paper {
+  background: #F6E4E2;
+}
+
+
 /* =========================================
    TAPE ON CATEGORY CARDS
    ========================================= */
@@ -2535,6 +2549,38 @@ h1::after {
 
 .career-phase-card .phase-card-paper::before {
   background: #927AA5;
+
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.18) 0,
+      rgba(255, 255, 255, 0.18) 9px,
+      transparent 9px,
+      transparent 18px
+    );
+}
+
+
+/* Feelings of Being "Behind" tape */
+
+.behind-phase-card .phase-card-paper::before {
+  background: #B78D38;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.18) 0,
+      rgba(255, 255, 255, 0.18) 9px,
+      transparent 9px,
+      transparent 18px
+    );
+}
+
+
+/* Relationships & Family tape */
+
+.relationships-phase-card .phase-card-paper::before {
+  background: #B77F7A;
 
   background-image:
     repeating-linear-gradient(
