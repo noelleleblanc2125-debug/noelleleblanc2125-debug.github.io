@@ -2865,62 +2865,6 @@ h1::after {
 
 
 /* =========================================
-   HOME PAGE — EXPLORE THE JOURNAL
-   ========================================= */
-
-.journal-journey {
-  width: min(1050px, 92%);
-  margin: 75px auto 95px auto;
-  text-align: center;
-}
-
-
-/* Section title */
-
-.journey-title {
-  width: fit-content;
-  margin: 0 auto 12px auto;
-
-  font-family: 'Parisienne', cursive;
-  font-size: 2.6rem;
-  font-weight: 400;
-
-  color: #4A3C32;
-}
-
-
-/* Small decorative divider */
-
-.journey-title::after {
-  content: "✦  ·  ✧  ·  ✦";
-  display: block;
-
-  margin-top: 4px;
-
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1rem;
-  letter-spacing: 0.18em;
-
-  color: #A4728C;
-}
-
-
-/* Introductory text */
-
-.journey-intro {
-  max-width: 680px;
-
-  margin: 25px auto 55px auto;
-
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  line-height: 1.7;
-
-  color: #4A3C32;
-}
-
-
-/* =========================================
    THREE PHASE CARDS
    ========================================= */
 
@@ -3021,6 +2965,61 @@ h1::after {
       5px
       rgba(74, 60, 50, 0.13)
     );
+}
+
+/* =========================================
+   HOME PAGE — EXPLORE THE JOURNAL
+   ========================================= */
+
+.journal-journey {
+  width: min(1050px, 92%);
+  margin: 75px auto 95px auto;
+  text-align: center;
+}
+
+
+/* Section title */
+
+.journey-title {
+  width: fit-content;
+  margin: 0 auto 12px auto;
+
+  font-family: 'Parisienne', cursive;
+  font-size: 2.6rem;
+  font-weight: 400;
+
+  color: #4A3C32;
+}
+
+
+/* Small decorative divider */
+
+.journey-title::after {
+  content: "✦  ·  ✧  ·  ✦";
+  display: block;
+
+  margin-top: 4px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+
+  color: #A4728C;
+}
+
+
+/* Introductory text */
+
+.journey-intro {
+  max-width: 680px;
+
+  margin: 25px auto 55px auto;
+
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: #4A3C32;
 }
 
 
