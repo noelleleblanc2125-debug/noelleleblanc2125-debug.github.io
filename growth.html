@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Growth After Things Fall Apart — Things Fall Apart: Social Media Edition</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- MAIN WEBSITE HEADER -->
+  <h1>Things Fall Apart: Social Media Edition</h1>
+
+  <img
+    src="journal-header.png"
+    class="journal-header"
+    alt="My Screenshot Journal"
+  >
+
+  <div class="header-divider"></div>
+
+
+  <!-- TEMPORARY NAVIGATION
+       We will replace this with the new phase navigation later. -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="adulthood.html">Expected vs. Actual Adulthood</a>
+    <a href="relationships.html">Relationships &amp; Family</a>
+    <a href="behind.html">Feelings of Being "Behind"</a>
+    <a href="values.html">Changing Values &amp; Self-Understanding</a>
+    <a href="career.html">Career &amp; Life Direction</a>
+  </nav>
+
+
+  <!-- PHASE 3 PAGE -->
+  <main class="phase-page phase-three-page">
+
+    <p class="phase-number">Phase III</p>
+
+    <h2 class="page-title phase-title">
+      The Growth That Happens After Things Fall Apart
+    </h2>
+
+
+    <!-- PHASE INTRODUCTION -->
+    <section class="phase-intro">
+      <p>
+        The Growth That Happens After Things Fall Apart explores what can
+        emerge from uncertainty and change. As familiar expectations begin
+        to loosen, young adulthood can also become a period of reflection,
+        reconsideration, and growth. These posts capture changing values,
+        shifting priorities, and new understandings of ourselves that can
+        develop as we begin to make sense of lives that may look different
+        from the ones we originally imagined.
+      </p>
+    </section>
+
+
+    <!-- CATEGORY SECTION -->
+    <section class="phase-categories phase-categories-single">
+
+      <h3 class="phase-explore-title">Explore This Phase</h3>
+
+
+      <!-- CHANGING VALUES & SELF-UNDERSTANDING -->
+      <a href="values.html" class="phase-category-card values-phase-card">
+
+        <div class="phase-card-paper">
+
+          <p class="phase-card-label">Category</p>
+
+          <h3>Changing Values &amp; Self-Understanding</h3>
+
+          <p class="phase-card-description">
+            Exploring changing priorities, values, perspectives, and
+            understandings of ourselves as we continue to grow into
+            adulthood.
+          </p>
+
+          <span class="phase-card-link">
+            Explore this category →
+          </span>
+
+        </div>
+
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- PENNANT TITLE SCRIPT -->
+  <script>
+    document.querySelectorAll('.page-title').forEach(function(title) {
+      const words = title.textContent.trim().split(' ');
+      title.textContent = '';
+
+      words.forEach(function(word) {
+        const wordGroup = document.createElement('span');
+        wordGroup.className = 'title-word';
+
+        Array.from(word).forEach(function(letter) {
+          const flag = document.createElement('span');
+          flag.className = 'title-letter';
+          flag.textContent = letter;
+          wordGroup.appendChild(flag);
+        });
+
+        title.appendChild(wordGroup);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
