@@ -2341,6 +2341,8 @@ h1::after {
    ========================================= */
 
 .phase-explore-title {
+  grid-column: 1 / -1;
+
   width: fit-content;
 
   margin: 0 auto 48px auto;
