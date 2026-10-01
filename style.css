@@ -2200,4 +2200,489 @@ h1::after {
     font-size: 1.08rem;
     line-height: 1.4;
   }
+
+   /* =========================================
+   PHASE LANDING PAGES
+   ========================================= */
+
+.phase-page {
+  max-width: 1100px;
+  margin: 0 auto 120px auto;
+  padding: 0 35px;
+  box-sizing: border-box;
+}
+
+
+/* PHASE NUMBER */
+
+.phase-number {
+  width: fit-content;
+  margin: 5px auto 18px auto;
+  padding: 7px 22px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4A3C32;
+
+  background: #E8DCC8;
+
+  transform: rotate(-1deg);
+
+  box-shadow:
+    2px 3px 5px rgba(74, 60, 50, 0.10);
+}
+
+
+/* PHASE PENNANT TITLE */
+
+.phase-page .page-title {
+  color: #4A3C32;
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
+
+/* PHASE INTRODUCTION */
+
+.phase-intro {
+  position: relative;
+
+  width: min(720px, 82%);
+  margin: 0 auto 75px auto;
+  padding: 30px 48px;
+
+  box-sizing: border-box;
+
+  background: #FFF9EE;
+
+  box-shadow:
+    3px 5px 10px rgba(74, 60, 50, 0.12);
+
+  transform: rotate(-0.4deg);
+
+  clip-path: polygon(
+    1% 5%,
+    8% 2%,
+    17% 5%,
+    27% 2%,
+    38% 4%,
+    49% 1%,
+    61% 4%,
+    73% 2%,
+    84% 5%,
+    99% 2%,
+    98% 95%,
+    89% 98%,
+    79% 95%,
+    68% 99%,
+    56% 96%,
+    45% 99%,
+    34% 95%,
+    22% 98%,
+    11% 95%,
+    2% 98%
+  );
+}
+
+
+.phase-intro::before {
+  content: "";
+
+  position: absolute;
+
+  width: 105px;
+  height: 30px;
+
+  top: -5px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(2deg);
+
+  background: rgba(168, 174, 145, 0.65);
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 0,
+      rgba(255, 255, 255, 0.15) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+}
+
+
+.phase-intro p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  text-align: center;
+
+  color: #4A3C32;
+}
+
+
+/* EXPLORE THIS PHASE */
+
+.phase-explore-title {
+  width: fit-content;
+
+  margin: 0 auto 48px auto;
+
+  font-family: 'Parisienne', cursive;
+  font-size: 2.25rem;
+  font-weight: 400;
+
+  color: #4A3C32;
+
+  text-align: center;
+}
+
+
+.phase-explore-title::after {
+  content: "✦  ·  ✧  ·  ✦";
+
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+
+  color: #A4728C;
+}
+
+
+/* CATEGORY CARD AREA */
+
+.phase-categories {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 360px));
+
+  justify-content: center;
+  align-items: stretch;
+
+  gap: 55px;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+}
+
+
+/* CATEGORY CARDS */
+
+.phase-category-card {
+  position: relative;
+
+  display: block;
+
+  color: #4A3C32;
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+
+.phase-category-card:first-of-type {
+  transform: rotate(-1.2deg);
+}
+
+
+.phase-category-card:last-of-type {
+  transform: rotate(1deg);
+}
+
+
+.phase-category-card:hover {
+  transform: rotate(0deg) translateY(-7px);
+
+  filter:
+    drop-shadow(
+      4px 7px 5px rgba(74, 60, 50, 0.13)
+    );
+}
+
+
+/* PAPER INSIDE EACH CARD */
+
+.phase-card-paper {
+  position: relative;
+
+  height: 100%;
+  min-height: 285px;
+
+  padding: 38px 32px 42px 32px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  box-shadow:
+    4px 6px 10px rgba(74, 60, 50, 0.13);
+
+  clip-path: polygon(
+    1% 2%,
+    10% 0%,
+    20% 3%,
+    31% 1%,
+    42% 3%,
+    53% 0%,
+    65% 3%,
+    76% 1%,
+    87% 3%,
+    99% 1%,
+    100% 95%,
+    92% 98%,
+    83% 95%,
+    73% 99%,
+    62% 96%,
+    51% 99%,
+    40% 95%,
+    29% 98%,
+    18% 95%,
+    8% 98%,
+    0% 95%
+  );
+}
+
+
+/* EXPECTED VS. ACTUAL ADULTHOOD CARD */
+
+.adulthood-phase-card .phase-card-paper {
+  background: #DFE9E7;
+}
+
+
+/* CAREER & LIFE DIRECTION CARD */
+
+.career-phase-card .phase-card-paper {
+  background: #EFE6F2;
+}
+
+
+/* TAPE ON CATEGORY CARDS */
+
+.phase-card-paper::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 30px;
+
+  top: -3px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(-3deg);
+
+  opacity: 0.72;
+}
+
+
+.adulthood-phase-card .phase-card-paper::before {
+  background: #718B91;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.18) 0,
+      rgba(255, 255, 255, 0.18) 9px,
+      transparent 9px,
+      transparent 18px
+    );
+}
+
+
+.career-phase-card .phase-card-paper::before {
+  background: #927AA5;
+
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.18) 0,
+      rgba(255, 255, 255, 0.18) 9px,
+      transparent 9px,
+      transparent 18px
+    );
+}
+
+
+/* CATEGORY LABEL */
+
+.phase-card-label {
+  width: fit-content;
+
+  margin: 0 auto 12px auto;
+  padding: 3px 11px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.95rem;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: rgba(74, 60, 50, 0.72);
+
+  border-bottom:
+    1px dashed rgba(74, 60, 50, 0.35);
+}
+
+
+/* CATEGORY TITLE */
+
+.phase-card-paper h3 {
+  margin: 12px auto 18px auto;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.65rem;
+  line-height: 1.15;
+  font-weight: 400;
+
+  color: #4A3C32;
+}
+
+
+/* CATEGORY DESCRIPTION */
+
+.phase-card-description {
+  margin: 0 auto 25px auto;
+
+  font-family: 'Lora', serif;
+  font-size: 0.96rem;
+  line-height: 1.6;
+
+  color: #4A3C32;
+}
+
+
+/* EXPLORE LINK */
+
+.phase-card-link {
+  display: inline-block;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+
+  color: #4A3C32;
+
+  border-bottom:
+    2px solid rgba(74, 60, 50, 0.28);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.phase-category-card:hover .phase-card-link {
+  border-color: #A4728C;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   PHASE LANDING PAGES — MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .phase-page {
+    width: 100%;
+
+    padding: 0 18px;
+
+    margin-bottom: 80px;
+  }
+
+
+  .phase-number {
+    margin-bottom: 15px;
+
+    font-size: 1rem;
+  }
+
+
+  .phase-page .page-title {
+    margin-bottom: 40px;
+  }
+
+
+  .phase-intro {
+    width: 92%;
+
+    margin-bottom: 60px;
+
+    padding:
+      27px
+      24px;
+  }
+
+
+  .phase-intro p {
+    font-size: 0.98rem;
+
+    line-height: 1.65;
+  }
+
+
+  .phase-explore-title {
+    margin-bottom: 40px;
+
+    font-size: 2rem;
+  }
+
+
+  .phase-categories {
+    grid-template-columns:
+      minmax(0, 390px);
+
+    gap: 55px;
+
+    width: 92%;
+  }
+
+
+  .phase-category-card:first-of-type,
+  .phase-category-card:last-of-type {
+    transform: rotate(-0.5deg);
+  }
+
+
+  .phase-card-paper {
+    min-height: 0;
+
+    padding:
+      35px
+      25px
+      38px
+      25px;
+  }
+
+
+  .phase-card-paper h3 {
+    font-size: 1.5rem;
+  }
+
+
+  .phase-card-description {
+    font-size: 0.93rem;
+  }
+
+}
 }
