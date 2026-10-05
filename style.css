@@ -3200,4 +3200,529 @@ h1::after {
     transform: rotate(-0.5deg);
   }
 
+   /* =========================================
+   HOME PAGE — STATIC BULLET JOURNAL SPREAD
+   ========================================= */
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 55px 45px;
+
+  width: min(1000px, 92%);
+  margin: 70px auto 90px auto;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   STATIC JOURNAL CARDS
+   ========================================= */
+
+.static-home-card {
+  position: relative;
+
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  cursor: default;
+
+  transition: none;
+}
+
+
+/* Remove old clickable-card hover movement */
+
+.static-home-card:hover {
+  translate: none;
+}
+
+
+/* =========================================
+   CARD HEADINGS
+   ========================================= */
+
+.static-card-heading {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: fit-content;
+  max-width: 85%;
+
+  margin: 0 0 -18px 28px;
+  padding: 10px 18px;
+
+  background: #E8DCC8;
+
+  box-shadow:
+    2px
+    3px
+    5px
+    rgba(74, 60, 50, 0.10);
+
+  transform: rotate(-1deg);
+}
+
+
+.static-card-heading .card-title {
+  margin: 0;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.55rem;
+  line-height: 1.1;
+  font-weight: 400;
+
+  color: #4A3C32;
+}
+
+
+.card-doodle {
+  display: inline-block;
+
+  margin-left: 14px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+
+  color: #A4728C;
+}
+
+
+/* =========================================
+   ABOUT THE PROJECT
+   ========================================= */
+
+.about-card {
+  transform: rotate(-0.6deg);
+}
+
+
+.about-card:hover {
+  transform: rotate(-0.6deg);
+}
+
+
+.about-card .static-card-heading {
+  background: #E5D6C3;
+}
+
+
+.about-card .card-content {
+  position: relative;
+
+  margin: 0;
+  padding: 48px 38px 38px 38px;
+
+  background: #FFF9EE;
+
+  border: none;
+  border-radius: 2px;
+
+  box-shadow:
+    4px
+    6px
+    10px
+    rgba(74, 60, 50, 0.12);
+
+  clip-path: polygon(
+    1% 2%,
+    9% 0%,
+    18% 2%,
+    28% 1%,
+    38% 3%,
+    49% 1%,
+    60% 2%,
+    71% 0%,
+    82% 3%,
+    91% 1%,
+    99% 2%,
+    100% 96%,
+    91% 98%,
+    81% 96%,
+    70% 99%,
+    59% 96%,
+    48% 99%,
+    37% 96%,
+    26% 98%,
+    15% 96%,
+    7% 98%,
+    0% 96%
+  );
+}
+
+
+/* =========================================
+   WHAT I'M CAPTURING
+   ========================================= */
+
+.capture-card {
+  transform: rotate(0.5deg);
+}
+
+
+.capture-card:hover {
+  transform: rotate(0.5deg);
+}
+
+
+.capture-card .static-card-heading {
+  background: #D9DDBF;
+  transform: rotate(1deg);
+}
+
+
+.capture-card .card-content {
+  position: relative;
+
+  margin: 0;
+  padding: 48px 38px 38px 38px;
+
+  background: #F4F0E3;
+
+  border: none;
+  border-radius: 2px;
+
+  box-shadow:
+    4px
+    6px
+    10px
+    rgba(74, 60, 50, 0.12);
+
+  clip-path: polygon(
+    0% 2%,
+    10% 0%,
+    20% 3%,
+    31% 1%,
+    42% 2%,
+    53% 0%,
+    64% 3%,
+    75% 1%,
+    86% 3%,
+    99% 1%,
+    100% 97%,
+    90% 99%,
+    80% 96%,
+    69% 98%,
+    58% 96%,
+    47% 99%,
+    36% 96%,
+    25% 98%,
+    14% 96%,
+    5% 99%,
+    0% 97%
+  );
+}
+
+
+/* =========================================
+   BULLET JOURNAL CHECKLIST
+   ========================================= */
+
+.checklist-intro {
+  margin-bottom: 10px !important;
+
+  font-family: 'Patrick Hand', cursive !important;
+  font-size: 1.08rem !important;
+}
+
+
+.capture-checklist {
+  margin: 10px 0 28px 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.capture-checklist li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+
+  margin-bottom: 9px;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.02rem;
+  line-height: 1.35;
+
+  color: #4A3C32;
+}
+
+
+.check-box {
+  font-size: 1.25rem;
+  line-height: 1;
+
+  color: #7F896B;
+}
+
+
+/* =========================================
+   HOW I'M COLLECTING
+   ========================================= */
+
+.collecting-card {
+  grid-column: 1 / -1;
+
+  justify-self: center;
+
+  width: min(760px, 88%);
+  max-width: 760px;
+
+  transform: rotate(-0.35deg);
+}
+
+
+.collecting-card:hover {
+  transform: rotate(-0.35deg);
+}
+
+
+.collecting-card .static-card-heading {
+  background: #E5D3D0;
+  transform: rotate(-0.7deg);
+}
+
+
+.collecting-card .card-content {
+  position: relative;
+
+  margin: 0;
+
+  padding:
+    52px
+    48px
+    42px
+    68px;
+
+  background-color: #FFFDF5;
+
+  background-image:
+    linear-gradient(
+      rgba(113, 139, 145, 0.13) 1px,
+      transparent 1px
+    );
+
+  background-size: 100% 28px;
+
+  border: none;
+  border-radius: 2px;
+
+  box-shadow:
+    4px
+    6px
+    10px
+    rgba(74, 60, 50, 0.12);
+
+  clip-path: polygon(
+    1% 2%,
+    10% 1%,
+    20% 3%,
+    31% 1%,
+    42% 3%,
+    53% 1%,
+    64% 2%,
+    75% 0%,
+    86% 3%,
+    99% 1%,
+    100% 96%,
+    91% 99%,
+    81% 96%,
+    70% 98%,
+    59% 96%,
+    48% 99%,
+    37% 96%,
+    26% 98%,
+    15% 96%,
+    6% 99%,
+    0% 96%
+  );
+}
+
+
+/* Notebook margin line */
+
+.collecting-card .card-content::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 45px;
+
+  width: 1px;
+
+  background: rgba(183, 127, 122, 0.35);
+}
+
+
+/* =========================================
+   STATIC CARD BODY TEXT
+   ========================================= */
+
+.static-home-card .card-content p {
+  position: relative;
+  z-index: 1;
+
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  color: #4A3C32;
+}
+
+
+.static-home-card .card-content p:first-child {
+  margin-top: 0;
+}
+
+
+.static-home-card .card-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   SMALL SCRAPBOOK DETAILS
+   ========================================= */
+
+.about-card::before,
+.capture-card::before,
+.collecting-card::before {
+  content: "";
+
+  position: absolute;
+  z-index: 3;
+
+  width: 85px;
+  height: 25px;
+
+  top: -10px;
+  right: 32px;
+
+  opacity: 0.55;
+
+  pointer-events: none;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.18) 0,
+      rgba(255, 255, 255, 0.18) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+}
+
+
+.about-card::before {
+  background-color: #B8A2C8;
+  transform: rotate(5deg);
+}
+
+
+.capture-card::before {
+  background-color: #A8AE91;
+  transform: rotate(-4deg);
+}
+
+
+.collecting-card::before {
+  background-color: #D7AAA5;
+  transform: rotate(3deg);
+}
+
+
+/* =========================================
+   STATIC JOURNAL SPREAD — MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .home-cards {
+    display: flex;
+    flex-direction: column;
+
+    gap: 50px;
+
+    width: 92%;
+    margin: 55px auto 75px auto;
+  }
+
+
+  .about-card,
+  .capture-card,
+  .collecting-card {
+    width: 100%;
+    max-width: none;
+
+    margin: 0 auto;
+  }
+
+
+  .static-card-heading {
+    max-width: 82%;
+
+    margin-left: 18px;
+
+    padding: 9px 14px;
+  }
+
+
+  .static-card-heading .card-title {
+    font-size: 1.4rem;
+  }
+
+
+  .about-card .card-content,
+  .capture-card .card-content {
+    margin: 0;
+
+    padding:
+      45px
+      26px
+      32px
+      26px;
+  }
+
+
+  .collecting-card .card-content {
+    margin: 0;
+
+    padding:
+      48px
+      28px
+      35px
+      48px;
+  }
+
+
+  .collecting-card .card-content::before {
+    left: 32px;
+  }
+
+
+  .static-home-card .card-content p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+
+  .capture-checklist li {
+    font-size: 0.98rem;
+  }
+
+}
 }
