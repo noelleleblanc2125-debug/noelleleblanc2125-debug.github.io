@@ -3727,3 +3727,137 @@ h1::after {
   }
 
 }
+
+/* =========================================
+   JOURNEY CARD — CATEGORY INDEX LINKS
+   ========================================= */
+
+.journey-category-links {
+  width: 100%;
+  margin: 2px 0 25px 0;
+  padding: 14px 0;
+
+  border-top: 1px dashed rgba(74, 60, 50, 0.22);
+  border-bottom: 1px dashed rgba(74, 60, 50, 0.22);
+}
+
+
+/* Individual category entry */
+
+.journey-category-link {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 5px;
+  align-items: start;
+
+  width: fit-content;
+  max-width: 95%;
+
+  margin: 0 auto 10px auto;
+
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.05rem;
+  line-height: 1.25;
+
+  color: #4A3C32;
+  text-align: left;
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.journey-category-link:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Little handwritten arrow */
+
+.category-arrow {
+  display: inline-block;
+
+  color: #A4728C;
+
+  font-size: 1.05rem;
+  line-height: 1.2;
+
+  transition: transform 0.2s ease;
+}
+
+
+/* Hover interaction */
+
+.journey-category-link:hover {
+  color: #A4728C;
+  transform: translateX(3px);
+}
+
+
+.journey-category-link:hover .category-arrow {
+  transform: rotate(-8deg);
+}
+
+
+/* =========================================
+   PHASE-SPECIFIC INDEX COLORS
+   ========================================= */
+
+/* Phase I — rustic blue */
+
+.journey-phase-one .category-arrow {
+  color: #718B91;
+}
+
+
+/* Phase II — mustard */
+
+.journey-phase-two .category-arrow {
+  color: #B78D38;
+}
+
+
+/* Phase III — sage */
+
+.journey-phase-three .category-arrow {
+  color: #7F896B;
+}
+
+
+/* =========================================
+   UPDATED PHASE CARD HEIGHT
+   ========================================= */
+
+.journey-phase {
+  min-height: 385px;
+}
+
+
+/* Keep the "Explore all" link at the bottom */
+
+.journey-link {
+  margin-top: auto;
+}
+
+
+/* =========================================
+   CATEGORY INDEX — MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .journey-phase {
+    min-height: 0;
+  }
+
+  .journey-category-links {
+    margin-bottom: 22px;
+  }
+
+  .journey-category-link {
+    font-size: 1.02rem;
+  }
+
+}
