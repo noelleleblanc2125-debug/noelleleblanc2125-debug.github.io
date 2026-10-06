@@ -3958,3 +3958,13 @@ h1::after {
       rgba(74, 60, 50, 0.16)
     );
 }
+
+/* =========================================
+   REMOVE FLOATING HOME CARD WASHI TAPE
+   ========================================= */
+
+.about-card::before,
+.capture-card::before,
+.collecting-card::before {
+  display: none;
+}
