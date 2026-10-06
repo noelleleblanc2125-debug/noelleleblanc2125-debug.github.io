@@ -3968,3 +3968,23 @@ h1::after {
 .collecting-card::before {
   display: none;
    }
+
+/* =========================================
+   EXTRA-TALL SCREENSHOT
+   ========================================= */
+
+/*
+   Keeps unusually tall screenshots from
+   overwhelming the scrapbook layout while
+   preserving the entire original image.
+*/
+
+.gallery-photo img.extra-tall-screenshot {
+  width: auto;
+  max-width: 100%;
+  max-height: 600px;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+}
