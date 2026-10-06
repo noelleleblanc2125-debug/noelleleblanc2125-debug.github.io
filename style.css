@@ -3033,9 +3033,9 @@ h1::after {
   position: absolute;
 
   width: 95px;
-  height: 29px;
+  height: 26px;
 
-  top: 6px;
+  top: 14px;
   left: 50%;
 
   transform:
@@ -3043,7 +3043,7 @@ h1::after {
     rotate(-3deg);
 
   opacity: 0.72;
-
+   
   background-image:
     repeating-linear-gradient(
       45deg,
