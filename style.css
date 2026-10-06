@@ -3198,7 +3198,9 @@ h1::after {
   .journey-phase-two,
   .journey-phase-three {
     transform: rotate(-0.5deg);
-  }
+     }
+
+}
 
    /* =========================================
    HOME PAGE — STATIC BULLET JOURNAL SPREAD
@@ -3724,5 +3726,4 @@ h1::after {
     font-size: 0.98rem;
   }
 
-}
 }
