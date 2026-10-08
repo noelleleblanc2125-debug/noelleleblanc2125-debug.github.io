@@ -611,6 +611,47 @@
 
   </main>
 
+
+<!-- FREE FORMSPREE THANK-YOU REDIRECT -->
+
+<script>
+  const feedbackForm = document.querySelector(".feedback-form");
+
+  feedbackForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const submitButton = feedbackForm.querySelector(
+      'button[type="submit"]'
+    );
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending Your Note...";
+
+    try {
+      const response = await fetch(feedbackForm.action, {
+        method: "POST",
+        body: new FormData(feedbackForm),
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        window.location.href = "thank-you.html";
+      } else {
+        alert("Your note couldn't be sent. Please try again.");
+      }
+
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Send My Note ♡";
+    }
+  });
+</script>
+  
 </body>
 
 </html>
