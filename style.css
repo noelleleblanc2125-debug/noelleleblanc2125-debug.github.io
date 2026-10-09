@@ -5021,3 +5021,22 @@ h1::after {
   }
 
 }
+
+
+/* =========================================
+   ADULTHOOD — MOVE NOTEBOOK HOLES LEFT
+   ========================================= */
+
+.adulthood-page .category-gallery::before {
+  left: -30px;
+}
+
+/* Keep notebook holes visible on smaller screens */
+
+@media (max-width: 700px) {
+  .adulthood-page .category-gallery::before {
+    left: -12px;
+  }
+}
+
+
