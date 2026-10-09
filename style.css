@@ -3033,9 +3033,9 @@ h1::after {
   position: absolute;
 
   width: 95px;
-  height: 26px;
+  height: 29px;
 
-  top: 14px;
+  top: -3px;
   left: 50%;
 
   transform:
@@ -3043,7 +3043,7 @@ h1::after {
     rotate(-3deg);
 
   opacity: 0.72;
-   
+
   background-image:
     repeating-linear-gradient(
       45deg,
@@ -3198,9 +3198,7 @@ h1::after {
   .journey-phase-two,
   .journey-phase-three {
     transform: rotate(-0.5deg);
-     }
-
-}
+  }
 
    /* =========================================
    HOME PAGE — STATIC BULLET JOURNAL SPREAD
@@ -3728,1398 +3726,392 @@ h1::after {
 
 }
 
-/* =========================================
-   JOURNEY CARD — CATEGORY INDEX LINKS
-   ========================================= */
-
-.journey-category-links {
-  width: 100%;
-  margin: 2px 0 25px 0;
-  padding: 14px 0;
-
-  border-top: 1px dashed rgba(74, 60, 50, 0.22);
-  border-bottom: 1px dashed rgba(74, 60, 50, 0.22);
 }
 
+/* ================================================================
+   SITE EXTENSIONS — PHASES, INDEX, NAVIGATION, VISITOR NOTES
+   These retain the functionality and appearance of the latest CSS.
+   ================================================================ */
 
-/* Individual category entry */
-
-.journey-category-link {
-  display: grid;
-  grid-template-columns: 22px 1fr;
-  gap: 5px;
-  align-items: start;
-
-  width: fit-content;
-  max-width: 95%;
-
-  margin: 0 auto 10px auto;
-
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.05rem;
-  line-height: 1.25;
-
-  color: #4A3C32;
-  text-align: left;
-  text-decoration: none;
-
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+/* Phase III: single sage category card */
+.phase-categories-single { grid-template-columns: minmax(0,360px); }
+.values-phase-card .phase-card-paper { background:#EEF0E7; }
+.values-phase-card .phase-card-paper::before {
+  background-color:#7F896B;
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.18) 0 9px,transparent 9px 18px);
 }
 
-
-.journey-category-link:last-child {
-  margin-bottom: 0;
+/* Breadcrumbs */
+.phase-breadcrumb {
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;
+  width:fit-content;max-width:90%;margin:0 auto 28px;padding:7px 16px;
+  font:1rem/1.3 'Patrick Hand',cursive;color:rgba(74,60,50,.72);
+  background:rgba(255,249,238,.72);border:1px dashed rgba(74,60,50,.28);
+  border-radius:6px;transform:rotate(-.4deg);
+}
+.phase-breadcrumb a {color:#A4728C;text-decoration:none;transition:color .2s ease;}
+.phase-breadcrumb a:hover {color:#4A3C32;text-decoration:underline;}
+.breadcrumb-divider {color:rgba(74,60,50,.4);}
+@media(max-width:700px){
+  .phase-breadcrumb {max-width:88%;margin-bottom:24px;padding:6px 12px;font-size:.92rem;text-align:center;}
 }
 
-
-/* Little handwritten arrow */
-
-.category-arrow {
-  display: inline-block;
-
-  color: #A4728C;
-
-  font-size: 1.05rem;
-  line-height: 1.2;
-
-  transition: transform 0.2s ease;
-}
-
-
-/* Hover interaction */
-
-.journey-category-link:hover {
-  color: #A4728C;
-  transform: translateX(3px);
-}
-
-
-.journey-category-link:hover .category-arrow {
-  transform: rotate(-8deg);
-}
-
-
-/* =========================================
-   PHASE-SPECIFIC INDEX COLORS
-   ========================================= */
-
-/* Phase I — rustic blue */
-
-.journey-phase-one .category-arrow {
-  color: #718B91;
-}
-
-
-/* Phase II — mustard */
-
-.journey-phase-two .category-arrow {
-  color: #B78D38;
-}
-
-
-/* Phase III — sage */
-
-.journey-phase-three .category-arrow {
-  color: #7F896B;
-}
-
-
-/* =========================================
-   UPDATED PHASE CARD HEIGHT
-   ========================================= */
-
+/* Homepage: three-phase journey */
+.journal-journey {width:min(1050px,92%);margin:75px auto 95px;text-align:center;}
+.journey-title {width:fit-content;margin:0 auto 12px;font:400 2.6rem 'Parisienne',cursive;color:#4A3C32;}
+.journey-title::after {content:'✦  ·  ✧  ·  ✦';display:block;margin-top:4px;font:1rem 'Patrick Hand',cursive;letter-spacing:.18em;color:#A4728C;}
+.journey-intro {max-width:680px;margin:25px auto 55px;font:1rem/1.7 'Lora',serif;color:#4A3C32;}
+.journey-phases {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px;max-width:1000px;margin:0 auto;align-items:stretch;}
 .journey-phase {
-  min-height: 385px;
+  position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;
+  min-height:385px;padding:38px 28px 32px;box-sizing:border-box;
+  color:#4A3C32;text-decoration:none;background:transparent;
+  transition:transform .25s ease,filter .25s ease;
 }
-
-
-/* Keep the "Explore all" link at the bottom */
-
-.journey-link {
-  margin-top: auto;
-}
-
-
-/* =========================================
-   CATEGORY INDEX — MOBILE
-   ========================================= */
-
-@media (max-width: 800px) {
-
-  .journey-phase {
-    min-height: 0;
-  }
-
-  .journey-category-links {
-    margin-bottom: 22px;
-  }
-
-  .journey-category-link {
-    font-size: 1.02rem;
-  }
-
-}
-
-/* =========================================
-   PHASE CARDS — PAPER + ATTACHED WASHI FIX
-   ========================================= */
-
-/*
-   The card itself is no longer clipped.
-   This allows the tape to extend beyond
-   the top edge of the paper.
-*/
-
-.journey-phase {
-  background: transparent;
-  box-shadow: none;
-  clip-path: none;
-
-  isolation: isolate;
-}
-
-
-/*
-   The torn paper is now created separately
-   behind the card content.
-*/
-
+.journey-phase-one {transform:rotate(-1deg);}
+.journey-phase-two {transform:rotate(.7deg);}
+.journey-phase-three {transform:rotate(-.6deg);}
+.journey-phase:hover {transform:rotate(0) translateY(-7px);}
 .journey-phase::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: -1;
-
-  background: #FFF9EE;
-
-  clip-path: polygon(
-    1% 3%,
-    10% 1%,
-    20% 3%,
-    31% 1%,
-    42% 3%,
-    53% 1%,
-    64% 3%,
-    76% 1%,
-    87% 3%,
-    99% 1%,
-    100% 96%,
-    91% 98%,
-    81% 96%,
-    71% 99%,
-    61% 96%,
-    50% 99%,
-    39% 96%,
-    28% 98%,
-    17% 96%,
-    8% 98%,
-    0% 96%
-  );
-
-  filter:
-    drop-shadow(
-      4px
-      6px
-      5px
-      rgba(74, 60, 50, 0.12)
-    );
+  content:'';position:absolute;inset:0;z-index:-1;background:#FFF9EE;
+  clip-path:polygon(1% 3%,10% 1%,20% 3%,31% 1%,42% 3%,53% 1%,64% 3%,76% 1%,87% 3%,99% 1%,100% 96%,91% 98%,81% 96%,71% 99%,61% 96%,50% 99%,39% 96%,28% 98%,17% 96%,8% 98%,0 96%);
+  filter:drop-shadow(4px 6px 5px rgba(74,60,50,.12));
 }
-
-
-/*
-   Now the tape can actually straddle
-   the top edge of the paper.
-*/
-
+.journey-phase:hover::after {filter:drop-shadow(4px 8px 6px rgba(74,60,50,.16));}
 .journey-phase::before {
-  top: -8px;
-
-  z-index: 3;
+  content:'';position:absolute;width:95px;height:26px;top:-8px;left:50%;z-index:3;
+  transform:translateX(-50%) rotate(-3deg);opacity:.72;
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.18) 0 9px,transparent 9px 18px);
+}
+.journey-phase-one::before {background-color:#718B91;}
+.journey-phase-two::before {background-color:#B78D38;}
+.journey-phase-three::before {background-color:#7F896B;}
+.journey-phase-number {display:inline-block;margin-bottom:12px;padding:4px 12px;font: .95rem 'Patrick Hand',cursive;text-transform:uppercase;letter-spacing:.1em;color:rgba(74,60,50,.72);border-bottom:1px dashed rgba(74,60,50,.3);}
+.journey-phase h3 {margin:8px auto 18px;font:400 1.55rem/1.15 'Patrick Hand',cursive;color:#4A3C32;}
+.journey-phase p {margin:0 auto 24px;font:.92rem/1.6 'Lora',serif;color:#4A3C32;}
+.journey-link {display:inline-block;margin-top:auto;font:1.08rem 'Patrick Hand',cursive;color:#4A3C32;border-bottom:2px solid rgba(74,60,50,.25);transition:border-color .2s ease,transform .2s ease;}
+.journey-phase:hover .journey-link {border-color:#A4728C;transform:translateX(3px);}
+.journey-category-links {width:100%;margin:2px 0 25px;padding:14px 0;border-top:1px dashed rgba(74,60,50,.22);border-bottom:1px dashed rgba(74,60,50,.22);}
+.journey-category-link {display:grid;grid-template-columns:22px 1fr;gap:5px;align-items:start;width:fit-content;max-width:95%;margin:0 auto 10px;font:1.05rem/1.25 'Patrick Hand',cursive;color:#4A3C32;text-align:left;text-decoration:none;transition:color .2s ease,transform .2s ease;}
+.journey-category-link:last-child {margin-bottom:0;}
+.category-arrow {display:inline-block;color:#A4728C;font:1.05rem/1.2 'Patrick Hand',cursive;transition:transform .2s ease;}
+.journey-category-link:hover {color:#A4728C;transform:translateX(3px);}
+.journey-category-link:hover .category-arrow {transform:rotate(-8deg);}
+.journey-phase-one .category-arrow {color:#718B91;}
+.journey-phase-two .category-arrow {color:#B78D38;}
+.journey-phase-three .category-arrow {color:#7F896B;}
+@media(max-width:800px){
+  .journal-journey {width:92%;margin:60px auto 75px;}
+  .journey-title {font-size:2.25rem;}
+  .journey-intro {width:90%;margin-bottom:45px;font-size:.96rem;}
+  .journey-phases {grid-template-columns:minmax(0,390px);justify-content:center;gap:45px;}
+  .journey-phase {min-height:0;padding:36px 25px 32px;transform:rotate(-.5deg);}
+  .journey-category-links {margin-bottom:22px;}
+  .journey-category-link {font-size:1.02rem;}
 }
 
+/* Static home cards: hide old tape, preserve torn-paper notes */
+.about-card::before,.capture-card::before,.collecting-card::before {display:none;}
 
-/* Keep hover shadow on the paper itself */
+/* Optional cropped display for very tall screenshots */
+.gallery-photo img.extra-tall-screenshot {width:100%;height:500px;object-fit:cover;object-position:center;margin:0;}
 
-.journey-phase:hover {
-  filter: none;
-}
-
-
-.journey-phase:hover::after {
-  filter:
-    drop-shadow(
-      4px
-      8px
-      6px
-      rgba(74, 60, 50, 0.16)
-    );
-}
-
-/* =========================================
-   REMOVE FLOATING HOME CARD WASHI TAPE
-   ========================================= */
-
-.about-card::before,
-.capture-card::before,
-.collecting-card::before {
-  display: none;
-   }
-
-/* =========================================
-   EXTRA-TALL SCREENSHOT
-   ========================================= */
-
-/*
-   Keeps unusually tall screenshots from
-   overwhelming the scrapbook layout while
-   preserving the entire original image.
-*/
-
-.gallery-photo img.extra-tall-screenshot {
-  width: 100%;
-  height: 500px;
-
-  object-fit: cover;
-  object-position: center;
-
-  margin: 0;
-}
-
-
-/* =========================================
-   NAVIGATION DROPDOWN MENUS
-   ========================================= */
-
-.site-nav {
-  position: relative;
-  z-index: 50;
-}
-
-/* Each phase dropdown */
-
-.site-nav .nav-dropdown {
-  position: relative;
-}
-
-/* Clickable dropdown heading */
-
+/* Functional navigation dropdowns */
+.site-nav {position:relative;z-index:50;}
+.site-nav .nav-dropdown {position:relative;}
 .site-nav .nav-dropdown > summary {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  list-style: none;
-  cursor: pointer;
-
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.05rem;
-  color: #4A3C32;
-
-  padding: 8px 16px;
-
-  border: 2px dashed rgba(74, 60, 50, 0.4);
-  border-radius: 8px;
-
-  background: #FFF9EE;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
+  display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;
+  font:1.05rem 'Patrick Hand',cursive;color:#4A3C32;padding:8px 16px;
+  border:2px dashed rgba(74,60,50,.4);border-radius:8px;background:#FFF9EE;
+  transition:background .2s ease,border-color .2s ease,color .2s ease;
 }
-
-/* Hide browser's default dropdown arrow */
-
-.site-nav .nav-dropdown > summary::-webkit-details-marker {
-  display: none;
-}
-
-/* Custom dropdown arrow */
-
-.site-nav .nav-dropdown > summary::after {
-  content: "⌄";
-  display: inline-block;
-  font-size: 1.1rem;
-  line-height: 1;
-  transition: transform 0.2s ease;
-}
-
-.site-nav .nav-dropdown[open] > summary::after {
-  transform: rotate(180deg);
-}
-
-/* Hover and keyboard focus */
-
-.site-nav .nav-dropdown > summary:hover,
-.site-nav .nav-dropdown > summary:focus-visible {
-  background: rgba(164, 114, 140, 0.15);
-  border-color: #A4728C;
-  color: #A4728C;
-}
-
-/* Highlight the currently active phase */
-
-.site-nav .nav-dropdown.active > summary {
-  background: rgba(164, 114, 140, 0.22);
-  border-color: #A4728C;
-  border-style: solid;
-  color: #A4728C;
-}
-
-/* Dropdown paper */
-
+.site-nav .nav-dropdown > summary::-webkit-details-marker {display:none;}
+.site-nav .nav-dropdown > summary::after {content:'⌄';display:inline-block;font-size:1.1rem;line-height:1;transition:transform .2s ease;}
+.site-nav .nav-dropdown[open] > summary::after {transform:rotate(180deg);}
+.site-nav .nav-dropdown > summary:hover,.site-nav .nav-dropdown > summary:focus-visible {background:rgba(164,114,140,.15);border-color:#A4728C;color:#A4728C;}
+.site-nav .nav-dropdown.active > summary {background:rgba(164,114,140,.22);border-color:#A4728C;border-style:solid;color:#A4728C;}
 .site-nav .nav-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  z-index: 100;
-
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-
-  width: 280px;
-  max-width: calc(100vw - 32px);
-  box-sizing: border-box;
-
-  padding: 10px;
-
-  background: #FFF9EE;
-  border: 2px dashed rgba(74, 60, 50, 0.35);
-  border-radius: 10px;
-
-  box-shadow: 4px 6px 12px rgba(74, 60, 50, 0.15);
+  position:absolute;top:calc(100% + 8px);left:0;z-index:100;
+  display:flex;flex-direction:column;gap:4px;width:280px;max-width:calc(100vw - 32px);
+  box-sizing:border-box;padding:10px;background:#FFF9EE;
+  border:2px dashed rgba(74,60,50,.35);border-radius:10px;
+  box-shadow:4px 6px 12px rgba(74,60,50,.15);
+}
+.site-nav .nav-dropdown-menu a {display:block;padding:8px 10px;border:none;border-radius:6px;background:transparent;font-size:1.03rem;line-height:1.3;text-align:left;white-space:normal;}
+.site-nav .nav-dropdown-menu a:hover,.site-nav .nav-dropdown-menu a:focus-visible {background:rgba(164,114,140,.15);color:#A4728C;}
+.site-nav .nav-dropdown-menu .nav-overview {margin-bottom:4px;padding-bottom:12px;border-bottom:1px dashed rgba(74,60,50,.3);border-radius:0;}
+@media(max-width:700px){
+  .site-nav .nav-dropdown {position:static;}
+  .site-nav .nav-dropdown > summary {font-size:1rem;padding:7px 11px;}
+  .site-nav .nav-dropdown-menu {top:calc(100% + 5px);left:50%;transform:translateX(-50%);width:min(300px,calc(100vw - 32px));}
 }
 
-/* Links inside the dropdown */
-
-.site-nav .nav-dropdown-menu a {
-  display: block;
-  padding: 8px 10px;
-
-  border: none;
-  border-radius: 6px;
-
-  background: transparent;
-
-  font-size: 1.03rem;
-  line-height: 1.3;
-  text-align: left;
-  white-space: normal;
-}
-
-/* Dropdown link hover */
-
-.site-nav .nav-dropdown-menu a:hover,
-.site-nav .nav-dropdown-menu a:focus-visible {
-  background: rgba(164, 114, 140, 0.15);
-  color: #A4728C;
-}
-
-/* Phase overview link */
-
-.site-nav .nav-dropdown-menu .nav-overview {
-  margin-bottom: 4px;
-  padding-bottom: 12px;
-
-  border-bottom: 1px dashed rgba(74, 60, 50, 0.3);
-  border-radius: 0;
-}
-
-/* =========================================
-   MOBILE DROPDOWN ADJUSTMENTS
-   ========================================= */
-
-@media (max-width: 700px) {
-
-  .site-nav .nav-dropdown {
-    position: static;
-  }
-
-  .site-nav .nav-dropdown > summary {
-    font-size: 1rem;
-    padding: 7px 11px;
-  }
-
-  .site-nav .nav-dropdown-menu {
-    top: calc(100% + 5px);
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: min(300px, calc(100vw - 32px));
-  }
-
-}
-
-
-/* =========================================
-   VISITOR FEEDBACK — LEAVE A NOTE
-   ========================================= */
-
-/* Overall section */
-
-.visitor-feedback {
-  width: min(800px, 92%);
-  margin: 80px auto 110px auto;
-  box-sizing: border-box;
-}
-
-
-/* Scrapbook paper */
-
+/* Visitor feedback: original scrapbook form */
+.visitor-feedback {width:min(800px,92%);margin:80px auto 110px;box-sizing:border-box;}
 .feedback-paper {
-  position: relative;
+  position:relative;padding:55px 55px 45px;background-color:#FFF9EE;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 33px,rgba(164,114,140,.10) 34px,transparent 35px);
+  border:1px solid rgba(74,60,50,.12);border-radius:5px;
+  box-shadow:5px 7px 15px rgba(74,60,50,.13);transform:rotate(-.4deg);
+}
+.feedback-paper::before {content:'';position:absolute;top:-15px;left:50%;width:115px;height:30px;transform:translateX(-50%) rotate(2deg);background-color:#B8A2C8;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.2) 0 8px,transparent 8px 16px);opacity:.85;}
+.feedback-title {margin:0 0 20px;font:400 3rem/1.3 'Parisienne',cursive;color:#A4728C;text-align:center;}
+.feedback-intro {max-width:590px;margin:0 auto 35px;font:1rem/1.8 'Lora',serif;color:#4A3C32;text-align:center;}
+.feedback-form {display:flex;flex-direction:column;gap:18px;}
+.feedback-label {font:1.45rem/1.4 'Patrick Hand',cursive;color:#4A3C32;}
+.feedback-textarea {display:block;width:100%;min-height:165px;box-sizing:border-box;padding:18px 20px;font:1rem/1.8 'Lora',serif;color:#4A3C32;background:rgba(255,253,248,.95);border:2px dashed rgba(164,114,140,.55);border-radius:8px;resize:vertical;box-shadow:inset 0 2px 5px rgba(74,60,50,.04);}
+.feedback-textarea::placeholder {color:#97867D;font-style:italic;}
+.feedback-textarea:focus {outline:2px solid #A4728C;outline-offset:3px;border-color:#A4728C;}
+.feedback-consent {display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:rgba(232,220,200,.45);border-radius:6px;}
+.feedback-consent input[type='checkbox'] {flex-shrink:0;width:18px;height:18px;margin:3px 0 0;accent-color:#A4728C;cursor:pointer;}
+.feedback-consent label {font:.88rem/1.7 'Lora',serif;color:#4A3C32;cursor:pointer;}
+.feedback-submit {align-self:center;margin-top:8px;padding:12px 32px;font:1.35rem 'Patrick Hand',cursive;color:#FFF9EE;background:#A4728C;border:2px solid #A4728C;border-radius:8px;cursor:pointer;box-shadow:3px 4px 7px rgba(74,60,50,.15);transition:background .2s ease,transform .2s ease,box-shadow .2s ease;}
+.feedback-submit:hover {background:#875B72;transform:translateY(-3px);box-shadow:4px 6px 9px rgba(74,60,50,.18);}
+.feedback-submit:focus-visible {outline:3px solid #4A3C32;outline-offset:4px;}
+.feedback-privacy {max-width:560px;margin:5px auto 0;font:.78rem/1.7 'Lora',serif;color:#75675F;text-align:center;}
+@media(max-width:700px){
+  .visitor-feedback {width:92%;margin:65px auto 85px;}
+  .feedback-paper {padding:45px 22px 30px;transform:none;}
+  .feedback-title {font-size:2.5rem;}
+  .feedback-intro {font-size:.92rem;line-height:1.7;}
+  .feedback-label {font-size:1.25rem;}
+  .feedback-textarea {padding:14px;font-size:.95rem;}
+  .feedback-consent {padding:12px;}
+  .feedback-consent label {font-size:.82rem;}
+  .feedback-submit {font-size:1.2rem;}
+}
 
-  padding: 55px 55px 45px;
+/* Notes from readers: publication remains manually moderated */
+.reader-notes-section {max-width:980px;margin:75px auto;padding:0 22px;box-sizing:border-box;}
+.reader-notes-header {text-align:center;margin-bottom:35px;}
+.reader-notes-eyebrow {font:1rem 'Patrick Hand',cursive;letter-spacing:2px;color:#A4728C;margin-bottom:10px;}
+.reader-notes-header h2 {font:400 clamp(2.4rem,5vw,3.5rem) 'Parisienne',cursive;color:#8F6980;margin:10px 0 20px;}
+.reader-notes-intro {max-width:650px;margin:0 auto;font:.95rem/1.9 'Lora',serif;color:#665A55;white-space:pre-line;}
+.reader-notes-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin:35px 0;}
+.reader-notes-grid:empty {display:none;}
+.reader-note {position:relative;padding:35px 28px 28px;background:#F4E8EF;border:1px solid rgba(130,100,110,.12);border-radius:3px;box-shadow:4px 6px 12px rgba(70,50,50,.1);transform:rotate(-1deg);box-sizing:border-box;}
+.reader-note:nth-child(3n+2) {background:#E8EBDD;transform:rotate(1deg);}
+.reader-note:nth-child(3n) {background:#F5E9D8;transform:rotate(-.5deg);}
+.reader-note::before {content:'';position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);width:90px;height:24px;background:rgba(183,164,196,.55);clip-path:polygon(4% 0%,100% 0%,96% 100%,0% 100%);}
+.reader-note:nth-child(3n+2)::before {background:rgba(213,173,157,.55);}
+.reader-note:nth-child(3n)::before {background:rgba(167,180,150,.55);}
+.reader-note-text {font:1.3rem/1.6 'Patrick Hand',cursive;color:#574A4E;margin:0 0 20px;overflow-wrap:anywhere;}
+.reader-note-attribution {font:italic .8rem 'Lora',serif;color:#89757C;text-align:right;margin:0;}
+.reader-notes-empty {position:relative;max-width:560px;margin:35px auto;padding:35px 30px;text-align:center;background:#F6EDE5;border:1px dashed #D5BFB1;border-radius:5px;box-shadow:3px 5px 12px rgba(70,50,50,.08);}
+.reader-notes-decoration {display:block;font:1.4rem 'Patrick Hand',cursive;color:#A4728C;margin-bottom:15px;}
+.reader-notes-empty p {font:1.2rem/1.6 'Patrick Hand',cursive;color:#6E5C56;margin:8px 0;}
+.reader-notes-disclaimer {max-width:620px;margin:25px auto 0;text-align:center;font:italic .75rem/1.7 'Lora',serif;color:#897B75;}
+@media(max-width:700px){
+  .reader-notes-section {margin:55px auto;padding:0 18px;}
+  .reader-notes-grid {grid-template-columns:1fr;gap:28px;}
+  .reader-note {padding:30px 22px 24px;}
+  .reader-notes-empty {padding:30px 20px;}
+}
 
-  background-color: #FFF9EE;
+/* ================================================================
+   NEW DESIGN — THE WEBSITE PAGE *IS* THE JOURNAL
 
+   Desktop: open facing pages, realistic center gutter, layered paper
+   edges, and scrapbook content placed directly on the pages.
+   No additional gallery-level notebook, holes, or binding.
+   Mobile: a single page, with the same depth and paper texture.
+
+   NOTE: edge tabs are decorative in CSS. Existing dropdown links
+   remain the functional navigation; linking tabs requires HTML.
+   ================================================================ */
+
+:root {
+  --journal-ink:#4A3C32;
+  --journal-paper:#FFF9EE;
+  --journal-shadow:rgba(58,42,39,.21);
+}
+
+/* The dotted body becomes the desk behind the journal. */
+body {overflow-x:hidden;}
+
+/* All primary page types become the paper itself, not a card on paper. */
+.category-page,.phase-page,.home-page {
+  position:relative;
+  isolation:isolate;
+  width:min(1280px,calc(100% - 66px));
+  max-width:1280px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:48px 65px 90px;
+  box-sizing:border-box;
+  border-radius:6px 15px 15px 6px;
+  background-color:var(--journal-paper);
   background-image:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0px,
-      transparent 33px,
-      rgba(164, 114, 140, 0.10) 34px,
-      transparent 35px
-    );
-
-  border: 1px solid rgba(74, 60, 50, 0.12);
-  border-radius: 5px;
-
+    /* Gentle darker tint at the center of the facing sheets */
+    linear-gradient(to right,transparent 0%,rgba(143,117,105,.03) 44%,rgba(89,63,65,.12) 49.5%,rgba(89,63,65,.16) 50%,rgba(89,63,65,.07) 51%,transparent 57%),
+    /* Soft dot-grid texture */
+    radial-gradient(rgba(136,113,103,.16) .85px,transparent .9px),
+    /* Separate left and right page brightness */
+    linear-gradient(to right,#FFF9EE 0%,#FFFBF4 48.7%,#F7EEE2 49.8%,#FFF9EE 51.5%,#FFFDF7 100%);
+  background-size:100% 100%,19px 19px,100% 100%;
   box-shadow:
-    5px 7px 15px rgba(74, 60, 50, 0.13);
-
-  transform: rotate(-0.4deg);
+    -3px 0 0 #E7D9CC,
+    -8px 3px 0 #D7C6B7,
+    7px 6px 0 #E8D9CD,
+    13px 12px 0 #CDB9AD,
+    20px 26px 42px var(--journal-shadow),
+    inset 11px 0 20px -16px rgba(58,42,39,.36),
+    inset -13px 0 20px -16px rgba(58,42,39,.32);
 }
 
-
-/* Decorative tape */
-
-.feedback-paper::before {
-  content: "";
-
-  position: absolute;
-  top: -15px;
-  left: 50%;
-
-  width: 115px;
-  height: 30px;
-
-  transform:
-    translateX(-50%)
-    rotate(2deg);
-
-  background-color: #B8A2C8;
-
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.20) 0px,
-      rgba(255, 255, 255, 0.20) 8px,
-      transparent 8px,
-      transparent 16px
-    );
-
-  opacity: 0.85;
+/* A continuous gutter on the *page*, never on the gallery. */
+.category-page::before,.phase-page::before,.home-page::before {
+  content:'';
+  position:absolute;
+  z-index:0;
+  top:0;bottom:0;left:calc(50% - 12px);width:24px;
+  background:linear-gradient(to right,
+    transparent 0%,rgba(91,65,68,.08) 23%,rgba(91,65,68,.24) 46%,
+    rgba(255,255,255,.52) 53%,rgba(91,65,68,.10) 69%,transparent 100%);
+  pointer-events:none;
 }
 
-
-/* Handwritten title */
-
-.feedback-title {
-  margin: 0 0 20px;
-
-  font-family: 'Parisienne', cursive;
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 1.3;
-
-  color: #A4728C;
-
-  text-align: center;
+/* Three pastel index markers visible beyond the right-hand edge.
+   These are visual details, NOT clickable links. */
+.category-page::after,.phase-page::after,.home-page::after {
+  content:'';
+  position:absolute;z-index:-1;right:-22px;top:170px;
+  width:24px;height:192px;border-radius:0 8px 8px 0;
+  background:linear-gradient(to bottom,
+    #AFC4C5 0 31%,transparent 31% 35%,
+    #D7AAA5 35% 65%,transparent 65% 69%,
+    #A8AE91 69% 100%);
+  box-shadow:3px 4px 7px rgba(58,42,39,.19);
 }
 
+/* Keep real page content above the gutter graphic. */
+.category-page > *,.phase-page > *,.home-page > * {position:relative;z-index:1;}
 
-/* Introductory paragraph */
+/* Titles and introduction sit ON the journal pages, not on a
+   separate notebook. Existing taped intro-note aesthetic stays. */
+.category-page .page-title,.phase-page .page-title {margin-top:5px;}
 
-.feedback-intro {
-  max-width: 590px;
-  margin: 0 auto 35px;
-
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  line-height: 1.8;
-
-  color: #4A3C32;
-
-  text-align: center;
+/* Category entries occupy facing pages, with a clear center gutter. */
+.category-page .category-gallery,
+.category-page .category-gallery:has(.gallery-entry:only-child) {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:76px 90px;
+  align-items:start;
+  justify-content:stretch;
+  width:100%;max-width:none;
+  margin:0 auto;
+  padding:24px 0 12px;
+  background:transparent;
+  border:0;border-radius:0;box-shadow:none;
+}
+.category-page .category-gallery:has(.gallery-entry:only-child) {
+  grid-template-columns:minmax(0,410px);justify-content:center;
+}
+.category-page .category-gallery::before,.category-page .category-gallery::after {
+  content:none;display:none;
 }
 
+/* Each item is a composition of a pasted photo and its annotation,
+   not another large rectangle of notebook paper. */
+.category-page .category-gallery > .gallery-entry {
+  display:flex;flex-direction:column;align-items:flex-start;
+  gap:0;width:100%;min-width:0;max-width:none;
+  margin:0;padding:8px 6px 16px;
+  background:transparent;box-shadow:none;transform:none;
+  transition:none;
+}
+.category-page .category-gallery > .gallery-entry:hover {transform:none;box-shadow:none;}
+.category-page .gallery-photo {
+  position:relative;order:0;
+  width:94%;box-sizing:border-box;
+  padding:12px 12px 26px;
+  background:#FFFDF8;
+  box-shadow:4px 5px 0 rgba(199,177,161,.30),8px 12px 18px rgba(74,60,50,.20);
+  transform:rotate(-2.2deg);
+}
+.category-page .gallery-photo img {display:block;width:100%;height:auto;}
+.category-page .gallery-photo::before {top:-13px;left:19%;}
+.category-page .gallery-caption {
+  position:relative;order:1;z-index:2;
+  width:86%;box-sizing:border-box;
+  margin:-14px -5px 0 auto;
+  padding:25px 23px 35px;
+  text-align:left;background:var(--accent-light);
+  transform:rotate(1.6deg);
+  filter:drop-shadow(3px 5px 4px rgba(74,60,50,.12));
+}
+.category-page .gallery-caption p {font-size:1.18rem;line-height:1.48;text-align:left;overflow-wrap:anywhere;}
+.category-page .gallery-entry:nth-child(2n) .gallery-photo {align-self:flex-end;transform:rotate(2deg);}
+.category-page .gallery-entry:nth-child(2n) .gallery-caption {align-self:flex-start;margin:-16px auto 0 -4px;transform:rotate(-1.4deg);}
+.category-page .gallery-entry:nth-child(3n) .gallery-photo {width:88%;transform:rotate(-1deg);}
+.category-page .gallery-entry:nth-child(3n) .gallery-caption {width:82%;margin-top:-24px;transform:rotate(2deg);}
+.category-page .gallery-entry:nth-child(3n)::after {display:none;}
 
-/* =========================================
-   FEEDBACK FORM
-   ========================================= */
+/* Some screenshot pages can use full-height images without cropping.
+   Preserve the intentional 'extra-tall' crop where explicitly tagged. */
+.category-page .gallery-photo img.extra-tall-screenshot {height:500px;object-fit:cover;}
 
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+/* The journal also surrounds the phase overview and home content. */
+.phase-page .phase-categories {max-width:940px;gap:55px 75px;}
+.phase-page .phase-categories-single {grid-template-columns:minmax(0,360px);}
+.home-page {margin-bottom:95px;}
+.home-page .home-cards {width:100%;max-width:100%;}
+
+/* Tablet: two facing pages remain until the screen is too narrow. */
+@media (min-width:701px) and (max-width:1050px) {
+  .category-page,.phase-page,.home-page {width:calc(100% - 42px);padding:38px 36px 70px;}
+  .category-page .category-gallery {gap:58px 56px;}
+  .category-page .gallery-caption {width:95%;padding:20px 18px 30px;}
+  .phase-page .phase-categories {gap:40px;}
 }
 
-
-/* Question above the writing area */
-
-.feedback-label {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.45rem;
-  line-height: 1.4;
-
-  color: #4A3C32;
-}
-
-
-/* Writing area */
-
-.feedback-textarea {
-  display: block;
-
-  width: 100%;
-  min-height: 165px;
-  box-sizing: border-box;
-
-  padding: 18px 20px;
-
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  line-height: 1.8;
-
-  color: #4A3C32;
-
-  background: rgba(255, 253, 248, 0.95);
-
-  border: 2px dashed rgba(164, 114, 140, 0.55);
-  border-radius: 8px;
-
-  resize: vertical;
-
-  box-shadow:
-    inset 0 2px 5px rgba(74, 60, 50, 0.04);
-}
-
-
-/* Placeholder writing */
-
-.feedback-textarea::placeholder {
-  color: #97867D;
-  font-style: italic;
-}
-
-
-/* Writing area when selected */
-
-.feedback-textarea:focus {
-  outline: 2px solid #A4728C;
-  outline-offset: 3px;
-
-  border-color: #A4728C;
-}
-
-
-/* =========================================
-   OPTIONAL PUBLICATION CONSENT
-   ========================================= */
-
-.feedback-consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-
-  padding: 14px 16px;
-
-  background: rgba(232, 220, 200, 0.45);
-
-  border-radius: 6px;
-}
-
-
-/* Checkbox */
-
-.feedback-consent input[type="checkbox"] {
-  flex-shrink: 0;
-
-  width: 18px;
-  height: 18px;
-
-  margin: 3px 0 0;
-
-  accent-color: #A4728C;
-
-  cursor: pointer;
-}
-
-
-/* Consent explanation */
-
-.feedback-consent label {
-  font-family: 'Lora', serif;
-  font-size: 0.88rem;
-  line-height: 1.7;
-
-  color: #4A3C32;
-
-  cursor: pointer;
-}
-
-
-/* =========================================
-   SUBMIT BUTTON
-   ========================================= */
-
-.feedback-submit {
-  align-self: center;
-
-  margin-top: 8px;
-  padding: 12px 32px;
-
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.35rem;
-
-  color: #FFF9EE;
-  background: #A4728C;
-
-  border: 2px solid #A4728C;
-  border-radius: 8px;
-
-  cursor: pointer;
-
-  box-shadow:
-    3px 4px 7px rgba(74, 60, 50, 0.15);
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-
-/* Button hover */
-
-.feedback-submit:hover {
-  background: #875B72;
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    4px 6px 9px rgba(74, 60, 50, 0.18);
-}
-
-
-/* Keyboard accessibility */
-
-.feedback-submit:focus-visible {
-  outline: 3px solid #4A3C32;
-  outline-offset: 4px;
-}
-
-
-/* =========================================
-   PRIVACY NOTE
-   ========================================= */
-
-.feedback-privacy {
-  max-width: 560px;
-  margin: 5px auto 0;
-
-  font-family: 'Lora', serif;
-  font-size: 0.78rem;
-  line-height: 1.7;
-
-  color: #75675F;
-
-  text-align: center;
-}
-
-
-/* =========================================
-   MOBILE ADJUSTMENTS
-   ========================================= */
-
-@media (max-width: 700px) {
-
-  .visitor-feedback {
-    width: 92%;
-    margin: 65px auto 85px;
+/* Mobile: the journal itself becomes one real page. No central seam. */
+@media (max-width:700px) {
+  .category-page,.phase-page,.home-page {
+    width:calc(100% - 32px);
+    max-width:none;
+    padding:35px 18px 60px;
+    border-radius:5px 12px 12px 5px;
+    background-color:#FFF9EE;
+    background-image:
+      linear-gradient(to right,rgba(115,82,83,.10),transparent 15px),
+      radial-gradient(rgba(136,113,103,.16) .85px,transparent .9px);
+    background-size:100% 100%,19px 19px;
+    box-shadow:-3px 0 0 #E7D9CC,5px 5px 0 #E1CFC0,9px 14px 25px rgba(58,42,39,.18);
   }
-
-  .feedback-paper {
-    padding: 45px 22px 30px;
-    transform: none;
+  .category-page::before,.phase-page::before,.home-page::before {content:none;display:none;}
+  .category-page::after,.phase-page::after,.home-page::after {right:-12px;width:14px;top:145px;height:150px;}
+  .category-page .category-gallery,
+  .category-page .category-gallery:has(.gallery-entry:only-child) {
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:58px;width:100%;max-width:440px;padding:12px 0;
   }
-
-  .feedback-title {
-    font-size: 2.5rem;
+  .category-page .category-gallery > .gallery-entry {width:100%;padding:8px 0 14px;}
+  .category-page .gallery-photo,
+  .category-page .gallery-entry:nth-child(2n) .gallery-photo,
+  .category-page .gallery-entry:nth-child(3n) .gallery-photo {
+    width:94%;align-self:center;transform:rotate(-1.3deg);
   }
-
-  .feedback-intro {
-    font-size: 0.92rem;
-    line-height: 1.7;
+  .category-page .gallery-caption,
+  .category-page .gallery-entry:nth-child(2n) .gallery-caption,
+  .category-page .gallery-entry:nth-child(3n) .gallery-caption {
+    order:1;width:91%;align-self:center;
+    margin:-10px auto 0;
+    padding:22px 19px 30px;
+    transform:rotate(.7deg);
   }
-
-  .feedback-label {
-    font-size: 1.25rem;
-  }
-
-  .feedback-textarea {
-    padding: 14px;
-    font-size: 0.95rem;
-  }
-
-  .feedback-consent {
-    padding: 12px;
-  }
-
-  .feedback-consent label {
-    font-size: 0.82rem;
-  }
-
-  .feedback-submit {
-    font-size: 1.2rem;
-  }
-
+  .category-page .gallery-caption p {font-size:1.12rem;}
+  .phase-page .phase-categories {grid-template-columns:minmax(0,1fr);width:100%;}
+  .home-page .home-cards {width:100%;}
 }
 
-
-/* =========================================
-   NOTES FROM READERS
-   ========================================= */
-
-.reader-notes-section {
-  max-width: 980px;
-  margin: 75px auto;
-  padding: 0 22px;
-  box-sizing: border-box;
+/* Keyboard and motion accessibility */
+.site-nav a:focus-visible,.phase-category-card:focus-visible,
+.journey-category-link:focus-visible,.journey-phase:focus-visible {
+  outline:3px solid #A4728C;outline-offset:4px;
 }
-
-
-/* SECTION HEADING */
-
-.reader-notes-header {
-  text-align: center;
-  margin-bottom: 35px;
+@media (prefers-reduced-motion:reduce) {
+  .category-page .gallery-entry,.category-page .gallery-photo,
+  .category-page .gallery-caption {transition:none;}
 }
-
-.reader-notes-eyebrow {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  color: #A4728C;
-  margin-bottom: 10px;
-}
-
-.reader-notes-header h2 {
-  font-family: 'Parisienne', cursive;
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
-  font-weight: normal;
-  color: #8F6980;
-  margin: 10px 0 20px;
-}
-
-.reader-notes-intro {
-  max-width: 650px;
-  margin: 0 auto;
-  font-family: 'Lora', serif;
-  font-size: 0.95rem;
-  line-height: 1.9;
-  color: #665A55;
-  white-space: pre-line;
-}
-
-
-/* GRID OF PUBLISHED NOTES */
-
-.reader-notes-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-  margin: 35px 0;
-}
-
-.reader-notes-grid:empty {
-  display: none;
-}
-
-
-/* INDIVIDUAL READER NOTES */
-
-.reader-note {
-  position: relative;
-  padding: 35px 28px 28px;
-  background: #F4E8EF;
-  border: 1px solid rgba(130, 100, 110, 0.12);
-  border-radius: 3px;
-  box-shadow: 4px 6px 12px rgba(70, 50, 50, 0.10);
-  transform: rotate(-1deg);
-  box-sizing: border-box;
-}
-
-.reader-note:nth-child(3n+2) {
-  background: #E8EBDD;
-  transform: rotate(1deg);
-}
-
-.reader-note:nth-child(3n) {
-  background: #F5E9D8;
-  transform: rotate(-0.5deg);
-}
-
-
-/* DECORATIVE TAPE */
-
-.reader-note::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-3deg);
-  width: 90px;
-  height: 24px;
-  background: rgba(183, 164, 196, 0.55);
-  clip-path: polygon(
-    4% 0%, 100% 0%, 96% 100%, 0% 100%
-  );
-}
-
-.reader-note:nth-child(3n+2)::before {
-  background: rgba(213, 173, 157, 0.55);
-}
-
-.reader-note:nth-child(3n)::before {
-  background: rgba(167, 180, 150, 0.55);
-}
-
-
-/* NOTE CONTENT */
-
-.reader-note-text {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: #574A4E;
-  margin: 0 0 20px;
-  overflow-wrap: anywhere;
-}
-
-.reader-note-attribution {
-  font-family: 'Lora', serif;
-  font-size: 0.8rem;
-  font-style: italic;
-  color: #89757C;
-  text-align: right;
-  margin: 0;
-}
-
-
-/* EMPTY STATE */
-
-.reader-notes-empty {
-  position: relative;
-  max-width: 560px;
-  margin: 35px auto;
-  padding: 35px 30px;
-  text-align: center;
-
-  background: #F6EDE5;
-  border: 1px dashed #D5BFB1;
-  border-radius: 5px;
-
-  box-shadow: 3px 5px 12px rgba(70, 50, 50, 0.08);
-}
-
-.reader-notes-decoration {
-  display: block;
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.4rem;
-  color: #A4728C;
-  margin-bottom: 15px;
-}
-
-.reader-notes-empty p {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #6E5C56;
-  margin: 8px 0;
-}
-
-
-/* PUBLICATION INFORMATION */
-
-.reader-notes-disclaimer {
-  max-width: 620px;
-  margin: 25px auto 0;
-  text-align: center;
-
-  font-family: 'Lora', serif;
-  font-size: 0.75rem;
-  line-height: 1.7;
-  font-style: italic;
-  color: #897B75;
-}
-
-
-/* MOBILE ADJUSTMENTS */
-
-@media (max-width: 700px) {
-
-  .reader-notes-section {
-    margin: 55px auto;
-    padding: 0 18px;
-  }
-
-  .reader-notes-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .reader-note {
-    padding: 30px 22px 24px;
-  }
-
-  .reader-notes-empty {
-    padding: 30px 20px;
-  }
-
-}
-
-
-/* =========================================
-   ADULTHOOD — BULLET JOURNAL FOUNDATION
-   ========================================= */
-
-/* Dotted notebook page */
-
-.adulthood-page .category-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  gap: 85px;
-
-  width: 100%;
-  max-width: 1050px;
-  margin: 0 auto;
-
-  padding: 55px 35px;
-  box-sizing: border-box;
-
-  
-}
-
-
-/* Each entry becomes a journal composition */
-
-.adulthood-page .category-gallery > .gallery-entry {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 0.9fr);
-
-  align-items: center;
-  gap: 28px;
-
-  width: 90%;
-  max-width: 850px;
-
-  padding: 12px;
-  margin: 0;
-
-  background: transparent;
-  box-shadow: none;
-
-  transform: none;
-}
-
-
-/* Alternate entry positions */
-
-.adulthood-page .gallery-entry:nth-child(even) {
-  align-self: flex-end;
-}
-
-
-/* Alternate screenshot and caption placement */
-
-.adulthood-page .gallery-entry:nth-child(even)
-.gallery-photo {
-  order: 2;
-}
-
-.adulthood-page .gallery-entry:nth-child(even)
-.gallery-caption {
-  order: 1;
-}
-
-
-/* Make screenshots resemble pasted photographs */
-
-.adulthood-page .gallery-photo {
-  padding: 12px 12px 28px;
-
-  background: #FFFDF8;
-
-  box-shadow:
-    4px 6px 12px rgba(74, 60, 50, 0.16);
-
-  transform: rotate(-2deg);
-}
-
-.adulthood-page .gallery-entry:nth-child(even)
-.gallery-photo {
-  transform: rotate(2deg);
-}
-
-
-/* Keep screenshots readable */
-
-.adulthood-page .gallery-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-
-/* Position tape across the photo edge */
-
-.adulthood-page .gallery-photo::before {
-  top: -13px;
-}
-
-
-/* Captions become separate journal notes */
-
-.adulthood-page .gallery-caption {
-  margin: 0;
-
-  padding: 28px 24px 35px;
-
-  background: #F4E3E8;
-
-  text-align: left;
-
-  transform: rotate(1deg);
-}
-
-.adulthood-page .gallery-entry:nth-child(3n + 2)
-.gallery-caption {
-  background: #E8EBDD;
-}
-
-.adulthood-page .gallery-entry:nth-child(3n)
-.gallery-caption {
-  background: #F3E7D7;
-}
-
-
-/* Keep the entire composition steady on hover */
-
-.adulthood-page .category-gallery > .gallery-entry:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-
-/* =========================================
-   MOBILE JOURNAL LAYOUT
-   ========================================= */
-
-@media (max-width: 700px) {
-
-  .adulthood-page .category-gallery {
-    gap: 55px;
-    padding: 35px 14px 45px 20px;
-  }
-
-  .adulthood-page .category-gallery > .gallery-entry {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    max-width: 100%;
-
-    gap: 22px;
-    padding: 8px;
-  }
-
-  .adulthood-page .gallery-entry .gallery-photo,
-  .adulthood-page .gallery-entry .gallery-caption {
-    order: initial;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .adulthood-page .gallery-entry .gallery-photo {
-    transform: rotate(-1deg);
-  }
-
-  .adulthood-page .gallery-entry .gallery-caption {
-    transform: rotate(0.5deg);
-  }
-
-}
-
-
-/* =========================================
-   ADULTHOOD — VARIED JOURNAL ARRANGEMENTS
-   ========================================= */
-
-/* Every third entry becomes a layered composition */
-
-.adulthood-page .category-gallery >
-.gallery-entry:nth-child(3n) {
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  width: 82%;
-  max-width: 740px;
-
-  gap: 0;
-}
-
-
-/* Screenshot sits toward the left */
-
-.adulthood-page .category-gallery >
-.gallery-entry:nth-child(3n) .gallery-photo {
-
-  order: 0;
-
-  width: 72%;
-  box-sizing: border-box;
-
-  transform: rotate(-2deg);
-}
-
-
-/* Caption is tucked below and toward the right */
-
-.adulthood-page .category-gallery >
-.gallery-entry:nth-child(3n) .gallery-caption {
-
-  order: 1;
-
-  width: 68%;
-  box-sizing: border-box;
-
-  align-self: flex-end;
-
-  margin: -12px 0 0;
-
-  transform: rotate(1.5deg);
-}
-
-
-/* =========================================
-   MOBILE ADJUSTMENTS
-   ========================================= */
-
-@media (max-width: 700px) {
-
-  .adulthood-page .category-gallery >
-  .gallery-entry:nth-child(3n) {
-
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .adulthood-page .category-gallery >
-  .gallery-entry:nth-child(3n) .gallery-photo {
-
-    width: 100%;
-    transform: rotate(-1deg);
-  }
-
-  .adulthood-page .category-gallery >
-  .gallery-entry:nth-child(3n) .gallery-caption {
-
-    width: 100%;
-
-    margin: 15px 0 0;
-
-    transform: rotate(0.5deg);
-  }
-
-}
-
-/* =========================================
-   ADULTHOOD — REMOVE FLOATING PAPERCLIPS
-   ========================================= */
-
-.adulthood-page .gallery-entry:nth-child(3n)::after {
-  display: none;
-}
-
-
-/* =========================================
-   ADULTHOOD JOURNAL — NOTEBOOK HOLES
-   ========================================= */
-
-/* Allow notebook decorations to be positioned */
-
-.adulthood-page .category-gallery {
-  position: relative;
-}
-
-/* Add punched notebook holes down the left edge */
-
-.adulthood-page .category-gallery::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  bottom: 0;
-  left: 6px;
-
-  width: 18px;
-
-  background-image:
-    radial-gradient(
-      circle,
-      #E8DCCD 0 5px,
-      #C9B9A8 5.5px 6.5px,
-      transparent 7px
-    );
-
-  background-size: 18px 115px;
-  background-position: center 30px;
-  background-repeat: repeat-y;
-
-  pointer-events: none;
-}
-
-/* Keep holes smaller on mobile */
-
-@media (max-width: 700px) {
-
-  .adulthood-page .category-gallery {
-    padding-left: 30px;
-  }
-
-  .adulthood-page .category-gallery::before {
-    left: 4px;
-    width: 16px;
-
-    background-size: 16px 95px;
-  }
-
-}
-
-
-/* =========================================
-   ADULTHOOD — MOVE NOTEBOOK HOLES LEFT
-   ========================================= */
-
-.adulthood-page .category-gallery::before {
-  left: -30px;
-}
-
-/* Keep notebook holes visible on smaller screens */
-
-@media (max-width: 700px) {
-  .adulthood-page .category-gallery::before {
-    left: -12px;
-  }
-}
-
-
-/* =========================================
-   ADULTHOOD — BOUND BULLET JOURNAL
-   ========================================= */
-
-/* Remove decorative notebook holes */
-
-.adulthood-page .category-gallery::before,
-.adulthood-page .category-gallery::after {
-  content: none;
-  display: none;
-}
-
-/* Create a soft fabric-style journal binding */
-
-.adulthood-page .category-gallery {
-  border-left: 14px solid #B8A3AF;
-  border-radius: 5px 12px 12px 5px;
-
-  box-shadow:
-    inset 7px 0 10px -7px rgba(74, 60, 50, 0.35),
-    -5px 0 0 #E8DAD5,
-    4px 8px 18px rgba(74, 60, 50, 0.12);
-}
-
-/* Make the binding slimmer on mobile */
-
-@media (max-width: 700px) {
-  .adulthood-page .category-gallery {
-    border-left-width: 9px;
-  }
-}
-
-
-/* =========================================
-   ADULTHOOD — ONE CONTINUOUS JOURNAL PAGE
-   ========================================= */
-
-/* The main page becomes the notebook */
-
-.adulthood-page {
-  background-color: transparent;
-
-  background-image:
-    linear-gradient(
-      to right,
-      #B8A3AF 0,
-      #B8A3AF 9px,
-      #E6D7D8 9px,
-      #E6D7D8 13px,
-      transparent 13px
-    ),
-    radial-gradient(
-      #D8CEC1 0.8px,
-      transparent 0.8px
-    );
-
-  background-size:
-    100% 100%,
-    20px 20px;
-
-  background-repeat:
-    no-repeat,
-    repeat;
-}
-
-/* Remove the second layer of notebook paper */
-
-.adulthood-page .category-gallery {
-  background: transparent;
-
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-/* No holes or spiral decorations on the gallery */
-
-.adulthood-page .category-gallery::before,
-.adulthood-page .category-gallery::after {
-  content: none;
-  display: none;
-}
-
