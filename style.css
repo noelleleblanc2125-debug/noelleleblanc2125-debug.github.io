@@ -5040,3 +5040,35 @@ h1::after {
 }
 
 
+/* =========================================
+   ADULTHOOD — BOUND BULLET JOURNAL
+   ========================================= */
+
+/* Remove decorative notebook holes */
+
+.adulthood-page .category-gallery::before,
+.adulthood-page .category-gallery::after {
+  content: none;
+  display: none;
+}
+
+/* Create a soft fabric-style journal binding */
+
+.adulthood-page .category-gallery {
+  border-left: 14px solid #B8A3AF;
+  border-radius: 5px 12px 12px 5px;
+
+  box-shadow:
+    inset 7px 0 10px -7px rgba(74, 60, 50, 0.35),
+    -5px 0 0 #E8DAD5,
+    4px 8px 18px rgba(74, 60, 50, 0.12);
+}
+
+/* Make the binding slimmer on mobile */
+
+@media (max-width: 700px) {
+  .adulthood-page .category-gallery {
+    border-left-width: 9px;
+  }
+}
+
