@@ -4872,3 +4872,89 @@ h1::after {
 
 }
 
+
+/* =========================================
+   ADULTHOOD — VARIED JOURNAL ARRANGEMENTS
+   ========================================= */
+
+/* Every third entry becomes a layered composition */
+
+.adulthood-page .category-gallery >
+.gallery-entry:nth-child(3n) {
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  width: 82%;
+  max-width: 740px;
+
+  gap: 0;
+}
+
+
+/* Screenshot sits toward the left */
+
+.adulthood-page .category-gallery >
+.gallery-entry:nth-child(3n) .gallery-photo {
+
+  order: 0;
+
+  width: 72%;
+  box-sizing: border-box;
+
+  transform: rotate(-2deg);
+}
+
+
+/* Caption is tucked below and toward the right */
+
+.adulthood-page .category-gallery >
+.gallery-entry:nth-child(3n) .gallery-caption {
+
+  order: 1;
+
+  width: 68%;
+  box-sizing: border-box;
+
+  align-self: flex-end;
+
+  margin: -12px 0 0;
+
+  transform: rotate(1.5deg);
+}
+
+
+/* =========================================
+   MOBILE ADJUSTMENTS
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .adulthood-page .category-gallery >
+  .gallery-entry:nth-child(3n) {
+
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .adulthood-page .category-gallery >
+  .gallery-entry:nth-child(3n) .gallery-photo {
+
+    width: 100%;
+    transform: rotate(-1deg);
+  }
+
+  .adulthood-page .category-gallery >
+  .gallery-entry:nth-child(3n) .gallery-caption {
+
+    width: 100%;
+
+    margin: 15px 0 0;
+
+    transform: rotate(0.5deg);
+  }
+
+}
+
