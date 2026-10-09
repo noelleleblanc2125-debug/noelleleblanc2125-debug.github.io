@@ -4958,3 +4958,10 @@ h1::after {
 
 }
 
+/* =========================================
+   ADULTHOOD — REMOVE FLOATING PAPERCLIPS
+   ========================================= */
+
+.adulthood-page .gallery-entry:nth-child(3n)::after {
+  display: none;
+}
