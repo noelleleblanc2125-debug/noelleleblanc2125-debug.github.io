@@ -3944,11 +3944,9 @@ body {overflow-x:hidden;}
   background-image:
     /* Gentle darker tint at the center of the facing sheets */
     linear-gradient(to right,transparent 0%,rgba(143,117,105,.03) 44%,rgba(89,63,65,.12) 49.5%,rgba(89,63,65,.16) 50%,rgba(89,63,65,.07) 51%,transparent 57%),
-    /* Soft dot-grid texture */
-    radial-gradient(rgba(136,113,103,.16) .85px,transparent .9px),
-    /* Separate left and right page brightness */
+    /* Smooth warm paper; the dotted desk stays visible outside */
     linear-gradient(to right,#FFF9EE 0%,#FFFBF4 48.7%,#F7EEE2 49.8%,#FFF9EE 51.5%,#FFFDF7 100%);
-  background-size:100% 100%,19px 19px,100% 100%;
+  background-size:100% 100%,100% 100%;
   box-shadow:
     -3px 0 0 #E7D9CC,
     -8px 3px 0 #D7C6B7,
@@ -4075,9 +4073,9 @@ body {overflow-x:hidden;}
     border-radius:5px 12px 12px 5px;
     background-color:#FFF9EE;
     background-image:
-      linear-gradient(to right,rgba(115,82,83,.10),transparent 15px),
-      radial-gradient(rgba(136,113,103,.16) .85px,transparent .9px);
-    background-size:100% 100%,19px 19px;
+      /* Subtle book-edge shading, without a dot pattern on the paper */
+      linear-gradient(to right,rgba(115,82,83,.10),transparent 15px);
+    background-size:100% 100%;
     box-shadow:-3px 0 0 #E7D9CC,5px 5px 0 #E1CFC0,9px 14px 25px rgba(58,42,39,.18);
   }
   .category-page::before,.phase-page::before,.home-page::before {content:none;display:none;}
@@ -4114,4 +4112,183 @@ body {overflow-x:hidden;}
 @media (prefers-reduced-motion:reduce) {
   .category-page .gallery-entry,.category-page .gallery-photo,
   .category-page .gallery-caption {transition:none;}
+}
+
+/* ================================================================
+   LEATHER DESK + DOTTED JOURNAL PAPER (October 2026)
+   The dots belong to the book, not the surrounding background.
+   This overrides only surface textures; layout, tabs, navigation,
+   screenshots, captions, and feedback styling are left intact.
+   ================================================================ */
+
+/* Warm, gently mottled leather-like surface behind the journal. */
+body {
+  background-color: #98745D;
+  background-image:
+    radial-gradient(ellipse at 16% 10%, rgba(255, 235, 204, .15), transparent 52%),
+    radial-gradient(ellipse at 88% 84%, rgba(65, 38, 29, .17), transparent 57%),
+    repeating-linear-gradient(112deg,
+      rgba(255, 248, 231, .022) 0px,
+      rgba(255, 248, 231, .022) 1px,
+      transparent 1px,
+      transparent 5px);
+  background-size: 100% 100%, 100% 100%, 180px 180px;
+}
+
+/* Soft dot-grid paper, layered OVER the existing open-book shading. */
+.category-page,
+.phase-page,
+.home-page {
+  background-color: #FFF9EE;
+  background-image:
+    radial-gradient(circle, rgba(91, 70, 56, .19) 1px, transparent 1.2px),
+    linear-gradient(to right,
+      transparent 0%,
+      rgba(143, 117, 105, .03) 44%,
+      rgba(89, 63, 65, .12) 49.5%,
+      rgba(89, 63, 65, .16) 50%,
+      rgba(89, 63, 65, .07) 51%,
+      transparent 57%),
+    linear-gradient(to right,
+      #FFF9EE 0%, #FFFBF4 48.7%, #F7EEE2 49.8%,
+      #FFF9EE 51.5%, #FFFDF7 100%);
+  background-size: 22px 22px, 100% 100%, 100% 100%;
+}
+
+/* On phones the book is one page, so remove the center gutter tint,
+   but keep its gentle left-hand binding shadow and the dot grid. */
+@media (max-width: 700px) {
+  .category-page,
+  .phase-page,
+  .home-page {
+    background-color: #FFF9EE;
+    background-image:
+      radial-gradient(circle, rgba(91, 70, 56, .19) 1px, transparent 1.2px),
+      linear-gradient(to right, rgba(115, 82, 83, .10), transparent 15px);
+    background-size: 22px 22px, 100% 100%;
+  }
+}
+
+
+/* ================================================================
+   FINAL JOURNAL DETAILS — HAND-DRAWN + BOTANICAL (October 2026)
+
+   The surrounding surface is warm leather; the BOOK keeps its dots.
+   All illustrations are lightweight inline SVG, so no extra image
+   files or HTML edits are required. Existing navigation, screenshots,
+   forms, consent, and category colors are unchanged.
+   ================================================================ */
+
+/* Subtle grain and directional light, not a second dot pattern. */
+body {
+  background-color: #95745E;
+  background-image:
+    radial-gradient(ellipse at 14% 6%, rgba(245,218,183,.20), transparent 55%),
+    radial-gradient(ellipse at 88% 92%, rgba(57,32,27,.23), transparent 60%),
+    repeating-linear-gradient(23deg, rgba(255,245,220,.026) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(112deg, rgba(55,35,27,.025) 0 1px, transparent 1px 7px);
+  background-size: 100% 100%,100% 100%,170px 170px,190px 190px;
+}
+
+/* The journal is one continuous paper surface, with a physical edge. */
+.category-page, .phase-page, .home-page {
+  background-color: #FFF9EE;
+  background-image:
+    radial-gradient(circle,rgba(93,73,61,.17) 1px,transparent 1.25px),
+    linear-gradient(to right,transparent 0%,rgba(109,78,73,.035) 43%,rgba(88,58,60,.13) 49%,rgba(88,58,60,.16) 50%,rgba(255,255,255,.24) 51%,transparent 57%),
+    linear-gradient(to right,rgba(117,83,71,.08),transparent 3.5%,transparent 96%,rgba(117,83,71,.055)),
+    linear-gradient(to right,#FFF9EE 0%,#FFFBF4 48.7%,#F7EEE2 49.8%,#FFF9EE 51.5%,#FFFDF7 100%);
+  background-size:22px 22px,100% 100%,100% 100%,100% 100%;
+  box-shadow:
+    -2px 0 0 #E9DDD0,
+    -6px 3px 0 #DCCABB,
+    -10px 6px 0 #CBB5A6,
+    5px 5px 0 #EADDD0,
+    10px 9px 0 #D9C4B5,
+    15px 14px 0 #C5AA98,
+    23px 28px 42px rgba(50,31,27,.29),
+    inset 12px 0 22px -16px rgba(58,42,39,.35),
+    inset -12px 0 22px -16px rgba(58,42,39,.25);
+}
+
+/* Gentle paper dividers tucked behind each page; not interactive. */
+.adulthood-page::after {background:linear-gradient(to bottom,#AFC4C5 0 31%,transparent 31% 35%,#D7AAA5 35% 65%,transparent 65% 69%,#A8AE91 69% 100%);}
+.career-page::after {background:linear-gradient(to bottom,#B8A2C8 0 31%,transparent 31% 35%,#AFC4C5 35% 65%,transparent 65% 69%,#D7AAA5 69% 100%);}
+.behind-page::after {background:linear-gradient(to bottom,#D4A857 0 31%,transparent 31% 35%,#B8A2C8 35% 65%,transparent 65% 69%,#A8AE91 69% 100%);}
+.relationships-page::after {background:linear-gradient(to bottom,#D7AAA5 0 31%,transparent 31% 35%,#D4A857 35% 65%,transparent 65% 69%,#B8A2C8 69% 100%);}
+.values-page::after {background:linear-gradient(to bottom,#A8AE91 0 31%,transparent 31% 35%,#D7AAA5 35% 65%,transparent 65% 69%,#AFC4C5 69% 100%);}
+
+/* Small drawings live in the whitespace around scrapbook entries.
+   Never use pointer events: they must not obstruct reading or links. */
+.category-page .category-gallery > .gallery-entry {position:relative;isolation:isolate;}
+.category-page .category-gallery > .gallery-entry::before {
+  content:"";display:block;position:absolute;z-index:0;
+  width:76px;height:90px;right:-20px;bottom:24px;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20110%20130%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20stroke%3D%22%23839077%22%20stroke-width%3D%222.3%22%3E%3Cpath%20d%3D%22M45%20122C47%20101%2050%2083%2059%2056M53%2092c-16-8-24-18-24-30M49%20104c17-5%2027-14%2033-27%22%2F%3E%3Cpath%20d%3D%22M31%2065C18%2058%2018%2047%2022%2043c11%200%2017%209%2014%2018M77%2079c9-13%2021-14%2025-12-2%2012-11%2019-22%2018%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%23A4728C%22%20stroke-width%3D%222.1%22%3E%3Cpath%20d%3D%22M60%2041c-13-18-2-29%205-17%208-17%2022-7%2012%209%2019-2%2020%2013%203%2018%208%2017-9%2022-19%207-10%2015-24%207-15-10-16-4-15-19%202-18z%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2243%22%20r%3D%226%22%20fill%3D%22%23E5C69A%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M16%2091l2-7%202%207%207%202-7%202-2%207-2-7-7-2z%22%20stroke%3D%22%23B78D38%22%20stroke-width%3D%221.6%22%2F%3E%3C%2Fsvg%3E");background-size:contain;
+  background-position:center;background-repeat:no-repeat;
+  opacity:.77;transform:rotate(12deg);pointer-events:none;
+}
+.category-page .category-gallery > .gallery-entry:nth-child(3n+2)::before {
+  width:76px;height:65px;right:-24px;top:22%;bottom:auto;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2096%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20stroke%3D%22%23A4728C%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22M34%2011l5%2018%2018%205-18%205-5%2018-5-18-18-5%2018-5z%22%2F%3E%3Cpath%20d%3D%22M82%2044l3%2010%2010%203-10%203-3%2010-3-10-10-3%2010-3z%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%23B78D38%22%20stroke-width%3D%222%22%3E%3Cpath%20d%3D%22M78%208v11M72%2014h12M23%2072v10M18%2077h10%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M98%2024c8-5%2013-2%2012%203-2%207-14%2011-14%2011S88%2028%2091%2024c2-3%205-2%207%200z%22%20stroke%3D%22%23A4728C%22%20stroke-width%3D%221.8%22%2F%3E%3C%2Fsvg%3E");transform:rotate(-9deg);opacity:.76;
+}
+.category-page .category-gallery > .gallery-entry:nth-child(3n)::before {
+  width:74px;height:62px;left:-27px;right:auto;top:43%;bottom:auto;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2095%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%2070c12%2015%2038%2011%2051-6%209-12%207-25-4-29-10-4-18%206-11%2013%209%209%2032-4%2049-23%22%20stroke%3D%22%23A4728C%22%20stroke-width%3D%222.8%22%20stroke-dasharray%3D%221%200%22%2F%3E%3Cpath%20d%3D%22M80%2024l18%200-4%2017%22%20stroke%3D%22%23A4728C%22%20stroke-width%3D%222.8%22%2F%3E%3Cpath%20d%3D%22M19%2017c2-4%206-4%209%200%203-5%209-2%208%203-1%205-8%2010-8%2010s-13-8-9-13z%22%20stroke%3D%22%23B77F7A%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E");transform:rotate(-10deg);opacity:.72;
+}
+.category-page .gallery-photo, .category-page .gallery-caption {z-index:1;}
+
+/* Phase pages get a little botanical sketch tucked beside the intro. */
+.phase-page .phase-intro::after {
+  content:"";display:block;position:absolute;z-index:2;
+  right:-35px;bottom:-32px;width:105px;height:76px;
+  background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20150%2090%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20stroke%3D%22%2384916F%22%20stroke-width%3D%222.2%22%3E%3Cpath%20d%3D%22M9%2076C45%2077%2051%2018%20138%2016%22%2F%3E%3Cpath%20d%3D%22M37%2063c-15%200-20-7-23-17%2015-2%2023%203%2027%2011M58%2044c-6-17-2-25%209-31%207%2014%205%2022-3%2029M85%2027c-1%2014%206%2021%2018%2023%202-16-4-23-13-26M110%2018c4-11%2013-15%2025-14-3%2013-11%2018-22%2019%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%23B77F7A%22%20stroke-width%3D%221.7%22%3E%3Cpath%20d%3D%22M22%2023l3%209%209%203-9%203-3%209-3-9-9-3%209-3z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center / contain no-repeat;
+  transform:rotate(-13deg);opacity:.8;pointer-events:none;
+}
+
+/* A few spontaneous pen marks near the homepage greeting. */
+.home-page .welcome-section::after {
+  content:"";display:block;position:absolute;z-index:0;
+  right:-37px;top:8px;width:75px;height:66px;
+  background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2096%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20stroke%3D%22%23A4728C%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22M34%2011l5%2018%2018%205-18%205-5%2018-5-18-18-5%2018-5z%22%2F%3E%3Cpath%20d%3D%22M82%2044l3%2010%2010%203-10%203-3%2010-3-10-10-3%2010-3z%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%23B78D38%22%20stroke-width%3D%222%22%3E%3Cpath%20d%3D%22M78%208v11M72%2014h12M23%2072v10M18%2077h10%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M98%2024c8-5%2013-2%2012%203-2%207-14%2011-14%2011S88%2028%2091%2024c2-3%205-2%207%200z%22%20stroke%3D%22%23A4728C%22%20stroke-width%3D%221.8%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
+  transform:rotate(13deg);opacity:.58;pointer-events:none;
+}
+.home-page .welcome-section > * {position:relative;z-index:1;}
+
+/* Keep the existing staggered polaroid / caption collage dimensional. */
+.category-page .gallery-photo {
+  box-shadow: 3px 4px 0 rgba(197,173,155,.32),
+              7px 9px 0 rgba(231,218,206,.76),
+              11px 17px 21px rgba(66,44,39,.20);
+}
+.category-page .gallery-caption {
+  filter:drop-shadow(4px 6px 4px rgba(66,44,39,.15));
+}
+
+/* Mobile: single dotted journal page, no center gutter. Drawings
+   remain tiny and away from the text / interactive controls. */
+@media (max-width:700px) {
+  .category-page,.phase-page,.home-page {
+    background-image:
+      radial-gradient(circle,rgba(93,73,61,.17) 1px,transparent 1.25px),
+      linear-gradient(to right,rgba(109,78,73,.09),transparent 18px),
+      linear-gradient(to right,#FFF9EE,#FFFCF6);
+    background-size:22px 22px,100% 100%,100% 100%;
+    box-shadow:-2px 0 0 #E8D8C9,4px 4px 0 #E0CDBD,
+               8px 8px 0 #CEB5A5,12px 16px 26px rgba(50,31,27,.24);
+  }
+  .category-page .category-gallery > .gallery-entry::before {
+    width:49px;height:62px;right:-8px;bottom:8px;opacity:.48;
+  }
+  .category-page .category-gallery > .gallery-entry:nth-child(3n+2)::before {
+    width:49px;height:48px;right:-6px;top:24%;bottom:auto;
+  }
+  .category-page .category-gallery > .gallery-entry:nth-child(3n)::before {
+    width:48px;height:45px;left:-8px;right:auto;top:44%;bottom:auto;
+  }
+  .phase-page .phase-intro::after {right:-10px;bottom:-20px;width:64px;height:48px;opacity:.52;}
+  .home-page .welcome-section::after {right:2px;top:-20px;width:45px;height:40px;opacity:.44;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .category-page .gallery-photo,.category-page .gallery-caption {transition:none;}
 }
