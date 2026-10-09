@@ -4696,3 +4696,188 @@ h1::after {
 }
 
 
+/* =========================================
+   ADULTHOOD — BULLET JOURNAL FOUNDATION
+   ========================================= */
+
+/* Dotted notebook page */
+
+.adulthood-page .category-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 85px;
+
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+
+  padding: 55px 35px;
+  box-sizing: border-box;
+
+  background-color: #FFF9EE;
+
+  background-image: radial-gradient(
+    #D8CEC1 0.8px,
+    transparent 0.8px
+  );
+
+  background-size: 20px 20px;
+
+  border-left: 2px solid #D7AAA5;
+}
+
+
+/* Each entry becomes a journal composition */
+
+.adulthood-page .category-gallery > .gallery-entry {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.9fr);
+
+  align-items: center;
+  gap: 28px;
+
+  width: 90%;
+  max-width: 850px;
+
+  padding: 12px;
+  margin: 0;
+
+  background: transparent;
+  box-shadow: none;
+
+  transform: none;
+}
+
+
+/* Alternate entry positions */
+
+.adulthood-page .gallery-entry:nth-child(even) {
+  align-self: flex-end;
+}
+
+
+/* Alternate screenshot and caption placement */
+
+.adulthood-page .gallery-entry:nth-child(even)
+.gallery-photo {
+  order: 2;
+}
+
+.adulthood-page .gallery-entry:nth-child(even)
+.gallery-caption {
+  order: 1;
+}
+
+
+/* Make screenshots resemble pasted photographs */
+
+.adulthood-page .gallery-photo {
+  padding: 12px 12px 28px;
+
+  background: #FFFDF8;
+
+  box-shadow:
+    4px 6px 12px rgba(74, 60, 50, 0.16);
+
+  transform: rotate(-2deg);
+}
+
+.adulthood-page .gallery-entry:nth-child(even)
+.gallery-photo {
+  transform: rotate(2deg);
+}
+
+
+/* Keep screenshots readable */
+
+.adulthood-page .gallery-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* Position tape across the photo edge */
+
+.adulthood-page .gallery-photo::before {
+  top: -13px;
+}
+
+
+/* Captions become separate journal notes */
+
+.adulthood-page .gallery-caption {
+  margin: 0;
+
+  padding: 28px 24px 35px;
+
+  background: #F4E3E8;
+
+  text-align: left;
+
+  transform: rotate(1deg);
+}
+
+.adulthood-page .gallery-entry:nth-child(3n + 2)
+.gallery-caption {
+  background: #E8EBDD;
+}
+
+.adulthood-page .gallery-entry:nth-child(3n)
+.gallery-caption {
+  background: #F3E7D7;
+}
+
+
+/* Keep the entire composition steady on hover */
+
+.adulthood-page .category-gallery > .gallery-entry:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* =========================================
+   MOBILE JOURNAL LAYOUT
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .adulthood-page .category-gallery {
+    gap: 55px;
+    padding: 35px 14px 45px 20px;
+  }
+
+  .adulthood-page .category-gallery > .gallery-entry {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 100%;
+
+    gap: 22px;
+    padding: 8px;
+  }
+
+  .adulthood-page .gallery-entry .gallery-photo,
+  .adulthood-page .gallery-entry .gallery-caption {
+    order: initial;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .adulthood-page .gallery-entry .gallery-photo {
+    transform: rotate(-1deg);
+  }
+
+  .adulthood-page .gallery-entry .gallery-caption {
+    transform: rotate(0.5deg);
+  }
+
+}
+
