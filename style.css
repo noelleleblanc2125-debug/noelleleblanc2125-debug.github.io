@@ -4716,16 +4716,7 @@ h1::after {
   padding: 55px 35px;
   box-sizing: border-box;
 
-  background-color: #FFF9EE;
-
-  background-image: radial-gradient(
-    #D8CEC1 0.8px,
-    transparent 0.8px
-  );
-
-  background-size: 20px 20px;
-
-  border-left: 2px solid #D7AAA5;
+  
 }
 
 
