@@ -4292,3 +4292,89 @@ body {
 @media (prefers-reduced-motion:reduce) {
   .category-page .gallery-photo,.category-page .gallery-caption {transition:none;}
 }
+
+
+/* ============================================================
+   CROSS-PAGE JOURNAL FLIP — NO JAVASCRIPT OR HTML EDITS NEEDED
+   The main journal sheet turns; the leather desk stays in place.
+   Works on modern iPhone browsers using cross-document View Transitions.
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* The page itself is the moving sheet. The background and nav
+     remain part of the still scene rather than flipping with it. */
+  main.home-page,
+  main.category-page,
+  main.phase-page,
+  main.thank-you-page {
+    view-transition-name: journal-sheet;
+  }
+
+  ::view-transition {
+    perspective: 1550px;
+    background: transparent;
+  }
+
+  ::view-transition-group(journal-sheet) {
+    perspective: 1550px;
+    transform-style: preserve-3d;
+    animation-duration: 800ms;
+    animation-timing-function: ease-in-out;
+  }
+
+  ::view-transition-image-pair(journal-sheet) {
+    isolation: isolate;
+    transform-style: preserve-3d;
+  }
+
+  ::view-transition-old(journal-sheet) {
+    transform-origin: 7% 50%;
+    backface-visibility: hidden;
+    animation: journal-sheet-close 800ms cubic-bezier(.38,.02,.61,1) both;
+    filter: drop-shadow(13px 12px 14px rgba(50,31,27,.18));
+  }
+
+  ::view-transition-new(journal-sheet) {
+    transform-origin: 7% 50%;
+    backface-visibility: hidden;
+    animation: journal-sheet-open 800ms cubic-bezier(.18,.67,.26,1) both;
+    filter: drop-shadow(9px 10px 13px rgba(50,31,27,.14));
+  }
+
+  /* Do not rotate the desk, navigation, or other shared elements. */
+  ::view-transition-old(root) {
+    animation: journal-desk-out 800ms ease both;
+  }
+
+  ::view-transition-new(root) {
+    animation: journal-desk-in 800ms ease both;
+  }
+
+  @keyframes journal-sheet-close {
+    0%   { transform: perspective(1550px) rotateY(0deg); opacity: 1; }
+    45%  { transform: perspective(1550px) rotateY(-39deg); opacity: 1; }
+    75%  { transform: perspective(1550px) rotateY(-81deg); opacity: .7; }
+    100% { transform: perspective(1550px) rotateY(-89deg); opacity: 0; }
+  }
+
+  @keyframes journal-sheet-open {
+    0%   { transform: perspective(1550px) rotateY(89deg); opacity: 0; }
+    30%  { transform: perspective(1550px) rotateY(75deg); opacity: .65; }
+    65%  { transform: perspective(1550px) rotateY(27deg); opacity: 1; }
+    100% { transform: perspective(1550px) rotateY(0deg); opacity: 1; }
+  }
+
+  @keyframes journal-desk-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
+  @keyframes journal-desk-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
