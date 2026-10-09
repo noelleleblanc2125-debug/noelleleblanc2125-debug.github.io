@@ -5072,3 +5072,54 @@ h1::after {
   }
 }
 
+
+/* =========================================
+   ADULTHOOD — ONE CONTINUOUS JOURNAL PAGE
+   ========================================= */
+
+/* The main page becomes the notebook */
+
+.adulthood-page {
+  background-color: transparent;
+
+  background-image:
+    linear-gradient(
+      to right,
+      #B8A3AF 0,
+      #B8A3AF 9px,
+      #E6D7D8 9px,
+      #E6D7D8 13px,
+      transparent 13px
+    ),
+    radial-gradient(
+      #D8CEC1 0.8px,
+      transparent 0.8px
+    );
+
+  background-size:
+    100% 100%,
+    20px 20px;
+
+  background-repeat:
+    no-repeat,
+    repeat;
+}
+
+/* Remove the second layer of notebook paper */
+
+.adulthood-page .category-gallery {
+  background: transparent;
+
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* No holes or spiral decorations on the gallery */
+
+.adulthood-page .category-gallery::before,
+.adulthood-page .category-gallery::after {
+  content: none;
+  display: none;
+}
+
