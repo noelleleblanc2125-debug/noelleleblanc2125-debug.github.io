@@ -4819,123 +4819,94 @@ main .journal-next-page .journal-next-link {
 
 
 /* ============================================================
-   PHASE OVERVIEWS — BALANCED TWO-PAGE SCRAPBOOK SPREAD
-   Lay out the intro and category notes on facing paper leaves,
-   keeping each note off the binding. No changes to links/content.
+   PHASE SPREAD — ONE RELIABLE TWO-PAGE LAYOUT
+   Introduction on the left. Title and sticky notes together on
+   the right. Do not flatten the category container with display:contents;
+   it causes the decorative title to overlap the facing sheet.
    ============================================================ */
 @media (min-width: 901px) {
   .phase-page {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: clamp(42px, 5vw, 88px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(48px, 6vw, 100px);
     align-items: start;
   }
-
-  /* Chapter labels and pennant headings span the open journal. */
   .phase-page > .phase-number,
   .phase-page > .phase-title,
   .phase-page > .phase-breadcrumb {
     grid-column: 1 / -1;
   }
-
-  /* Let the two category cards participate in the page-level grid. */
-  .phase-page > .phase-categories {
-    display: contents;
-  }
-
-  /* Start the introduction and Explore section on the same row. */
   .phase-page > .phase-intro {
     grid-column: 1;
+    grid-row: 3;
+    position: relative;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 20px 0 50px;
+    padding: 30px clamp(18px, 2.5vw, 34px);
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  .phase-page > .phase-categories,
+  .phase-page.phase-three-page > .phase-categories.phase-categories-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    grid-column: 2;
     grid-row: 3;
     width: 100%;
     max-width: none;
     min-width: 0;
-    margin: 12px 0 12px;
-    justify-self: stretch;
-    padding: 28px clamp(19px, 2.7vw, 35px);
-  }
-  .phase-page > .phase-categories > .phase-explore-title {
-    grid-column: 2;
-    grid-row: 3;
-    align-self: end;
-    justify-self: center;
-    margin: 0 auto 28px;
-    text-align: center;
-  }
-
-  /* Two category notes sit on facing leaves, not across the crease. */
-  .phase-page > .phase-categories > .phase-category-card {
-    width: 100%;
-    max-width: 460px;
-    min-width: 0;
-    justify-self: center;
+    margin: 12px 0 0;
+    padding: 0 0 35px;
     box-sizing: border-box;
-    margin-top: 10px;
   }
-  .phase-page.phase-one-page > .phase-categories > .phase-category-card:nth-of-type(1),
-  .phase-page.phase-two-page > .phase-categories > .phase-category-card:nth-of-type(1) {
-    grid-column: 1;
-    grid-row: 4;
-  }
-  .phase-page.phase-one-page > .phase-categories > .phase-category-card:nth-of-type(2),
-  .phase-page.phase-two-page > .phase-categories > .phase-category-card:nth-of-type(2) {
-    grid-column: 2;
-    grid-row: 4;
-  }
-
-  /* Phase III only has one category, so keep it on the right page. */
-  .phase-page.phase-three-page > .phase-categories > .phase-category-card {
-    grid-column: 2;
-    grid-row: 4;
-  }
-
-  /* Continue reading from the lower right leaf. */
-  .phase-page > .journal-next-page {
-    grid-column: 2;
-    grid-row: 5;
-    justify-self: end;
-    margin-top: 25px;
-    margin-bottom: 8px;
-    padding-right: 6px;
-  }
-}
-
-/* On a phone or narrow tablet, use the existing one-page reading flow. */
-@media (max-width: 900px) {
-  .phase-page > .phase-categories {
-    display: grid;
-  }
-}
-
-@media (min-width: 901px) {
-  /* Override Phase III's older nested-grid rule. */
-  .phase-page.phase-three-page > .phase-categories.phase-categories-single {display: contents;}
-}
-
-/* ------------------------------------------------------------
-   PHASE SPREAD CORRECTION — heading stays on the right leaf.
-   Prevent the scripted title/intro collage from crossing the fold.
-   ------------------------------------------------------------ */
-@media (min-width:901px) {
   .phase-page > .phase-categories > .phase-explore-title {
-    grid-column: 2;
-    grid-row: 3;
-    align-self: start;
-    justify-self: stretch;
+    grid-column: auto;
+    grid-row: auto;
+    position: relative;
+    display: block;
+    align-self: stretch;
     width: 100%;
     max-width: 100%;
+    min-width: 0;
+    margin: 0 auto 10px;
+    padding: 0;
     box-sizing: border-box;
-    margin: 24px 0 25px;
-    padding: 0 12px;
+    text-align: center;
     font-size: clamp(1.8rem, 3vw, 2.3rem);
-    overflow-wrap: normal;
+    line-height: 1.35;
     white-space: normal;
+    transform: none;
+    z-index: 2;
   }
-  .phase-page > .phase-intro {
-    z-index: 1;
+  .phase-page > .phase-categories > .phase-category-card,
+  .phase-page.phase-three-page > .phase-categories.phase-categories-single > .phase-category-card {
+    grid-column: auto;
+    grid-row: auto;
+    width: min(100%, 445px);
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    align-self: center;
   }
+  .phase-page > .journal-next-page {
+    grid-column: 2;
+    grid-row: 4;
+    justify-self: end;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Narrow screens stay a single vertically flowing journal sheet. */
+@media (max-width: 900px) {
+  .phase-page > .phase-categories,
   .phase-page.phase-three-page > .phase-categories.phase-categories-single {
-    display: contents;
+    display: grid;
   }
 }
 
