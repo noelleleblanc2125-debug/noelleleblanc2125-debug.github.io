@@ -4938,3 +4938,23 @@ main .journal-next-page .journal-next-link {
     display: contents;
   }
 }
+
+/* Unified navigation interaction: selected, hovered, and open tabs
+   all use the same high-contrast deep sage green. */
+.site-nav > a:hover,
+.site-nav > a:focus-visible,
+.site-nav > .nav-dropdown > summary:hover,
+.site-nav > .nav-dropdown > summary:focus-visible,
+.site-nav > .nav-dropdown[open] > summary,
+.site-nav > .nav-dropdown.active > summary,
+.site-nav > a.active {
+  background: #47665B;
+  color: #FFF9EE;
+  border-color: #354D43;
+  border-style: solid;
+}
+.site-nav > .nav-dropdown .nav-dropdown-menu a:hover,
+.site-nav > .nav-dropdown .nav-dropdown-menu a:focus-visible {
+  background: #47665B;
+  color: #FFF9EE;
+}
