@@ -4911,3 +4911,30 @@ main .journal-next-page .journal-next-link {
   /* Override Phase III's older nested-grid rule. */
   .phase-page.phase-three-page > .phase-categories.phase-categories-single {display: contents;}
 }
+
+/* ------------------------------------------------------------
+   PHASE SPREAD CORRECTION — heading stays on the right leaf.
+   Prevent the scripted title/intro collage from crossing the fold.
+   ------------------------------------------------------------ */
+@media (min-width:901px) {
+  .phase-page > .phase-categories > .phase-explore-title {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+    justify-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 24px 0 25px;
+    padding: 0 12px;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    overflow-wrap: normal;
+    white-space: normal;
+  }
+  .phase-page > .phase-intro {
+    z-index: 1;
+  }
+  .phase-page.phase-three-page > .phase-categories.phase-categories-single {
+    display: contents;
+  }
+}
