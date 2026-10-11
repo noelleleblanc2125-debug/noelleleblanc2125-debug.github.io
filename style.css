@@ -4929,3 +4929,115 @@ main .journal-next-page .journal-next-link {
   background: #47665B;
   color: #FFF9EE;
 }
+
+/* Homepage doodles: each illustration stays on its own journal sheet. */
+.home-page .scrapbook-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 22px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.home-page .scrapbook-decoration img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.home-page .about-page-column { min-width: 0; width: 100%; }
+.home-page .decoration-sparkle img { width: 160px; }
+.home-page .decoration-flowers img { width: 290px; transform: rotate(-5deg); }
+.home-page .decoration-hearts img { width: 235px; transform: rotate(6deg); }
+.home-page .decoration-leaf img { width: 240px; transform: rotate(-8deg); }
+
+@media (min-width: 901px) {
+  .home-page .home-cards > .about-page-column {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+  .home-page .about-page-column > .about-card { flex: 0 0 auto; }
+  .home-page .decoration-sparkle { flex: 1 0 220px; margin-top: 25px; }
+  .home-page .home-cards > .capture-card { grid-column: 2; grid-row: 1; }
+  .home-page .home-cards > .collecting-card { grid-column: 1; grid-row: 2; }
+  .home-page .home-cards > .decoration-flowers {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: stretch;
+  }
+  .home-page .journey-phases > .decoration-hearts {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: stretch;
+  }
+  .home-page > .decoration-leaf { grid-column: 1; min-height: 260px; }
+  .home-page > .journal-next-page { align-self: center; }
+}
+
+@media (max-width: 900px) {
+  .home-page .home-cards > .about-page-column { width: min(100%, 540px); }
+  .home-page .scrapbook-decoration { min-height: 180px; padding: 20px; }
+  .home-page .decoration-sparkle img { width: 110px; }
+  .home-page .decoration-flowers img { width: 190px; }
+  .home-page .decoration-hearts img { width: 145px; }
+  .home-page .decoration-leaf img { width: 150px; }
+}
+
+/* Phase overview decorations underneath the left-hand introduction. */
+.phase-page .phase-spread-left { min-width: 0; box-sizing: border-box; }
+.phase-page .phase-page-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  min-width: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.phase-page .phase-page-decoration img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+}
+.phase-page .phase-decoration-flowers img { width: 290px; transform: rotate(-5deg); }
+.phase-page .phase-decoration-hearts img { width: 245px; transform: rotate(6deg); }
+.phase-page .phase-decoration-leaf img { width: 220px; transform: rotate(-8deg); }
+
+@media (min-width: 901px) {
+  .phase-page > .phase-spread-left {
+    grid-column: 1;
+    grid-row: 3 / 5;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+  .phase-page .phase-spread-left > .phase-intro {
+    flex: 0 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 20px 0 30px;
+    padding: 30px clamp(18px, 2.5vw, 34px);
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  .phase-page .phase-spread-left > .phase-intro::before { left: 50%; }
+  .phase-page .phase-spread-left > .phase-page-decoration { flex: 1 0 270px; }
+}
+
+@media (max-width: 900px) {
+  .phase-page .phase-page-decoration { min-height: 180px; margin: 12px auto 35px; }
+  .phase-page .phase-page-decoration img { max-height: 230px; }
+  .phase-page .phase-decoration-flowers img { width: 190px; }
+  .phase-page .phase-decoration-hearts img { width: 155px; }
+  .phase-page .phase-decoration-leaf img { width: 150px; }
+}
