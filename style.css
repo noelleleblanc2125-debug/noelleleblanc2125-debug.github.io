@@ -4777,3 +4777,137 @@ main .journal-next-page .journal-next-link {
     margin-right: auto;
   }
 }
+
+
+/* Phase III: one category belongs to the RIGHT journal leaf, never the seam.
+   This intentionally leaves the left page open like a scrapbook spread. */
+@media (min-width: 901px) {
+  .phase-page.phase-three-page .phase-categories.phase-categories-single {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px clamp(36px, 5vw, 82px);
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: stretch;
+    box-sizing: border-box;
+  }
+  .phase-page.phase-three-page .phase-categories-single > .phase-explore-title {
+    grid-column: 1 / -1;
+  }
+  .phase-page.phase-three-page .phase-categories-single > .phase-category-card {
+    grid-column: 2;
+    width: min(100%, 460px);
+    max-width: 100%;
+    justify-self: center;
+    box-sizing: border-box;
+  }
+}
+/* On a narrow screen the book is a single sheet; keep it full-width. */
+@media (max-width: 900px) {
+  .phase-page.phase-three-page .phase-categories.phase-categories-single {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+  }
+  .phase-page.phase-three-page .phase-categories-single > .phase-explore-title,
+  .phase-page.phase-three-page .phase-categories-single > .phase-category-card {
+    grid-column: 1;
+  }
+}
+
+
+/* ============================================================
+   PHASE OVERVIEWS — BALANCED TWO-PAGE SCRAPBOOK SPREAD
+   Lay out the intro and category notes on facing paper leaves,
+   keeping each note off the binding. No changes to links/content.
+   ============================================================ */
+@media (min-width: 901px) {
+  .phase-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(42px, 5vw, 88px);
+    align-items: start;
+  }
+
+  /* Chapter labels and pennant headings span the open journal. */
+  .phase-page > .phase-number,
+  .phase-page > .phase-title,
+  .phase-page > .phase-breadcrumb {
+    grid-column: 1 / -1;
+  }
+
+  /* Let the two category cards participate in the page-level grid. */
+  .phase-page > .phase-categories {
+    display: contents;
+  }
+
+  /* Start the introduction and Explore section on the same row. */
+  .phase-page > .phase-intro {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 12px 0 12px;
+    justify-self: stretch;
+    padding: 28px clamp(19px, 2.7vw, 35px);
+  }
+  .phase-page > .phase-categories > .phase-explore-title {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: end;
+    justify-self: center;
+    margin: 0 auto 28px;
+    text-align: center;
+  }
+
+  /* Two category notes sit on facing leaves, not across the crease. */
+  .phase-page > .phase-categories > .phase-category-card {
+    width: 100%;
+    max-width: 460px;
+    min-width: 0;
+    justify-self: center;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+  .phase-page.phase-one-page > .phase-categories > .phase-category-card:nth-of-type(1),
+  .phase-page.phase-two-page > .phase-categories > .phase-category-card:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .phase-page.phase-one-page > .phase-categories > .phase-category-card:nth-of-type(2),
+  .phase-page.phase-two-page > .phase-categories > .phase-category-card:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  /* Phase III only has one category, so keep it on the right page. */
+  .phase-page.phase-three-page > .phase-categories > .phase-category-card {
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  /* Continue reading from the lower right leaf. */
+  .phase-page > .journal-next-page {
+    grid-column: 2;
+    grid-row: 5;
+    justify-self: end;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    padding-right: 6px;
+  }
+}
+
+/* On a phone or narrow tablet, use the existing one-page reading flow. */
+@media (max-width: 900px) {
+  .phase-page > .phase-categories {
+    display: grid;
+  }
+}
+
+@media (min-width: 901px) {
+  /* Override Phase III's older nested-grid rule. */
+  .phase-page.phase-three-page > .phase-categories.phase-categories-single {display: contents;}
+}
