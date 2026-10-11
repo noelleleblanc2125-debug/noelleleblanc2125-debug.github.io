@@ -4620,3 +4620,92 @@ body {
     min-width: 0;
   }
 }
+
+
+/* ============================================================
+   NAVIGATION CONTRAST + CONTINUOUS JOURNAL READING PATH
+   October 2026 — all original site styling, page flips and forms kept.
+   ============================================================ */
+
+/* Ivory title against the surrounding dark leather surface. */
+body > h1 {
+  color: #FFF8E9;
+  text-shadow: 0 2px 3px rgba(47, 29, 25, .75),
+               0 5px 12px rgba(47, 29, 25, .30);
+}
+
+/* Dark sage active tabs readable against light navigation. */
+.site-nav > a.active,
+.site-nav > .nav-dropdown.active > summary {
+  background: #47665B;
+  color: #FFF9EE;
+  border: 2px solid #2F4A40;
+  box-shadow: 0 2px 0 rgba(45, 65, 54, .23);
+}
+.site-nav > a.active:hover,
+.site-nav > a.active:focus-visible,
+.site-nav > .nav-dropdown.active > summary:hover,
+.site-nav > .nav-dropdown.active > summary:focus-visible {
+  background: #354D43;
+  color: #FFFFFF;
+  border-color: #263B32;
+}
+
+/* Paper-tab link at the end of every journal page. */
+.journal-next-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  clear: both;
+  margin: 58px auto 12px;
+  padding: 12px 10px 20px;
+  position: relative;
+  z-index: 5;
+}
+.journal-next-page .journal-next-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: fit-content;
+  max-width: min(94%, 430px);
+  padding: 14px 24px;
+  box-sizing: border-box;
+  background: #DAE6D7;
+  color: #2F493E;
+  border: 2px solid #809887;
+  border-radius: 5px 13px 7px 13px;
+  box-shadow: 3px 4px 0 #F7F0E6, 7px 8px 13px rgba(74,60,50,.21);
+  font: 500 1.22rem/1.3 'Patrick Hand', cursive;
+  text-decoration: none;
+  text-align: center;
+  transform: rotate(-1deg);
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.journal-next-page .journal-next-link:hover,
+.journal-next-page .journal-next-link:focus-visible {
+  background: #C5DBC8;
+  color: #243B30;
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 3px 5px 0 #F7F0E6, 8px 11px 18px rgba(74,60,50,.24);
+}
+.journal-next-page .journal-next-link:focus-visible {
+  outline: 3px solid #354D43;
+  outline-offset: 4px;
+}
+.journal-next-page .journal-next-arrow {
+  font-size: 1.45em;
+  line-height: 0.8;
+}
+@media (max-width:700px) {
+  body > h1 { text-shadow: 0 2px 4px rgba(47,29,25,.85); }
+  .journal-next-page { margin: 42px auto 6px; padding: 8px 0 15px; }
+  .journal-next-page .journal-next-link { max-width: 100%; padding: 12px 15px; font-size: 1.1rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .journal-next-page .journal-next-link { transition: none; }
+}
