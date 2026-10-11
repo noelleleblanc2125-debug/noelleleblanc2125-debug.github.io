@@ -4488,3 +4488,135 @@ body {
     100% { transform: perspective(2200px) rotateY(0deg) translateX(0); opacity: 1; filter: drop-shadow(3px 5px 6px rgba(50,31,27,.10)); }
   }
 }
+
+
+/* ================================================================
+   HOME JOURNAL SPREAD — TABLET/DESKTOP LAYOUT REFINEMENTS
+   Preserve all original content, card textures, form, and page flips.
+   ================================================================ */
+
+/* Card titles should sit clearly above the paper, never underneath it. */
+.home-page .static-home-card .static-card-heading {
+  position: relative;
+  z-index: 8;
+  margin-top: 0;
+  margin-bottom: 16px;
+  max-width: calc(100% - 25px);
+}
+.home-page .static-home-card .card-content {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+}
+.home-page .static-home-card .card-title {
+  overflow-wrap: anywhere;
+}
+
+/* Two facing pages: each item belongs to one page, not the binding. */
+@media (min-width: 901px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(36px, 5vw, 90px);
+    row-gap: 0;
+    align-items: start;
+  }
+  .home-page > .home-leaves,
+  .home-page > .welcome-section,
+  .home-page > .home-cards,
+  .home-page > .journal-journey {
+    grid-column: 1 / -1;
+  }
+
+  /* Journal introduction: 2 cards on the first spread, third on the left. */
+  .home-page .home-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(32px, 5vw, 85px);
+    row-gap: 64px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .home-page .home-cards .about-card {grid-column: 1;}
+  .home-page .home-cards .capture-card {grid-column: 2;}
+  .home-page .home-cards .collecting-card {
+    grid-column: 1;
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  /* Phase cards: Phase I left, Phase II right, Phase III left next row. */
+  .home-page .journal-journey {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .home-page .journey-phases {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(32px, 5vw, 85px);
+    row-gap: 55px;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+  }
+  .home-page .journey-phase {
+    width: 100%;
+    min-width: 0;
+    min-height: 360px;
+  }
+  .home-page .journey-phase-three {
+    grid-column: 1;
+  }
+
+  /* Reader reflections occupy the left page; submission the right. */
+  .home-page > .reader-notes-section {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding: 0 4px;
+    margin: 30px 0 85px;
+    box-sizing: border-box;
+  }
+  .home-page > .visitor-feedback {
+    grid-column: 2;
+    grid-row: auto;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 30px 0 85px;
+    box-sizing: border-box;
+  }
+  .home-page .reader-notes-header h2 {font-size: clamp(2.4rem, 3.7vw, 3.15rem);}
+  .home-page .reader-notes-grid {grid-template-columns: 1fr;}
+  .home-page .reader-notes-empty {margin: 28px auto;}
+  .home-page .feedback-paper {padding: 45px clamp(21px, 2.5vw, 40px) 35px;}
+  .home-page .feedback-title {font-size: clamp(2.25rem, 3.5vw, 3rem);}
+  .home-page .feedback-intro {font-size: .94rem;}
+  .home-page .feedback-label {font-size: 1.3rem;}
+  .home-page .feedback-consent {padding: 12px;}
+}
+
+/* Narrow tablets and phones: vertical reading remains more comfortable. */
+@media (max-width: 900px) {
+  .home-page .home-cards,
+  .home-page .journey-phases {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+  }
+  .home-page .home-cards > .home-card,
+  .home-page .home-cards > .collecting-card {
+    grid-column: auto;
+    width: min(100%, 540px);
+    max-width: 540px;
+    min-width: 0;
+  }
+  .home-page .journey-phases > .journey-phase {
+    width: min(100%, 440px);
+    min-width: 0;
+  }
+}
