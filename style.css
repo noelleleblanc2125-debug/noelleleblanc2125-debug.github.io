@@ -4709,3 +4709,71 @@ body > h1 {
 @media (prefers-reduced-motion:reduce) {
   .journal-next-page .journal-next-link { transition: none; }
 }
+
+
+/* ============================================================
+   NEXT-PAGE TAB — RIGHT-HAND JOURNAL CORNER
+   Keep the existing paper-tab design; change only its placement.
+   ============================================================ */
+@media (min-width: 901px) {
+  /* On the homepage the journal is a two-column grid. The tab belongs
+     specifically to the right-hand sheet, not the middle binding. */
+  .home-page > .journal-next-page {
+    grid-column: 2 / 3;
+    justify-self: end;
+    width: 100%;
+    margin-top: 28px;
+  }
+}
+
+/* On every page, tuck the button against the right paper margin. */
+main .journal-next-page {
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 0;
+  padding-right: clamp(12px, 3vw, 34px);
+  padding-left: 12px;
+}
+main .journal-next-page .journal-next-link {
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  /* A single mobile sheet: still right-aligned but fully tappable. */
+  main .journal-next-page {
+    margin-top: 36px;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+  main .journal-next-page .journal-next-link {
+    max-width: 100%;
+    padding: 12px 14px;
+    font-size: 1.08rem;
+  }
+}
+
+/* ============================================================
+   PHASE INTRO NOTES — KEEP CLEAR OF THE CENTER BINDING
+   The journal's two facing sheets remain continuous, but the
+   introductory paper sits entirely on the left-hand sheet.
+   This is scoped to phase overview pages only.
+   ============================================================ */
+@media (min-width: 901px) {
+  .phase-page .phase-intro {
+    width: calc(50% - 45px);
+    max-width: 570px;
+    margin-left: clamp(8px, 2%, 26px);
+    margin-right: auto;
+    padding: 30px clamp(22px, 3vw, 42px);
+    box-sizing: border-box;
+  }
+  .phase-page .phase-intro::before { left: 50%; }
+}
+
+/* One-page layouts have no center crease, so let the note breathe. */
+@media (max-width: 900px) {
+  .phase-page .phase-intro {
+    width: min(92%, 720px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
