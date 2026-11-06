@@ -5041,3 +5041,30 @@ main .journal-next-page .journal-next-link {
   .phase-page .phase-decoration-hearts img { width: 155px; }
   .phase-page .phase-decoration-leaf img { width: 150px; }
 }
+
+
+/* FIX: Prevent scrapbook captions from cutting off text */
+
+.category-page .gallery-caption {
+  padding-bottom: 45px;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 10px),
+    94% calc(100% - 5px),
+    87% calc(100% - 9px),
+    80% 100%,
+    72% calc(100% - 6px),
+    64% calc(100% - 2px),
+    56% calc(100% - 9px),
+    48% 100%,
+    40% calc(100% - 5px),
+    32% calc(100% - 10px),
+    24% calc(100% - 3px),
+    16% calc(100% - 8px),
+    8% 100%,
+    0 calc(100% - 5px)
+  );
+}
+
