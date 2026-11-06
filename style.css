@@ -5068,3 +5068,20 @@ main .journal-next-page .journal-next-link {
   );
 }
 
+
+/* =========================================
+   CONSISTENT SCREENSHOT IMAGE HEIGHT
+   Applies to all five category pages
+   ========================================= */
+
+.category-page .gallery-photo img,
+.category-page .gallery-photo img.extra-tall-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: center;
+}
+
+
