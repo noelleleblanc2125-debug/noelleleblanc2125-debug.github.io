@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#98745d">
+  <title>Still Becoming | Things Fall Apart: Social Media Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles are scoped so they cannot change the existing collection pages. */
+    .still-page .still-heading {text-align:center; margin:14px auto 28px;}
+    .still-page .still-eyebrow {font: 0.85rem 'Lora',serif;letter-spacing:.14em;text-transform:uppercase;color:#876e65;}
+    .still-page .still-title {font-family:'Parisienne',cursive;font-weight:400;font-size:clamp(3.3rem,8vw,5.6rem);color:#704f50;line-height:1.15;margin:14px 0 8px;}
+    .still-page .still-subtitle {font: 1.25rem 'Patrick Hand',cursive;color:#7c6558;margin:0;}
+    .still-page .still-sheet {position:relative;width:min(100%,730px);box-sizing:border-box;margin:30px auto 48px;padding:clamp(30px,6vw,58px);background:#fffaf1;border:1px solid #e8d8c5;box-shadow:4px 6px 0 rgba(112,83,66,.12),9px 13px 20px rgba(74,60,50,.12);transform:rotate(-.4deg);}
+    .still-page .still-sheet:before {content:"";position:absolute;top:-11px;left:calc(50% - 50px);width:100px;height:27px;background:rgba(218,184,159,.66);transform:rotate(2deg);}
+    .still-page .still-sheet-heading {font: 2rem 'Patrick Hand',cursive;color:#684b47;margin:0 0 15px;text-align:center;}
+    .still-page .still-placeholder {border:2px dashed #cdb6a5;padding:25px 22px;text-align:left;border-radius:3px;background:rgba(255,250,244,.68);}
+    .still-page .still-placeholder strong {font:1.35rem 'Patrick Hand',cursive;color:#6b4d46;display:block;margin-bottom:12px;}
+    .still-page .still-placeholder p {font:1.02rem/1.65 'Lora',serif;color:#67594f;margin:0 0 12px;}
+    .still-page .still-placeholder p:last-child {margin-bottom:0;}
+    .still-page .still-stage {max-width:730px;margin:0 auto 42px;text-align:center;padding:20px 24px;border-top:1px solid #cbbbac;}
+    .still-page .still-stage h3 {font:1.75rem 'Patrick Hand',cursive;color:#6b4d46;margin:0 0 8px;}
+    .still-page .still-stage p {font:1rem/1.65 'Lora',serif;color:#635449;margin:0;}
+    .still-page .still-stage a {color:#694d58;text-decoration:underline;text-underline-offset:3px;}
+    .still-page .still-preview-note {font: .91rem/1.5 'Lora',serif;color:#7e6b61;text-align:center;max-width:650px;margin:0 auto 25px;}
+    @media(max-width:700px){.still-page .still-sheet {transform:none;padding:35px 20px;}.still-page .still-placeholder{padding:20px 16px;}.still-page .still-stage{padding:20px 9px;}}
+
+    /* Reader reflection form — distinct from the homepage form. */
+    .still-page .still-reflection {max-width:730px;margin:0 auto 45px;padding:clamp(23px,5vw,42px);box-sizing:border-box;background:#fff9f0;border:1px solid #e5d5c4;box-shadow:4px 7px 0 rgba(112,83,66,.09);}
+    .still-page .still-reflection h3,.still-page .still-capture-section h3 {font:400 clamp(1.8rem,5vw,2.25rem) 'Patrick Hand',cursive;color:#684b47;margin:0 0 8px;text-align:center;}
+    .still-page .still-reflection .still-question {font:1.12rem/1.6 'Lora',serif;color:#635449;margin:0 auto 22px;text-align:center;max-width:570px;}
+    .still-page .still-reflection label.still-label {display:block;font:1.15rem/1.45 'Patrick Hand',cursive;color:#6b4d46;margin-bottom:9px;}
+    .still-page .still-reflection textarea {width:100%;min-height:145px;box-sizing:border-box;resize:vertical;padding:15px 17px;border:1px solid #cdb8a8;border-radius:5px;background:#fffcf7;color:#483c36;font:1rem/1.55 'Lora',serif;}
+    .still-page .still-reflection textarea:focus-visible,.still-page .still-send:focus-visible,.still-page .still-capture-link:focus-visible {outline:3px solid #956d87;outline-offset:4px;}
+    .still-page .still-consent {display:flex;gap:11px;align-items:flex-start;margin:17px 0;}
+    .still-page .still-consent input {flex:0 0 auto; width:18px;height:18px;margin:4px 0 0;accent-color:#8e6e7e;}
+    .still-page .still-consent label {font:.84rem/1.65 'Lora',serif;color:#68584e;}
+    .still-page .still-send {display:block;min-height:46px;margin:16px auto;padding:10px 28px;border:1px solid #8f7476;border-radius:5px;background:#e6d1d2;color:#553f49;font:1.24rem 'Patrick Hand',cursive;cursor:pointer;}
+    .still-page .still-send:hover {background:#dfc5c8;}
+    .still-page .still-send:disabled {cursor:wait;opacity:.7;}
+    .still-page .still-privacy {font:.77rem/1.6 'Lora',serif;color:#756559;margin:16px 0 0;text-align:center;}
+    .still-page .still-form-status {font:1.07rem/1.6 'Patrick Hand',cursive;color:#5a6e56;text-align:center;margin:13px 0 0;}
+    .still-page .still-form-status:empty {display:none;}
+    /* Final empty screenshot: the only image slot in the collection that cannot be filled. */
+    .still-page .still-capture-section {max-width:730px;margin:0 auto 48px;text-align:center;}
+    .still-page .still-capture-intro {font:1rem/1.7 'Lora',serif;color:#635449;margin:0 auto 25px;max-width:540px;}
+    .still-page .still-capture-link {display:block;width:min(100%,410px);box-sizing:border-box;margin:0 auto;text-decoration:none;color:inherit;}
+    .still-page .still-polaroid {display:block;padding:17px 17px 27px;background:#fffdf8;border:1px solid #e8ded0;box-shadow:5px 7px 0 rgba(199,177,161,.28),9px 15px 20px rgba(74,60,50,.18);transform:rotate(-1.5deg);transition:transform .2s ease,box-shadow .2s ease;position:relative;}
+    .still-page .still-polaroid:before {content:"";position:absolute;top:-12px;left:calc(50% - 43px);width:86px;height:26px;background:rgba(211,172,151,.7);transform:rotate(3deg);}
+    .still-page .still-capture-link:hover .still-polaroid,.still-page .still-capture-link:focus-visible .still-polaroid {transform:rotate(0deg) translateY(-4px);box-shadow:6px 11px 0 rgba(199,177,161,.28),11px 19px 24px rgba(74,60,50,.2);}
+    .still-page .still-empty-frame {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:240px;padding:24px;background:#f9f2e8;border:1px dashed #c9b9a7;box-sizing:border-box;}
+    .still-page .still-empty-mark {font:2rem 'Patrick Hand',cursive;color:#b4a28e;}
+    .still-page .still-empty-words {font:1.16rem/1.45 'Patrick Hand',cursive;color:#79695e;}
+    .still-page .still-polaroid-caption {display:block;font:1.35rem 'Patrick Hand',cursive;color:#765850;padding:20px 4px 0;}
+    .still-page .still-capture-hint {display:block;margin:20px auto 0;font:1rem/1.6 'Lora',serif;color:#755d57;text-decoration:underline;text-underline-offset:4px;}
+    @media(max-width:700px) {.still-page .still-reflection {padding:23px 18px;}.still-page .still-empty-frame {min-height:195px;}}
+    @media(prefers-reduced-motion:reduce){.still-page .still-polaroid{transition:none;}}
+  </style>
+</head>
+<body id="journal-start">
+  <h1>Things Fall Apart: Social Media Edition</h1>
+  <img src="journal-header.png" class="journal-header" alt="My Screenshot Journal">
+  <div class="header-divider"></div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <details class="nav-dropdown">
+      <summary>Things Falling Apart</summary>
+      <div class="nav-dropdown-menu">
+        <a href="falling-apart.html" class="nav-overview">Explore Phase I →</a>
+        <a href="adulthood.html">Expected vs. Actual Adulthood</a>
+        <a href="career.html">Career &amp; Life Direction</a>
+      </div>
+    </details>
+    <details class="nav-dropdown">
+      <summary>The Aftermath &amp; Transition</summary>
+      <div class="nav-dropdown-menu">
+        <a href="aftermath.html" class="nav-overview">Explore Phase II →</a>
+        <a href="behind.html">Feelings of Being "Behind"</a>
+        <a href="relationships.html">Relationships &amp; Family</a>
+      </div>
+    </details>
+    <details class="nav-dropdown active">
+      <summary>Growth After Things Fall Apart</summary>
+      <div class="nav-dropdown-menu">
+        <a href="growth.html" class="nav-overview">Explore Phase III →</a>
+        <a href="values.html">Changing Values &amp; Self-Understanding</a>
+      </div>
+    </details>
+  </nav>
+
+  <main class="category-page still-page">
+    <div class="phase-breadcrumb">
+      <a href="values.html">Changing Values &amp; Self-Understanding</a>
+      <span class="breadcrumb-divider">/</span>
+      <span>Still Becoming</span>
+    </div>
+    <header class="still-heading">
+      <p class="still-eyebrow">The final page</p>
+      <h2 class="still-title">Still Becoming ♡</h2>
+      <p class="still-subtitle">A note from the curator</p>
+    </header>
+    <section class="still-sheet" aria-labelledby="curator-heading">
+      <h3 class="still-sheet-heading" id="curator-heading">A Note from the Curator</h3>
+      <!-- YOUR REFLECTION GOES HERE. We will replace the block below with your own prose. -->
+      <div class="still-placeholder">
+        <strong>Your reflection belongs here ♡</strong>
+        <p>This space is reserved for your personal conclusion to the collection. Nothing has been written on your behalf.</p>
+        <p>When you're ready, we can place your reflection here and format it so your voice remains the focus.</p>
+      </div>
+    </section>
+    <!-- READER REFLECTION: optional submission. The curator reflection above is untouched. -->
+    <section class="still-reflection" aria-labelledby="reader-reflection-heading">
+      <h3 id="reader-reflection-heading">Your Turn to Reflect ♡</h3>
+      <p class="still-question">What has this collection made you reconsider about young adulthood?</p>
+      <form id="still-reflection-form" action="https://formspree.io/f/xljgjpgk" method="POST">
+        <input type="hidden" name="form_context" value="Still Becoming — Final Reflection">
+        <input type="hidden" name="_subject" value="Still Becoming — Reader Reflection">
+        <label class="still-label" for="still-reader-note">If you'd like, leave a note here:</label>
+        <textarea id="still-reader-note" name="message" rows="6" maxlength="2000" placeholder="Your reflection..." required></textarea>
+        <div class="still-consent">
+          <input type="checkbox" id="still-publication-consent" name="publication_consent" value="Yes - permission granted">
+          <label for="still-publication-consent">I give permission for my response to be considered for publication on this website. I understand that identifying details may be removed before publication.</label>
+        </div>
+        <button class="still-send" type="submit">Send My Reflection ♡</button>
+        <p class="still-form-status" id="still-form-status" role="status" aria-live="polite"></p>
+        <p class="still-privacy">Responses are sent privately and are never published automatically. Permission to publish is optional. Please avoid including identifying information about yourself or others. You can also choose not to submit anything and continue to the final capture.</p>
+      </form>
+    </section>
+
+    <!-- THE LAST CAPTURE: deliberate empty slot, linked to the final experience. -->
+    <section class="still-capture-section" aria-labelledby="last-capture-heading">
+      <h3 id="last-capture-heading">One Last Capture</h3>
+      <p class="still-capture-intro">We've reached the last space in the collection. But not every meaningful moment lives in a screenshot.</p>
+      <a class="still-capture-link" href="beyond-the-page.html" aria-label="Open the empty final capture and go Beyond the Page">
+        <span class="still-polaroid">
+          <span class="still-empty-frame" aria-hidden="true">
+            <span class="still-empty-mark">✧</span>
+            <span class="still-empty-words">No screenshot attached.</span>
+          </span>
+          <span class="still-polaroid-caption">What's beyond the page? ♡</span>
+        </span>
+        <span class="still-capture-hint">Tap the empty frame to turn the final page →</span>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    // Submit privately using the existing Formspree endpoint while keeping the
+    // reader on the final journal page. They can continue whether or not they submit.
+    const stillForm = document.getElementById('still-reflection-form');
+    const stillStatus = document.getElementById('still-form-status');
+    stillForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const button = stillForm.querySelector('button[type="submit"]');
+      button.disabled = true;
+      button.textContent = 'Sending Your Reflection...';
+      stillStatus.textContent = '';
+      try {
+        const response = await fetch(stillForm.action, {
+          method: 'POST',
+          body: new FormData(stillForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Submission was not accepted');
+        stillForm.reset();
+        stillStatus.textContent = 'Your note has been tucked away. Thank you for sharing. ♡';
+      } catch (error) {
+        stillStatus.textContent = 'Your note could not be sent. Please try again, or continue without submitting.';
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Send My Reflection ♡';
+      }
+    });
+  </script>
+</body>
+</html>
