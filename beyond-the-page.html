@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#98745d">
+  <title>Beyond the Page | Things Fall Apart: Social Media Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Parisienne&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Self-contained closing screen. Intentionally no next-page links. */
+    body.beyond-page {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(22px, 5vw, 64px) 16px;
+      box-sizing: border-box;
+      background-color: #98745d;
+      background-image: radial-gradient(ellipse at 25% 18%, rgba(255,255,255,.08), transparent 55%),
+                        radial-gradient(ellipse at 80% 85%, rgba(44,27,18,.14), transparent 55%);
+      color: #4a3c32;
+    }
+    .beyond-sheet {
+      position: relative;
+      width: min(100%, 720px);
+      box-sizing: border-box;
+      background-color: #fff9ee;
+      background-image: radial-gradient(#d8cbbb 0.8px, transparent 0.8px);
+      background-size: 19px 19px;
+      box-shadow: 8px 14px 0 rgba(82,55,39,.16), 12px 20px 35px rgba(49,31,22,.25);
+      border: 1px solid #e7d9c7;
+      padding: clamp(34px, 7vw, 74px) clamp(25px, 7vw, 78px);
+      text-align: center;
+      border-radius: 4px 12px 12px 4px;
+      isolation: isolate;
+    }
+    .beyond-sheet::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 16px;
+      width: 2px;
+      background: rgba(196,132,132,.25);
+      pointer-events: none;
+    }
+    .beyond-flourish { font-size: 24px; color: #a18e76; letter-spacing: .2em; margin: 0 0 12px; }
+    .beyond-label { font: 600 .7rem/1.5 'Lora', Georgia, serif; letter-spacing: .18em; text-transform: uppercase; color: #8e7666; margin: 0 0 14px; }
+    .beyond-title { font: 400 clamp(3rem, 9vw, 5rem)/1.1 'Parisienne', cursive; color: #78564b; margin: 0 0 24px; }
+    .beyond-line { font: 400 clamp(1.14rem, 2.8vw, 1.35rem)/1.65 'Patrick Hand', cursive; max-width: 510px; margin: 0 auto 16px; }
+    .beyond-lead { font-size: clamp(1.5rem, 4vw, 1.9rem); color: #795b50; margin-bottom: 20px; }
+    .beyond-divider { height: 1px; width: 64%; margin: 34px auto 27px; background: #d9c9b7; }
+    .beyond-last { font: 400 clamp(1.25rem, 3vw, 1.5rem)/1.55 'Patrick Hand', cursive; color: #78564b; margin: 0; }
+    @media (prefers-reduced-motion: no-preference) { .beyond-sheet { animation: appear .75s ease-out both; } @keyframes appear { from {opacity:0;transform:translateY(12px)} to {opacity:1;transform:translateY(0)} } }
+  </style>
+</head>
+<body class="beyond-page">
+  <main class="beyond-sheet" aria-labelledby="beyond-title">
+    <p class="beyond-flourish" aria-hidden="true">✦ · ♡ · ✦</p>
+    <p class="beyond-label">The journal ends here</p>
+    <h1 class="beyond-title" id="beyond-title">Beyond the Page</h1>
+    <p class="beyond-line beyond-lead">Give yourself a beat.</p>
+    <p class="beyond-line">Remember, you're doing a great job of still becoming.</p>
+    <p class="beyond-line">You don't need to have everything figured out, and you don't need to be where you thought you'd be by now.</p>
+    <p class="beyond-line">So close this journal and do something that reminds you of that. Something that makes you feel present, something that brings you joy, or simply something that makes today feel like yours.</p>
+    <div class="beyond-divider" aria-hidden="true"></div>
+    <p class="beyond-last">The collection ends here. Your story doesn't. ♡</p>
+  </main>
+</body>
+</html>
